@@ -1,0 +1,51 @@
+# Python/ComfyUI caches and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.tmp
+
+# ComfyUI-generated output (if accidentally copied)
+output/
+outputs/
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Log files and checkpoints
+*.log
+*.ckpt
+*.safetensors
+*.pth
+
+# Node-specific temporary files
+*.cache
+*.json.bak
+*.autosave.json
+
+# API credentials, if used locally
+apikeys.json
+secrets.json
+*.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VSCode or other editor configs (optional)
+.vscode/
+.idea/
+*.swp
+
+# Git backup files
+*.orig
+
+# SwarmUI/ComfyUI user runtime folders (if present)
+comfyui_temp/
+comfyui_debug/
+user/default/output/
+user/default/images/
+user/default/_tmp/
