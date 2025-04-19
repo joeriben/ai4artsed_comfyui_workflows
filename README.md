@@ -35,11 +35,12 @@ The workflows rely on a working installation of [ComfyUI](https://github.com/com
 Depending on the individual workflow, you may also need:
 
 - Custom nodes or extensions provided in the companion repository [ai4artsed_comfyui](https://github.com/joeriben/ai4artsed_comfyui)
-- External APIs for language models (e.g. OpenRouter, Ollama)
-- Appropriate image generation models (e.g. SD 1.5, SDXL, or custom checkpoints)
+- External APIs for language models (in particular, **you will need an OpenRouter.ai Key**, optional Ollama installed on your system)
+- Appropriate image generation models (e.g. SD 3.5)
 - Optional: CLIP-based modules, VAE decoders, or prompt transformation logic
 
 Each workflow makes different assumptions. Please consult the respective JSON structure or embedded metadata for specific dependencies.
+Generally, these workflows make use of the following **custom nodes**: BetterStrings and ShowText.
 
 ---
 
