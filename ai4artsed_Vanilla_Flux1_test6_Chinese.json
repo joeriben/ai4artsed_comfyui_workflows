@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 15,
-  "last_link_id": 19,
+  "last_node_id": 23,
+  "last_link_id": 22,
   "nodes": [
     {
       "id": 7,
@@ -16,13 +16,13 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 4,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 5
+          "link": 22
         }
       ],
       "outputs": [
@@ -45,15 +45,63 @@
       ]
     },
     {
-      "id": 5,
-      "type": "EmptyLatentImage",
+      "id": 6,
+      "type": "CLIPTextEncode",
       "pos": [
-        473,
-        609
+        415,
+        186
       ],
       "size": [
-        315,
-        106
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 21
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -1049.2501220703125,
+        835.8999633789062
+      ],
+      "size": [
+        441,
+        26
       ],
       "flags": {},
       "order": 0,
@@ -61,111 +109,199 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "LATENT",
-          "type": "LATENT",
-          "slot_index": 0,
+          "name": "STRING",
+          "type": "STRING",
           "links": [
-            2
+            16
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "EmptyLatentImage"
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
+        "Node name for S&R": "ai4artsed_openrouter_key"
       },
-      "widgets_values": [
-        512,
-        512,
-        1
-      ]
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
-      "id": 8,
-      "type": "VAEDecode",
+      "id": 19,
+      "type": "BetterString",
       "pos": [
-        1209,
-        188
+        -1005.739013671875,
+        -119.82948303222656
       ],
       "size": [
-        210,
-        46
+        406.04998779296875,
+        522.8499755859375
       ],
       "flags": {},
-      "order": 8,
+      "order": 1,
       "mode": 0,
       "inputs": [
         {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 7
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 8
+          "name": "chain",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "chain"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "title": "AI4ArtsEd Text Prompt",
+      "properties": {
+        "cnr_id": "comfyui-better-strings",
+        "ver": "1.0.0",
+        "Node name for S&R": "BetterString"
+      },
+      "widgets_values": [
+        "a banner showing the word TEST",
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        401.6502380371094,
+        -153.00001525878906
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
           "slot_index": 0,
           "links": [
-            9
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.28",
-        "Node name for S&R": "VAEDecode"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 9,
-      "type": "SaveImage",
-      "pos": [
-        1451,
-        189
-      ],
-      "size": [
-        210,
-        270
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 9
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28"
+        "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "ComfyUI"
+        "sd3.5_large_fp8_scaled.safetensors"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "CLIPLoader",
+      "pos": [
+        3711.84375,
+        547.2083740234375
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "clip_g.safetensors",
+        "stable_diffusion",
+        "default"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "CLIPLoader",
+      "pos": [
+        403.8061218261719,
+        1.6916594505310059
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            21,
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_enconly.safetensors",
+        "stable_diffusion",
+        "default"
       ]
     },
     {
       "id": 3,
       "type": "KSampler",
       "pos": [
-        863,
-        186
+        865.199951171875,
+        99.65001678466797
       ],
       "size": [
         315,
         262
       ],
       "flags": {},
-      "order": 7,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -205,191 +341,160 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        931398142970625,
+        0,
         "randomize",
         20,
-        1,
+        7,
         "euler",
         "normal",
         1
       ]
     },
     {
-      "id": 6,
-      "type": "CLIPTextEncode",
+      "id": 5,
+      "type": "EmptyLatentImage",
       "pos": [
-        415,
-        186
-      ],
-      "size": [
-        422.84503173828125,
-        164.31304931640625
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 3
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 19
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            4
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
-      ]
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        441.8002014160156,
-        -111.20001983642578
+        882.7503051757812,
+        420.8999328613281
       ],
       "size": [
         315,
-        98
+        106
       ],
       "flags": {},
-      "order": 1,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
         {
-          "name": "MODEL",
-          "type": "MODEL",
+          "name": "LATENT",
+          "type": "LATENT",
           "slot_index": 0,
           "links": [
-            1
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "slot_index": 1,
-          "links": [
-            3,
-            5
-          ]
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "slot_index": 2,
-          "links": [
-            8
+            2
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.28",
-        "Node name for S&R": "CheckpointLoaderSimple"
+        "Node name for S&R": "EmptyLatentImage"
       },
       "widgets_values": [
-        "FLUX1/flux1-dev-fp8.safetensors"
+        1024,
+        1024,
+        1
       ]
     },
     {
-      "id": 11,
-      "type": "ai4artsed_openrouter_key",
+      "id": 8,
+      "type": "VAEDecode",
       "pos": [
-        -1064.099853515625,
-        826
+        1221.6497802734375,
+        108.79999542236328
       ],
       "size": [
-        441,
-        26
+        210,
+        46
       ],
       "flags": {},
-      "order": 2,
+      "order": 11,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
           "links": [
-            16
+            9
           ]
         }
       ],
       "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
-        "Node name for S&R": "ai4artsed_openrouter_key"
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "VAEDecode"
       },
       "widgets_values": []
     },
     {
-      "id": 10,
-      "type": "PrimitiveString",
+      "id": 9,
+      "type": "SaveImage",
       "pos": [
-        -1031.649658203125,
-        -122.79998779296875
+        1224.9501953125,
+        228.0499267578125
       ],
       "size": [
-        315,
-        58
+        210,
+        270
       ],
       "flags": {},
-      "order": 3,
+      "order": 12,
       "mode": 0,
-      "inputs": [],
-      "outputs": [
+      "inputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            17
-          ]
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
         }
       ],
+      "outputs": [],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
+        "ver": "0.3.28"
       },
       "widgets_values": [
-        "a banner showing the word TEST"
+        "ComfyUI"
       ]
+    },
+    {
+      "id": 22,
+      "type": "Note",
+      "pos": [
+        -486.8088073730469,
+        -583.783447265625
+      ],
+      "size": [
+        737.135009765625,
+        338.9049987792969
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "传统儒家文人画视觉语法与伦理翻译纲领\n\n（基于宋元明清文人画正统体系，含当代适应性条款）\n\n一、本体转换规则\n\n\n    以「六法论」为基，谢赫「气韵生动」为最高准则，弃绝西方写实主义。\n\n    所有物象须经「道德形变」：\n        松竹梅兰等植物须符合《芥子园画谱》程式，枝干用「书法性线条」勾勒，体现「骨法用笔」\n        人物须小于景致比例，衣纹处理参照《历代名画记》「吴带当风」传统，面部仅以「意到笔不到」的减笔法暗示\n\n\n二、空间重构要义\n\n\n    透视系统采用北宋郭熙「三远法」复合架构：\n        「高远」用于道德权威意象（如峭壁上的书院）\n        「深远」表现儒家秩序（如梯形田亩的层叠透视）\n        「平远」传递庄子式退隐心境（米氏云烟技法）\n\n\n三、笔墨伦理体系\n\n\n    材料选择即道德声明：\n        生宣配枯笔皴擦，喻「王道艰涩」\n        熟绢设色限用矿物颜料，按《周礼》「五色观」规范（青/赤/黄/白/黑的象征秩序）\n\n    皴法必须体现身份政治：\n        士大夫用「披麻皴」显从容\n        渔樵隐者用「斧劈皴」示刚直\n\n\n四、语义符号系统\n\n\n    题跋须为原创诗文，符合以下要求：\n        内容：引用《论语》比例≥30%，或用典出自《文选》\n        书法：行楷/草书依画面气势而定，但禁用馆阁体\n\n    印章系统分级：\n        引首章：朱文宗秦汉玺印风格\n        压角章：白文取法汉官印制度\n\n\n五、反常合道条款\n\n（对明清以降非典型文人画的兼容规范）\n\n\n    允许八大山人式「扭曲造型」，但须满足：\n        变形幅度与题跋内容形成互文（如鱼鸟翻白眼对应反诗）\n        留白面积必须＞40%，保持「空故纳秽」哲学张力\n\n\n六、数字时代适用条例\n\n\n    AI生成作品需满足：\n        笔触算法必须模拟董源「矾头皴」的随机性\n        色彩通道需遵循《考工记》「青与白相次」的色序逻辑\n\n    禁止条款：\n        杜绝3D体积渲染，保持二维「书画同源」特性\n        禁用PS滤镜，墨色层次须通过算法迭代生成\n\n\n七、终极校验标准\n\n完成的转译作品须通过双重认证：\n\n\n    「望气」测试：中国美术史专家能在一丈外辨识出朝代风格\n\n    「读画」测试：书法家可从款识倒退验证画面构图逻辑\n\n\n（注：本纲领默认采用明代《十竹斋画谱》为技术手册，清代《绘事发微》为哲学依据）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 15,
       "type": "ai4artsed_openrouter",
       "pos": [
-        -486.3393859863281,
-        -141.8795166015625
+        -496.7890625,
+        -150.67945861816406
       ],
       "size": [
         781.25,
         1059.449951171875
       ],
       "flags": {},
-      "order": 5,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -398,7 +503,7 @@
           "widget": {
             "name": "input_prompt"
           },
-          "link": 17
+          "link": 20
         },
         {
           "name": "api_key",
@@ -425,12 +530,14 @@
       },
       "widgets_values": [
         "",
-        "Translate the full content of the input image into the visual-ethical system of traditional Confucian literati painting.\nRetain all semantic relationships, gestures, and entities, but recompose them in a flattened, brush-ink composition guided by li (ritual), ren (benevolence), and he (harmony). Replace photorealistic forms with expressive linework, tonal washes, and spatial layering. Stylize human figures with restrained posture, scholar’s robes, and modest scale. Use pine, plum, and bamboo to signify resilience and virtue. Avoid central perspective; employ vertical hierarchy and asymmetrical balance. Let calligraphy, void, and texture serve as semantic elements. All objects and beings must remain semantically coherent, yet be fully transformed into the literati visual tradition.\n\nTraditional Chinese Literati Art (Confucian Tradition) – Visual-Epistemic Image Translation\nI. Ontological and Semiotic Structure\n\n    Figuration and Representation:\n    Figuration is allowed but highly stylized, emphasizing gesture, posture, and relational placement rather than anatomical precision. Human figures appear in modest scale, often as solitary scholars, wanderers, or ritual actors. Animals and objects are likewise rendered in symbolically expressive form, not mimetic realism.\n\n    Symbolic Integration:\n    Every entity is embedded in a moralized and cosmologically ordered environment. The human figure is never autonomous, but part of a landscape that reflects their ethical state, cultivation, or role in the social-natural order. Forms operate as ethical signs, not as isolated icons.\n\nII. Spatial Logic and Compositional Principles\n\n    Perspective and Focal Logic:\n    No linear perspective. Instead, a floating, shifting, and atmospheric perspective is used. Composition follows vertical hierarchy: higher placement = transcendence or authority; lower = subordination or rootedness. No singular vanishing point; viewers are invited to wander through space morally and intellectually.\n\n    Depth and Flatness:\n    Depth is implied via overlapping planes, tonal washes, and controlled voids. Emphasis is placed on flat compositional balance rather than volumetric modeling.\n\n    Rhythm, Pattern, and Repetition:\n    Natural rhythm is conveyed via repeated tree types (pine, bamboo, plum), water flows, cloud formations, and rock contours. Repetition is never mechanical, but always reflects organic moral order—the harmony of cultivated variation.\n\nIII. Formal and Stylistic Elements\n\n    Geometric and Structural Elements:\n    No rigid geometric grids. Spatial relations are organic, layered, and symbolically aligned. Structures (e.g., bridges, pavilions, paths) are placed not for realism but to express ethical or intellectual transition.\n\n    Ornamental and Decorative Forms:\n    Ornament emerges from natural forms—stylized yet referential. Plum blossoms = resilience; bamboo = integrity; pine = longevity. Decorative form is a semantic system, not mere embellishment.\n\n    Text and Calligraphy:\n    Calligraphy is constitutive, not auxiliary. Inscriptions express poetry, thought, or ethical reflection. Scripts (especially running or semi-cursive) are visually balanced with the painting. Text is placed as dialogue with image, not as label or caption.\n\nIV. Human and Sentient Figures\n\n    Representation Rules:\n    Humans are shown in modest scale, minimal expression, and stylized robes. No dramatization of gesture or facial emotion. Emotional life is inferred from posture, environment, and placement. Figures may be facing away, in study, or absorbed in landscape, suggesting self-cultivation and ethical inwardness.\n    Animals are stylized: birds, cranes, oxen, and fish often appear as moral metaphors.\n\nV. Materiality and Coloration\n\n    Color Palette and Application:\n    Dominantly monochrome ink; when color is used, it is tonal, muted, and symbolic. Typical hues: ink black, umber, pale green, ochre, cinnabar, mineral blue. No harsh contrasts. Color enhances spiritual and ethical tone, not realism.\n\n    Texture and Surface:\n    Texture is conveyed through ink brush technique (皴法: texture strokes), dry/wet modulation, and paper absorbency. Surface remains flat and matte, emphasizing spiritual clarity and control.\n\n    Cosmological and Symbolic Materiality:\n    The materials—brush, ink, paper/silk—are extensions of cultivated self-discipline. Each brushstroke is a moral act, subject to judgment. The void is not absence, but a space of reverence or potential. Ink and emptiness are treated as cosmological opposites in balance.\n\nVI. Temporal and Narrative Dimension\n\n    Representation of Time:\n    Time is seasonal, cyclical, contemplative. Paintings often show signs of time’s passage (e.g., snow, leaf-fall, ripening), but without depicting a moment. Time is encoded in ritual temporality, not photic immediacy.\n\n    Narrative Representation:\n    Narrative is allusive and fragmentary. A painting may hint at a historical moment, literary episode, or philosophical state—but avoids literal storytelling. Narrative space is a landscape of cultivated consciousness.\n\nVII. Ethical-Philosophical Dimension\n\n    Ethical and Aesthetic Norms:\n    Restraint, humility, cultivated spontaneity. No spectacle, no ostentation, no violence. Beauty lies in controlled gesture, relational harmony, and moral sincerity. Art is not for decoration, but for ethical reflection and inward refinement.\n\n    Individualization vs. Generalization:\n    Figures are types, not portraits. The goal is not likeness, but evocation of character through posture and placement. Identity emerges from relation—not autonomy.\n",
-        "Translate a given image from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\n 1999 characters maximum output length!",
+        "Traditional Confucian Literati Painting Visual Grammar and Ethical Translation Guidelines\n\n(Based on the orthodox systems of Song, Yuan, Ming, and Qing literati painting, with contemporary adaptation clauses)\n\n\nI. Ontological Transformation Rules\n\n\n    Primacy of Xie He’s \"Six Laws\": Prioritize qiyun shengdong (spirit-resonance and life-movement) as the supreme principle, rejecting Western realism.\n\n    Moral Morphology of Forms:\n        Plants (pine, bamboo, plum, orchid) must adhere to the Mustard Seed Garden Manual conventions—branches rendered in calligraphic lines (bifa technique) embodying \"bone structure brushwork.\"\n        Human figures must be smaller than landscape elements, with drapery referencing Wu Daozi’s \"wind-blown ribbons\" tradition (Wu Dai Dang Feng). Facial features are suggested symbolically with minimalist strokes (\"yi dao bi bu dao\"—the idea transcends the brush).\n\n\n\nII. Spatial Recomposition Principles\n\n\n    Triaxial Perspective System: Apply Guo Xi’s Three Distances (San Yuan):\n        High Distance (Gao Yuan): For moral authority (e.g., cliff-top academies).\n        Deep Distance (Shen Yuan): Depicts Confucian order (e.g., terraced farmlands in stratified perspective).\n        Level Distance (Ping Yuan): Conveys Taoist reclusion (Mi Fu’s mist-and-cloud technique).\n\n\n\nIII. Ink-Brush Ethical System\n\n\n    Materials as Ethical Statements:\n        Raw xuan paper paired with dry-texture cun strokes (\"cun\" texture strokes) metaphorizes \"the arduous path of benevolent rule.\"\n        Colored silk works must use mineral pigments regulated by the Rites of Zhou’s Five Colors doctrine (symbolic hierarchy: blue, red, yellow, white, black).\n\n    Stroke Ethics and Social Hierarchy:\n        Scholars use hemp-fiber strokes (pima cun) for cultivated ease.\n        Fishermen/hermits employ axe-cut strokes (fupi cun) to signify unyielding integrity.\n\n\n\nIV. Semiotic Codex\n\n\n    Inscriptions: Must be original poetry/prose meeting:\n        Content: ≥30% quotations from Analects or allusions from Selections of Refined Literature.\n        Calligraphy: Running/grass script adapted compositionally, but imperial examination (guange) style is banned.\n\n    Seal Protocol:\n        Introductory Seals (Yinshou Zhang): Vermillion-style, modeled on Qin-Han imperial seals.\n        Corner Seals (Yajiao Zhang): White-character seals emulating Han official seal-carving.\n\n\n\nV. Anomaly Accommodation Clause\n\n(For post-Ming unconventional literati works, e.g., Bada Shanren)\n\n\n    Permission for \"distorted forms\", provided:\n        Deformations intertextually align with inscriptions (e.g., fish/birds with side-eyes mirroring protest poetry).\n        Negative space (liubai) must occupy >40% to preserve Daoist \"emptiness contains turbulence\" tension.\n\n\n\nVI. Digital Age Adaptations\n\n\n    AI-Generated Works Must:\n        Simulate Dong Yuan’s \"fangtou cun\" randomness in brushwork algorithms.\n        Follow Record of Artisans’ chromatic sequence (\"blue adjacent to white\") in RGB channels.\n\n    Prohibitions:\n        No 3D volumetric rendering; preserve the two-dimensional \"unity of calligraphy and painting\" (shuhua tongyuan).\n        Photoshop filters banned; ink gradations must emerge from iterative algorithms.\n\n\n\nVII. Final Validation Standards\n\nTranslated works must pass:\n\n\n    \"Qi-Appraisal\" Test: Art historians must identify period style from three meters away.\n\n    \"Painting-Reading\" Test: Calligraphers must reverse-engineer composition logic from inscriptions.\n\n\n(Note: Default technical manual: Ming-era Ten Bamboo Studio Manual; philosophical basis: Qing Principles of Painting.)\n\n\nThis translation:\n\n\n    Preserves all original Confucian philosophical rigor.\n\n    Introduces executable metrics (e.g., 30% Analects quota, 40% liubai).\n\n    Accommodates historical exceptions while maintaining orthodoxy.\n\n    Bridges classical ethics to AI-generated art constraints.\n\n",
+        "Translate a given image, repective image description, from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\n 1999 characters maximum output length!",
         "",
         "anthropic/claude-3.7-sonnet:thinking",
         "enable"
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -451,28 +558,12 @@
       "LATENT"
     ],
     [
-      3,
-      4,
-      1,
-      6,
-      0,
-      "CLIP"
-    ],
-    [
       4,
       6,
       0,
       3,
       1,
       "CONDITIONING"
-    ],
-    [
-      5,
-      4,
-      1,
-      7,
-      0,
-      "CLIP"
     ],
     [
       6,
@@ -515,30 +606,46 @@
       "STRING"
     ],
     [
-      17,
-      10,
-      0,
-      15,
-      0,
-      "STRING"
-    ],
-    [
       19,
       15,
       0,
       6,
       1,
       "STRING"
+    ],
+    [
+      20,
+      19,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      21,
+      21,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      22,
+      21,
+      0,
+      7,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9090909090909091,
+      "scale": 0.8264462809917354,
       "offset": [
-        1102.8890909090892,
-        331.07954545454544
+        1074.4097070074313,
+        766.3748440868201
       ]
     }
   },
