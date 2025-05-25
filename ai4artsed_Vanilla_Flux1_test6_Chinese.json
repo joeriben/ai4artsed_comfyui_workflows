@@ -493,6 +493,7 @@
           ]
         }
       ],
+      "title": "ai4artsed_text_prompt",
       "properties": {
         "cnr_id": "comfy-core",
         "ver": "0.3.36",
@@ -500,7 +501,9 @@
       },
       "widgets_values": [
         "a banner showing the word TEST2"
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -607,8 +610,8 @@
     "ds": {
       "scale": 0.8264462809917354,
       "offset": [
-        1471.2897070074314,
-        467.5048440868197
+        1445.8797070074313,
+        604.2348440868195
       ]
     }
   },
