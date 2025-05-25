@@ -52,7 +52,7 @@
         46
       ],
       "flags": {},
-      "order": 13,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -135,7 +135,7 @@
         262
       ],
       "flags": {},
-      "order": 12,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -196,7 +196,7 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -399,7 +399,7 @@
         1040.6234130859375
       ],
       "flags": {},
-      "order": 14,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -414,8 +414,7 @@
         "ver": "0.3.27"
       },
       "widgets_values": [
-        "ComfyUI",
-        ""
+        "ComfyUI"
       ]
     },
     {
@@ -455,8 +454,7 @@
           "name": "output",
           "type": "STRING",
           "links": [
-            75,
-            83
+            75
           ]
         }
       ],
@@ -513,8 +511,7 @@
           "name": "output",
           "type": "STRING",
           "links": [
-            82,
-            84
+            82
           ]
         }
       ],
@@ -570,50 +567,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 51,
-      "type": "ShowText",
-      "pos": [
-        1124.3887939453125,
-        -8.729381561279297
-      ],
-      "size": [
-        505.0401916503906,
-        576.584228515625
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 84
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "# Create a Confucian Literati Painting: \"Awaiting a Scholar Friend Among Pines and Bamboo\"\n\nCompose an ink-wash painting that transforms Western leisure (two deck chairs on a lawn) into the contemplative aesthetic of Song Dynasty literati tradition. Your composition should embody the Confucian values of 和 (harmony), 礼 (ritual propriety), and 文 (cultivated refinement).\n\nRender two simple wooden benches positioned at modest angles on an earthen rise, suggesting rather than depicting their forms through restrained brushwork. Place them beneath an ancient pine tree executed with the traditional \"pine-bark\" texture stroke technique (松皮皴), symbolizing moral constancy and longevity. Include a bamboo grove with precise, economical strokes representing the upright scholar who remains flexible yet principled.\n\nEmploy 留白 (reserved white space) deliberately as philosophical emptiness, not mere background. Create spatial depth through vertical hierarchy rather than Western perspective—with distant mountains in pale ink washes and a suggestion of flowing water with minimal fluid lines.\n\nTwo scholar's hats rest on the benches, implying human presence through absence—embodying the Confucian appreciation for what remains unsaid. Include a small, distant pavilion barely visible through atmospheric mist, suggesting the harmonious relationship between natural world and cultivated society.\n\nIn the upper corner, add a poetic inscription in semi-cursive script (行书) reflecting on friendship, wisdom, and virtuous understanding shared in silence. Seal the work with a traditional red seal mark.\n\nRemember: restraint in expression is paramount—the painting should invite contemplation rather than immediate emotional response."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 46,
       "type": "ai4artsed_openrouter_key",
       "pos": [
@@ -644,52 +597,9 @@
         "ver": "fe64c5c981a6053532151e879437df25061dd945",
         "Node name for S&R": "ai4artsed_openrouter_key"
       },
+      "widgets_values": [],
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 50,
-      "type": "ShowText",
-      "pos": [
-        617.8831787109375,
-        -1368.8050537109375
-      ],
-      "size": [
-        1103.3447265625,
-        565.3106689453125
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 83
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "# Translation: Two Deck Chairs on a Lawn into Confucian Literati Painting\n\n## \"Awaiting a Scholar Friend Among Pines and Bamboo\"\n\n![Literati painting translation - conceptual description only]\n\nIn this ink-wash composition, the Western deck chairs have been transformed into two simple wooden benches placed beneath an ancient, gnarled pine tree. The benches face each other at a modest angle, positioned on a subtle earthen rise that replaces the flat lawn. The seating is humble yet dignified, crafted with restrained brush strokes that suggest their form rather than delineate it precisely.\n\nThe pine tree, rendered with expressive, twisting lines and textured bark (using the traditional \"pine-bark\" texture stroke technique), extends upward and outward across the upper portion of the composition, representing longevity and steadfast moral character. A small grove of bamboo stands nearby, executed with quick, precise brushwork—each stalk a symbol of the righteous scholar who bends but does not break.\n\nInstead of a uniform lawn, the ground is suggested through minimal dry-brush texture strokes and areas of complete emptiness (留白, reserved white), creating breathing space that invites contemplation. A narrow, winding path connects the seating area to a small, distant pavilion barely visible through atmospheric mist in the upper corner—suggesting the connection between nature and civilization.\n\nThe spatial organization follows vertical hierarchy rather than central perspective. A suggestion of mountains rises in the distance, rendered in pale washes of diluted ink, while a small stream flows in the lower portion of the composition, represented by a few fluid brush lines and subtle washes.\n\nTwo scholar's hats rest on the benches, implying human presence through absence—the scene awaits the return of cultivated companions. No figures are shown, inviting the viewer to imagine themselves in this space of virtuous leisure.\n\nIn the upper right corner, a poetic inscription in semi-cursive script reads:\n\n\"Among pines and clear waters,  \nTwo friends share wisdom without words.  \nThe void between benches  \nFills with virtuous understanding.\"\n\nThe entire composition employs restraint in both technique and emotional expression, embodying the Confucian values of harmony (和), ritual propriety (礼), and cultivated refinement (文)."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -820,22 +730,6 @@
       6,
       1,
       "STRING"
-    ],
-    [
-      83,
-      48,
-      0,
-      50,
-      0,
-      "STRING"
-    ],
-    [
-      84,
-      49,
-      0,
-      51,
-      0,
-      "STRING"
     ]
   ],
   "groups": [],
@@ -844,8 +738,8 @@
     "ds": {
       "scale": 0.6209213230591554,
       "offset": [
-        424.92180767409263,
-        1432.420220559546
+        651.1984626740924,
+        880.0152905595467
       ]
     }
   },
