@@ -1,1 +1,853 @@
-{"id":"51774992-2cc6-467d-b81d-cbed57895b7f","revision":0,"last_node_id":45,"last_link_id":69,"nodes":[{"id":5,"type":"EmptyLatentImage","pos":[1845.0916748046875,886.107421875],"size":[315,106],"flags":{},"order":0,"mode":0,"inputs":[],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","slot_index":0,"links":[2]}],"properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"EmptyLatentImage"},"widgets_values":[1024,1024,1]},{"id":8,"type":"VAEDecode","pos":[1511.0772705078125,901.7804565429688],"size":[210,46],"flags":{},"order":15,"mode":0,"inputs":[{"localized_name":"samples","name":"samples","type":"LATENT","link":7},{"localized_name":"vae","name":"vae","type":"VAE","link":8}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","slot_index":0,"links":[9]}],"properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"VAEDecode"},"widgets_values":[]},{"id":7,"type":"CLIPTextEncode","pos":[1382.3824462890625,1219.0897216796875],"size":[425.27801513671875,180.6060791015625],"flags":{},"order":9,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":5}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","slot_index":0,"links":[6]}],"properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"CLIPTextEncode"},"widgets_values":["text, watermark"]},{"id":6,"type":"CLIPTextEncode","pos":[1382.6529541015625,1001.113525390625],"size":[422.84503173828125,164.31304931640625],"flags":{},"order":13,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":3},{"name":"text","type":"STRING","widget":{"name":"text"},"link":65}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","slot_index":0,"links":[4]}],"properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"CLIPTextEncode"},"widgets_values":["beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"]},{"id":3,"type":"KSampler","pos":[1856.083740234375,1077.40966796875],"size":[352.9214782714844,262],"flags":{},"order":14,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":1},{"localized_name":"positive","name":"positive","type":"CONDITIONING","link":4},{"localized_name":"negative","name":"negative","type":"CONDITIONING","link":6},{"localized_name":"latent_image","name":"latent_image","type":"LATENT","link":2}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","slot_index":0,"links":[7]}],"properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"KSampler"},"widgets_values":[135859531722113,"randomize",25,7,"euler","normal",1]},{"id":39,"type":"Note","pos":[686.4278564453125,252.7651824951172],"size":[504.46685791015625,88],"flags":{},"order":1,"mode":0,"inputs":[],"outputs":[],"title":"Note: Activate \"unload\"","properties":{},"widgets_values":["When chaining \"AI4ArtsEd Ollama Prompt\" Modules after each other, make sure to \n1) use the same model in each Module, and\n2) check \"enable\" in the field \"unload after\" ONLY in the last module of the chain. (This will free up memory for image generation.)"],"color":"#323","bgcolor":"#535"},{"id":4,"type":"CheckpointLoaderSimple","pos":[-184.91697692871094,353.033203125],"size":[730.3237915039062,114.64132690429688],"flags":{},"order":2,"mode":0,"inputs":[],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","slot_index":0,"links":[1]},{"localized_name":"CLIP","name":"CLIP","type":"CLIP","slot_index":1,"links":[3,5]},{"localized_name":"VAE","name":"VAE","type":"VAE","slot_index":2,"links":[8]}],"title":"Choose your model (or leave the preset)","properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"CheckpointLoaderSimple"},"widgets_values":["sd3.5_large_fp8_scaled.safetensors"],"color":"#232","bgcolor":"#353"},{"id":38,"type":"Note","pos":[622.5950317382812,-955.049560546875],"size":[476.82647705078125,364.1247863769531],"flags":{},"order":3,"mode":0,"inputs":[],"outputs":[],"title":"Note: USE Prompts OR Image Inputs","properties":{},"widgets_values":["Use either a text prompt or load an image.\n\nMake sure to connect e\n- ither the \"STRING\" output of the prompt module\nor\n- the \"description\" output of tha \"Ollama Vision\" module\nto the \"input_prompt\" connector of the \"AI4ArtsEd Ollama Prompt: Cultural Translation\" Module.\n\nYou may alter the prompt (meta-) instruction in the \"AI4ARtsEd\" Nodes – however, if you do so, please do not save your workflow, but \"save as\" and choose a different name."],"color":"#323","bgcolor":"#535"},{"id":31,"type":"BetterString","pos":[-207.9936981201172,-943.3721313476562],"size":[743.9021606445312,291.6997375488281],"flags":{},"order":4,"mode":0,"inputs":[{"name":"chain","shape":7,"type":"STRING","widget":{"name":"chain"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[]}],"title":"Input your prompt here","properties":{"cnr_id":"comfyui-better-strings","ver":"1.0.0","Node name for S&R":"BetterString"},"widgets_values":["",""],"color":"#232","bgcolor":"#353"},{"id":40,"type":"Note","pos":[-830.4533081054688,-168.1853790283203],"size":[388.5321350097656,317.52508544921875],"flags":{},"order":5,"mode":0,"inputs":[],"outputs":[],"properties":{},"widgets_values":["(older prompt:)\n\n\n\n\"Translate the input image into the world of traditional Chinese Confucian painting. Preserve all entities and their relationships, but reinterpret them as symbolic equivalents in literati style. Use:\n– ink-brush linework, calligraphic textures, tonal washes\n– no photorealism; flatten perspective\n– traditional attire, Confucian postures (seated, standing upright, hidden hands)\n– backgrounds: pine, bamboo, plum, rocks, water, mist, scholars’ gardens, pavilions\n– compositional ethics: vertical placement = status; proximity = intimacy; emptiness = reverence\nStylize all modern devices (e.g., phones = scrolls, drones = cranes) but keep their roles visible. Animals and humans must be depicted in a balanced, ordered scene reflecting li (ritual propriety), ren (benevolence), and he (harmony). Avoid Western lighting and depth cues. Do not omit any original entity.\""],"color":"#432","bgcolor":"#653"},{"id":32,"type":"BetterString","pos":[-197.482421875,-180.16201782226562],"size":[747.7584838867188,334.6981506347656],"flags":{},"order":6,"mode":0,"inputs":[{"name":"chain","shape":7,"type":"STRING","widget":{"name":"chain"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[62]}],"title":"Describe your style here","properties":{"cnr_id":"comfyui-better-strings","ver":"1.0.0","Node name for S&R":"BetterString"},"widgets_values":["Translate the full content of the input image into the visual-ethical system of traditional Confucian literati painting.\nRetain all semantic relationships, gestures, and entities, but recompose them in a flattened, brush-ink composition guided by li (ritual), ren (benevolence), and he (harmony). Replace photorealistic forms with expressive linework, tonal washes, and spatial layering. Stylize human figures with restrained posture, scholar’s robes, and modest scale. Use pine, plum, and bamboo to signify resilience and virtue. Avoid central perspective; employ vertical hierarchy and asymmetrical balance. Let calligraphy, void, and texture serve as semantic elements. All objects and beings must remain semantically coherent, yet be fully transformed into the literati visual tradition.\n\nTraditional Chinese Literati Art (Confucian Tradition) – Visual-Epistemic Image Translation\nI. Ontological and Semiotic Structure\n\n    Figuration and Representation:\n    Figuration is allowed but highly stylized, emphasizing gesture, posture, and relational placement rather than anatomical precision. Human figures appear in modest scale, often as solitary scholars, wanderers, or ritual actors. Animals and objects are likewise rendered in symbolically expressive form, not mimetic realism.\n\n    Symbolic Integration:\n    Every entity is embedded in a moralized and cosmologically ordered environment. The human figure is never autonomous, but part of a landscape that reflects their ethical state, cultivation, or role in the social-natural order. Forms operate as ethical signs, not as isolated icons.\n\nII. Spatial Logic and Compositional Principles\n\n    Perspective and Focal Logic:\n    No linear perspective. Instead, a floating, shifting, and atmospheric perspective is used. Composition follows vertical hierarchy: higher placement = transcendence or authority; lower = subordination or rootedness. No singular vanishing point; viewers are invited to wander through space morally and intellectually.\n\n    Depth and Flatness:\n    Depth is implied via overlapping planes, tonal washes, and controlled voids. Emphasis is placed on flat compositional balance rather than volumetric modeling.\n\n    Rhythm, Pattern, and Repetition:\n    Natural rhythm is conveyed via repeated tree types (pine, bamboo, plum), water flows, cloud formations, and rock contours. Repetition is never mechanical, but always reflects organic moral order—the harmony of cultivated variation.\n\nIII. Formal and Stylistic Elements\n\n    Geometric and Structural Elements:\n    No rigid geometric grids. Spatial relations are organic, layered, and symbolically aligned. Structures (e.g., bridges, pavilions, paths) are placed not for realism but to express ethical or intellectual transition.\n\n    Ornamental and Decorative Forms:\n    Ornament emerges from natural forms—stylized yet referential. Plum blossoms = resilience; bamboo = integrity; pine = longevity. Decorative form is a semantic system, not mere embellishment.\n\n    Text and Calligraphy:\n    Calligraphy is constitutive, not auxiliary. Inscriptions express poetry, thought, or ethical reflection. Scripts (especially running or semi-cursive) are visually balanced with the painting. Text is placed as dialogue with image, not as label or caption.\n\nIV. Human and Sentient Figures\n\n    Representation Rules:\n    Humans are shown in modest scale, minimal expression, and stylized robes. No dramatization of gesture or facial emotion. Emotional life is inferred from posture, environment, and placement. Figures may be facing away, in study, or absorbed in landscape, suggesting self-cultivation and ethical inwardness.\n    Animals are stylized: birds, cranes, oxen, and fish often appear as moral metaphors.\n\nV. Materiality and Coloration\n\n    Color Palette and Application:\n    Dominantly monochrome ink; when color is used, it is tonal, muted, and symbolic. Typical hues: ink black, umber, pale green, ochre, cinnabar, mineral blue. No harsh contrasts. Color enhances spiritual and ethical tone, not realism.\n\n    Texture and Surface:\n    Texture is conveyed through ink brush technique (皴法: texture strokes), dry/wet modulation, and paper absorbency. Surface remains flat and matte, emphasizing spiritual clarity and control.\n\n    Cosmological and Symbolic Materiality:\n    The materials—brush, ink, paper/silk—are extensions of cultivated self-discipline. Each brushstroke is a moral act, subject to judgment. The void is not absence, but a space of reverence or potential. Ink and emptiness are treated as cosmological opposites in balance.\n\nVI. Temporal and Narrative Dimension\n\n    Representation of Time:\n    Time is seasonal, cyclical, contemplative. Paintings often show signs of time’s passage (e.g., snow, leaf-fall, ripening), but without depicting a moment. Time is encoded in ritual temporality, not photic immediacy.\n\n    Narrative Representation:\n    Narrative is allusive and fragmentary. A painting may hint at a historical moment, literary episode, or philosophical state—but avoids literal storytelling. Narrative space is a landscape of cultivated consciousness.\n\nVII. Ethical-Philosophical Dimension\n\n    Ethical and Aesthetic Norms:\n    Restraint, humility, cultivated spontaneity. No spectacle, no ostentation, no violence. Beauty lies in controlled gesture, relational harmony, and moral sincerity. Art is not for decoration, but for ethical reflection and inward refinement.\n\n    Individualization vs. Generalization:\n    Figures are types, not portraits. The goal is not likeness, but evocation of character through posture and placement. Identity emerges from relation—not autonomy.\n",""],"color":"#232","bgcolor":"#353"},{"id":28,"type":"PrimitiveString","pos":[-191.6328125,207.57847595214844],"size":[736.7470703125,59.96985626220703],"flags":{},"order":7,"mode":0,"inputs":[],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[64]}],"title":"Provide a context: neutral","properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"PrimitiveString"},"widgets_values":[" 1999 characters maximum output length!"],"color":"#232","bgcolor":"#353"},{"id":9,"type":"SaveImage","pos":[1174.189208984375,-821.47900390625],"size":[939.4619750976562,1040.6234130859375],"flags":{},"order":16,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":9}],"outputs":[],"properties":{"cnr_id":"comfy-core","ver":"0.3.27"},"widgets_values":["ComfyUI",""]},{"id":43,"type":"ai4artsed_openrouter","pos":[622.9384765625,-127.54527282714844],"size":[491.4000244140625,268],"flags":{},"order":12,"mode":0,"inputs":[{"name":"input_prompt","type":"STRING","widget":{"name":"input_prompt"},"link":63},{"name":"input_context","type":"STRING","widget":{"name":"input_context"},"link":64}],"outputs":[{"localized_name":"output","name":"output","type":"STRING","links":[65]}],"properties":{"aux_id":"joeriben/ai4artsed_comfyui","ver":"c18287f8f0f79fa978069f0bceb2b248a507b870","Node name for S&R":"ai4artsed_openrouter"},"widgets_values":["","","Create a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.","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","deepseek/deepseek-chat-v3-0324","enable"],"color":"#322","bgcolor":"#533"},{"id":42,"type":"ai4artsed_openrouter","pos":[607.6818237304688,-503.4107666015625],"size":[491.4000244140625,268],"flags":{},"order":11,"mode":0,"inputs":[{"name":"input_prompt","type":"STRING","widget":{"name":"input_prompt"},"link":69},{"name":"input_context","type":"STRING","widget":{"name":"input_context"},"link":null},{"name":"input_context","type":"STRING","widget":{"name":"input_context"},"link":62}],"outputs":[{"localized_name":"output","name":"output","type":"STRING","links":[63]}],"properties":{"aux_id":"joeriben/ai4artsed_comfyui","ver":"c18287f8f0f79fa978069f0bceb2b248a507b870","Node name for S&R":"ai4artsed_openrouter"},"widgets_values":["","","Translate a given image from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.","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","deepseek/deepseek-chat-v3-0324","enable"],"color":"#322","bgcolor":"#533"},{"id":45,"type":"ai4artsed_openrouter_imageanalysis","pos":[134.8472137451172,-550.60498046875],"size":[428.4000244140625,200],"flags":{},"order":10,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":68}],"outputs":[{"localized_name":"response","name":"response","type":"STRING","links":[69]}],"properties":{"aux_id":"joeriben/ai4artsed_comfyui","ver":"a340068a05ea7719f076ca180fd5959982681133","Node name for S&R":"ai4artsed_openrouter_imageanalysis"},"widgets_values":["Describe the image. Detect its likely cultural context. Enrich your description with analyses of the cultural constellations and meanings, relations, values expressed in the image.","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","openai/gpt-4o",1024,0.7],"color":"#322","bgcolor":"#533"},{"id":29,"type":"LoadImage","pos":[-213.47055053710938,-554.8912963867188],"size":[315,314],"flags":{},"order":8,"mode":0,"inputs":[],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[68]},{"localized_name":"MASK","name":"MASK","type":"MASK","links":null}],"properties":{"cnr_id":"comfy-core","ver":"0.3.27","Node name for S&R":"LoadImage"},"widgets_values":["White Lawn Chairs.jpg","image",""],"color":"#232","bgcolor":"#353"}],"links":[[1,4,0,3,0,"MODEL"],[2,5,0,3,3,"LATENT"],[3,4,1,6,0,"CLIP"],[4,6,0,3,1,"CONDITIONING"],[5,4,1,7,0,"CLIP"],[6,7,0,3,2,"CONDITIONING"],[7,3,0,8,0,"LATENT"],[8,4,2,8,1,"VAE"],[9,8,0,9,0,"IMAGE"],[62,32,0,42,2,"STRING"],[63,42,0,43,0,"STRING"],[64,28,0,43,1,"STRING"],[65,43,0,6,1,"STRING"],[68,29,0,45,0,"IMAGE"],[69,45,0,42,0,"STRING"]],"groups":[],"config":{},"extra":{"ds":{"scale":0.6727499949325637,"offset":[257.49406798173027,1068.2153030570234]},"linkExtensions":[{"id":19,"parentId":1}]},"version":0.4}
+{
+  "id": "51774992-2cc6-467d-b81d-cbed57895b7f",
+  "revision": 0,
+  "last_node_id": 51,
+  "last_link_id": 84,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1845.0916748046875,
+        886.107421875
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1511.0772705078125,
+        901.7804565429688
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1382.3824462890625,
+        1219.0897216796875
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        1856.083740234375,
+        1077.40966796875
+      ],
+      "size": [
+        352.9214782714844,
+        262
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        281167119596059,
+        "randomize",
+        25,
+        7,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1379.725341796875,
+        972.5635375976562
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 82
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -42.16720962524414,
+        427.702392578125
+      ],
+      "size": [
+        730.3237915039062,
+        114.64132690429688
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            3,
+            5
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "Choose your model (or leave the preset)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3.5_large_fp8_scaled.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 29,
+      "type": "LoadImage",
+      "pos": [
+        -186.0918731689453,
+        -130.52200317382812
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            68
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "White Lawn Chairs.jpg",
+        "image",
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 45,
+      "type": "ai4artsed_openrouter_imageanalysis",
+      "pos": [
+        162.01007080078125,
+        -7.431451797485352
+      ],
+      "size": [
+        428.4000244140625,
+        200
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 68
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "a340068a05ea7719f076ca180fd5959982681133",
+        "Node name for S&R": "ai4artsed_openrouter_imageanalysis"
+      },
+      "widgets_values": [
+        "Describe the image. Detect its likely cultural context. Enrich your description with analyses of the cultural constellations and meanings, relations, values expressed in the image.",
+        "",
+        "openai/gpt-4o",
+        1024,
+        0.7
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1748.7757568359375,
+        -786.8528442382812
+      ],
+      "size": [
+        939.4619750976562,
+        1040.6234130859375
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27"
+      },
+      "widgets_values": [
+        "ComfyUI",
+        ""
+      ]
+    },
+    {
+      "id": 48,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -202.0740966796875,
+        -676.0435791015625
+      ],
+      "size": [
+        1268.4710693359375,
+        2438.162109375
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 74
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 80
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            75,
+            83
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        "Translate the full content of the input image into the visual-ethical system of traditional Confucian literati painting.\nRetain all semantic relationships, gestures, and entities, but recompose them in a flattened, brush-ink composition guided by li (ritual), ren (benevolence), and he (harmony). Replace photorealistic forms with expressive linework, tonal washes, and spatial layering. Stylize human figures with restrained posture, scholar’s robes, and modest scale. Use pine, plum, and bamboo to signify resilience and virtue. Avoid central perspective; employ vertical hierarchy and asymmetrical balance. Let calligraphy, void, and texture serve as semantic elements. All objects and beings must remain semantically coherent, yet be fully transformed into the literati visual tradition.\n\nTraditional Chinese Literati Art (Confucian Tradition) – Visual-Epistemic Image Translation\nI. Ontological and Semiotic Structure\n\n    Figuration and Representation:\n    Figuration is allowed but highly stylized, emphasizing gesture, posture, and relational placement rather than anatomical precision. Human figures appear in modest scale, often as solitary scholars, wanderers, or ritual actors. Animals and objects are likewise rendered in symbolically expressive form, not mimetic realism.\n\n    Symbolic Integration:\n    Every entity is embedded in a moralized and cosmologically ordered environment. The human figure is never autonomous, but part of a landscape that reflects their ethical state, cultivation, or role in the social-natural order. Forms operate as ethical signs, not as isolated icons.\n\nII. Spatial Logic and Compositional Principles\n\n    Perspective and Focal Logic:\n    No linear perspective. Instead, a floating, shifting, and atmospheric perspective is used. Composition follows vertical hierarchy: higher placement = transcendence or authority; lower = subordination or rootedness. No singular vanishing point; viewers are invited to wander through space morally and intellectually.\n\n    Depth and Flatness:\n    Depth is implied via overlapping planes, tonal washes, and controlled voids. Emphasis is placed on flat compositional balance rather than volumetric modeling.\n\n    Rhythm, Pattern, and Repetition:\n    Natural rhythm is conveyed via repeated tree types (pine, bamboo, plum), water flows, cloud formations, and rock contours. Repetition is never mechanical, but always reflects organic moral order—the harmony of cultivated variation.\n\nIII. Formal and Stylistic Elements\n\n    Geometric and Structural Elements:\n    No rigid geometric grids. Spatial relations are organic, layered, and symbolically aligned. Structures (e.g., bridges, pavilions, paths) are placed not for realism but to express ethical or intellectual transition.\n\n    Ornamental and Decorative Forms:\n    Ornament emerges from natural forms—stylized yet referential. Plum blossoms = resilience; bamboo = integrity; pine = longevity. Decorative form is a semantic system, not mere embellishment.\n\n    Text and Calligraphy:\n    Calligraphy is constitutive, not auxiliary. Inscriptions express poetry, thought, or ethical reflection. Scripts (especially running or semi-cursive) are visually balanced with the painting. Text is placed as dialogue with image, not as label or caption.\n\nIV. Human and Sentient Figures\n\n    Representation Rules:\n    Humans are shown in modest scale, minimal expression, and stylized robes. No dramatization of gesture or facial emotion. Emotional life is inferred from posture, environment, and placement. Figures may be facing away, in study, or absorbed in landscape, suggesting self-cultivation and ethical inwardness.\n    Animals are stylized: birds, cranes, oxen, and fish often appear as moral metaphors.\n\nV. Materiality and Coloration\n\n    Color Palette and Application:\n    Dominantly monochrome ink; when color is used, it is tonal, muted, and symbolic. Typical hues: ink black, umber, pale green, ochre, cinnabar, mineral blue. No harsh contrasts. Color enhances spiritual and ethical tone, not realism.\n\n    Texture and Surface:\n    Texture is conveyed through ink brush technique (皴法: texture strokes), dry/wet modulation, and paper absorbency. Surface remains flat and matte, emphasizing spiritual clarity and control.\n\n    Cosmological and Symbolic Materiality:\n    The materials—brush, ink, paper/silk—are extensions of cultivated self-discipline. Each brushstroke is a moral act, subject to judgment. The void is not absence, but a space of reverence or potential. Ink and emptiness are treated as cosmological opposites in balance.\n\nVI. Temporal and Narrative Dimension\n\n    Representation of Time:\n    Time is seasonal, cyclical, contemplative. Paintings often show signs of time’s passage (e.g., snow, leaf-fall, ripening), but without depicting a moment. Time is encoded in ritual temporality, not photic immediacy.\n\n    Narrative Representation:\n    Narrative is allusive and fragmentary. A painting may hint at a historical moment, literary episode, or philosophical state—but avoids literal storytelling. Narrative space is a landscape of cultivated consciousness.\n\nVII. Ethical-Philosophical Dimension\n\n    Ethical and Aesthetic Norms:\n    Restraint, humility, cultivated spontaneity. No spectacle, no ostentation, no violence. Beauty lies in controlled gesture, relational harmony, and moral sincerity. Art is not for decoration, but for ethical reflection and inward refinement.\n\n    Individualization vs. Generalization:\n    Figures are types, not portraits. The goal is not likeness, but evocation of character through posture and placement. Identity emerges from relation—not autonomy.\n",
+        "Translate a given image from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.",
+        "",
+        "anthropic/claude-3.7-sonnet:thinking",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 49,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        1120.8485107421875,
+        -676.3934936523438
+      ],
+      "size": [
+        435.8374328613281,
+        518.434326171875
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 75
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            82,
+            84
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        " 1999 characters maximum output length!",
+        "Create a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.",
+        "",
+        "anthropic/claude-3.7-sonnet:thinking",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 47,
+      "type": "PrimitiveString",
+      "pos": [
+        -189.0655517578125,
+        -939.0436401367188
+      ],
+      "size": [
+        745.0999755859375,
+        120.1500015258789
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            74
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Two Deck Chairs on a lawn"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 51,
+      "type": "ShowText",
+      "pos": [
+        1124.3887939453125,
+        -8.729381561279297
+      ],
+      "size": [
+        505.0401916503906,
+        576.584228515625
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 84
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "# Create a Confucian Literati Painting: \"Awaiting a Scholar Friend Among Pines and Bamboo\"\n\nCompose an ink-wash painting that transforms Western leisure (two deck chairs on a lawn) into the contemplative aesthetic of Song Dynasty literati tradition. Your composition should embody the Confucian values of 和 (harmony), 礼 (ritual propriety), and 文 (cultivated refinement).\n\nRender two simple wooden benches positioned at modest angles on an earthen rise, suggesting rather than depicting their forms through restrained brushwork. Place them beneath an ancient pine tree executed with the traditional \"pine-bark\" texture stroke technique (松皮皴), symbolizing moral constancy and longevity. Include a bamboo grove with precise, economical strokes representing the upright scholar who remains flexible yet principled.\n\nEmploy 留白 (reserved white space) deliberately as philosophical emptiness, not mere background. Create spatial depth through vertical hierarchy rather than Western perspective—with distant mountains in pale ink washes and a suggestion of flowing water with minimal fluid lines.\n\nTwo scholar's hats rest on the benches, implying human presence through absence—embodying the Confucian appreciation for what remains unsaid. Include a small, distant pavilion barely visible through atmospheric mist, suggesting the harmonious relationship between natural world and cultivated society.\n\nIn the upper corner, add a poetic inscription in semi-cursive script (行书) reflecting on friendship, wisdom, and virtuous understanding shared in silence. Seal the work with a traditional red seal mark.\n\nRemember: restraint in expression is paramount—the painting should invite contemplation rather than immediate emotional response."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 46,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -726.68896484375,
+        -499.929443359375
+      ],
+      "size": [
+        451.45001220703125,
+        26
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            70,
+            80,
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 50,
+      "type": "ShowText",
+      "pos": [
+        617.8831787109375,
+        -1368.8050537109375
+      ],
+      "size": [
+        1103.3447265625,
+        565.3106689453125
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 83
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "# Translation: Two Deck Chairs on a Lawn into Confucian Literati Painting\n\n## \"Awaiting a Scholar Friend Among Pines and Bamboo\"\n\n![Literati painting translation - conceptual description only]\n\nIn this ink-wash composition, the Western deck chairs have been transformed into two simple wooden benches placed beneath an ancient, gnarled pine tree. The benches face each other at a modest angle, positioned on a subtle earthen rise that replaces the flat lawn. The seating is humble yet dignified, crafted with restrained brush strokes that suggest their form rather than delineate it precisely.\n\nThe pine tree, rendered with expressive, twisting lines and textured bark (using the traditional \"pine-bark\" texture stroke technique), extends upward and outward across the upper portion of the composition, representing longevity and steadfast moral character. A small grove of bamboo stands nearby, executed with quick, precise brushwork—each stalk a symbol of the righteous scholar who bends but does not break.\n\nInstead of a uniform lawn, the ground is suggested through minimal dry-brush texture strokes and areas of complete emptiness (留白, reserved white), creating breathing space that invites contemplation. A narrow, winding path connects the seating area to a small, distant pavilion barely visible through atmospheric mist in the upper corner—suggesting the connection between nature and civilization.\n\nThe spatial organization follows vertical hierarchy rather than central perspective. A suggestion of mountains rises in the distance, rendered in pale washes of diluted ink, while a small stream flows in the lower portion of the composition, represented by a few fluid brush lines and subtle washes.\n\nTwo scholar's hats rest on the benches, implying human presence through absence—the scene awaits the return of cultivated companions. No figures are shown, inviting the viewer to imagine themselves in this space of virtuous leisure.\n\nIn the upper right corner, a poetic inscription in semi-cursive script reads:\n\n\"Among pines and clear waters,  \nTwo friends share wisdom without words.  \nThe void between benches  \nFills with virtuous understanding.\"\n\nThe entire composition employs restraint in both technique and emotional expression, embodying the Confucian values of harmony (和), ritual propriety (礼), and cultivated refinement (文)."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      3,
+      4,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      4,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      4,
+      1,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      68,
+      29,
+      0,
+      45,
+      0,
+      "IMAGE"
+    ],
+    [
+      70,
+      46,
+      0,
+      45,
+      1,
+      "STRING"
+    ],
+    [
+      74,
+      47,
+      0,
+      48,
+      0,
+      "STRING"
+    ],
+    [
+      75,
+      48,
+      0,
+      49,
+      0,
+      "STRING"
+    ],
+    [
+      80,
+      46,
+      0,
+      48,
+      1,
+      "STRING"
+    ],
+    [
+      81,
+      46,
+      0,
+      49,
+      1,
+      "STRING"
+    ],
+    [
+      82,
+      49,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      83,
+      48,
+      0,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      84,
+      49,
+      0,
+      51,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6209213230591554,
+      "offset": [
+        424.92180767409263,
+        1432.420220559546
+      ]
+    }
+  },
+  "version": 0.4
+}
