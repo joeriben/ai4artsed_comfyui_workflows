@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 23,
-  "last_link_id": 22,
+  "last_node_id": 25,
+  "last_link_id": 23,
   "nodes": [
     {
       "id": 7,
@@ -16,7 +16,7 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -56,7 +56,7 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -126,53 +126,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 19,
-      "type": "BetterString",
-      "pos": [
-        -1005.739013671875,
-        -119.82948303222656
-      ],
-      "size": [
-        406.04998779296875,
-        522.8499755859375
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "chain",
-          "shape": 7,
-          "type": "STRING",
-          "widget": {
-            "name": "chain"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            20
-          ]
-        }
-      ],
-      "title": "AI4ArtsEd Text Prompt",
-      "properties": {
-        "cnr_id": "comfyui-better-strings",
-        "ver": "1.0.0",
-        "Node name for S&R": "BetterString"
-      },
-      "widgets_values": [
-        "a banner showing the word TEST",
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 4,
       "type": "CheckpointLoaderSimple",
       "pos": [
@@ -184,7 +137,7 @@
         98
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -232,7 +185,7 @@
         106
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -265,7 +218,7 @@
         106
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -301,7 +254,7 @@
         262
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -341,7 +294,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        0,
+        376998642584807,
         "randomize",
         20,
         7,
@@ -362,7 +315,7 @@
         106
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -398,7 +351,7 @@
         46
       ],
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -441,7 +394,7 @@
         270
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -480,7 +433,7 @@
           "widget": {
             "name": "input_prompt"
           },
-          "link": 20
+          "link": 23
         },
         {
           "name": "api_key",
@@ -515,6 +468,39 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 25,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -986.684814453125,
+        -136.56982421875
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "a banner showing the word TEST2"
+      ]
     }
   ],
   "links": [
@@ -591,14 +577,6 @@
       "STRING"
     ],
     [
-      20,
-      19,
-      0,
-      15,
-      0,
-      "STRING"
-    ],
-    [
       21,
       21,
       0,
@@ -613,6 +591,14 @@
       7,
       0,
       "CLIP"
+    ],
+    [
+      23,
+      25,
+      0,
+      15,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
@@ -621,8 +607,8 @@
     "ds": {
       "scale": 0.8264462809917354,
       "offset": [
-        1074.4097070074313,
-        766.3748440868201
+        1471.2897070074314,
+        467.5048440868197
       ]
     }
   },
