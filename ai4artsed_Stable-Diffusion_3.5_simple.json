@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 12,
-  "last_link_id": 13,
+  "last_node_id": 14,
+  "last_link_id": 19,
   "nodes": [
     {
       "id": 7,
@@ -56,7 +56,7 @@
         46
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -99,7 +99,7 @@
         270
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -144,7 +144,7 @@
           "widget": {
             "name": "text"
           },
-          "link": 13
+          "link": 17
         }
       ],
       "outputs": [
@@ -167,42 +167,6 @@
       ]
     },
     {
-      "id": 11,
-      "type": "PrimitiveString",
-      "pos": [
-        -171,
-        -83
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            10
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 4,
       "type": "CheckpointLoaderSimple",
       "pos": [
@@ -214,7 +178,7 @@
         98
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -254,96 +218,6 @@
       ]
     },
     {
-      "id": 12,
-      "type": "ShowText",
-      "pos": [
-        355.5,
-        -62.5
-      ],
-      "size": [
-        315,
-        100
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 12
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "translated prompt",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        " A banner on a green background: \"This is a default prompt\""
-      ]
-    },
-    {
-      "id": 10,
-      "type": "ai4artsed_ollama",
-      "pos": [
-        -177.5,
-        84
-      ],
-      "size": [
-        441,
-        200
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 10
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            12,
-            13
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_ollama"
-      },
-      "widgets_values": [
-        "",
-        "qwen2.5:32b",
-        "Properly translate into english. Output only the translation without any additions."
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 5,
       "type": "EmptyLatentImage",
       "pos": [
@@ -355,7 +229,7 @@
         106
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -391,7 +265,7 @@
         262
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -431,7 +305,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        277945545265729,
+        702152249339510,
         "randomize",
         20,
         7,
@@ -439,6 +313,173 @@
         "normal",
         1
       ]
+    },
+    {
+      "id": 11,
+      "type": "PrimitiveString",
+      "pos": [
+        -171,
+        -83
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 14,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -654.7364501953125,
+        281.50006103515625
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      }
+    },
+    {
+      "id": 12,
+      "type": "ShowText",
+      "pos": [
+        423.6817932128906,
+        -78.40919494628906
+      ],
+      "size": [
+        315,
+        112
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "übersetzter Prompt",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "A banner in front of a green background: \"Dies ist ein Default-Prompt\"."
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -169.73638916015625,
+        88.31816864013672
+      ],
+      "size": [
+        491.4000244140625,
+        268
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 16
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            17,
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        "NULL=neutral",
+        "Translate the prompt into english. However, should there be quotations, leave those parts untouched. Do not add any comment or text. Translate as precisely as possible.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -515,27 +556,35 @@
       "IMAGE"
     ],
     [
-      10,
+      16,
       11,
       0,
-      10,
-      0,
-      "STRING"
-    ],
-    [
-      12,
-      10,
-      0,
-      12,
-      0,
-      "STRING"
-    ],
-    [
       13,
-      10,
+      0,
+      "STRING"
+    ],
+    [
+      17,
+      13,
       0,
       6,
       1,
+      "STRING"
+    ],
+    [
+      18,
+      14,
+      0,
+      13,
+      1,
+      "STRING"
+    ],
+    [
+      19,
+      13,
+      0,
+      12,
+      0,
       "STRING"
     ]
   ],
@@ -545,8 +594,8 @@
     "ds": {
       "scale": 1.1000000000000005,
       "offset": [
-        70.19090909090829,
-        401.22727272727224
+        617.4636363636358,
+        321.6818181818176
       ]
     }
   },
