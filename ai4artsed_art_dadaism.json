@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 29,
-  "last_link_id": 29,
+  "last_node_id": 30,
+  "last_link_id": 31,
   "nodes": [
     {
       "id": 6,
@@ -16,13 +16,13 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 21
+          "link": 30
         },
         {
           "name": "text",
@@ -53,54 +53,6 @@
       ]
     },
     {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        401.6502380371094,
-        -153.00001525878906
-      ],
-      "size": [
-        315,
-        98
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [
-            1
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "slot_index": 1,
-          "links": []
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "slot_index": 2,
-          "links": [
-            8
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "sd3.5_large_fp8_scaled.safetensors"
-      ]
-    },
-    {
       "id": 20,
       "type": "CLIPLoader",
       "pos": [
@@ -112,7 +64,7 @@
         106
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -134,42 +86,6 @@
       ]
     },
     {
-      "id": 21,
-      "type": "CLIPLoader",
-      "pos": [
-        403.8061218261719,
-        1.6916594505310059
-      ],
-      "size": [
-        315,
-        106
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            21,
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "CLIPLoader"
-      },
-      "widgets_values": [
-        "t5xxl_enconly.safetensors",
-        "stable_diffusion",
-        "default"
-      ]
-    },
-    {
       "id": 3,
       "type": "KSampler",
       "pos": [
@@ -181,7 +97,7 @@
         262
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -221,7 +137,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1092454507763230,
+        604465314503801,
         "randomize",
         20,
         7,
@@ -242,7 +158,7 @@
         106
       ],
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -278,7 +194,7 @@
         46
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -321,7 +237,7 @@
         270
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -358,7 +274,7 @@
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 22
+          "link": 31
         }
       ],
       "outputs": [
@@ -392,7 +308,7 @@
         100.95500183105469
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -417,54 +333,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 27,
-      "type": "ai4artsed_ollama",
-      "pos": [
-        -486.89984130859375,
-        -340.23541259765625
-      ],
-      "size": [
-        294,
-        136
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 26
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            27,
-            28
-          ]
-        }
-      ],
-      "title": "ai4artsed_prompt_interception",
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_ollama"
-      },
-      "widgets_values": [
-        "",
-        "mistral:7b",
-        "Properly translate into english. Output only the translation without any additions."
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 28,
       "type": "ShowText",
       "pos": [
@@ -476,7 +344,7 @@
         116.81817626953125
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -504,7 +372,7 @@
       },
       "widgets_values": [
         "",
-        " A banner with the inscription Default-Prompt\n\nor\n\nA default-prompt signboard"
+        "A banner reading Default Prompt"
       ]
     },
     {
@@ -519,7 +387,7 @@
         523.1818237304688
       ],
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -547,7 +415,7 @@
       },
       "widgets_values": [
         "",
-        "**Dadaist Visual Deconstruction Prompt:**  \n\nA chaotic, dissonant photomontage erupts across the composition, defying cohesion. Fragments of a *banner* or *signboard* are violently disassembled—torn paper edges splay outward, layered haphazardly over mechanical blueprints and smeared ink blots. The words *\"Default-Prompt\"* are shattered into typographic debris: letters stutter in mismatched fonts, some upside-down, others stretched into grotesque distortions. Newspaper clippings bleed through, their headlines fragmented into absurd non-sequiturs (\"FACTORY SHUTTERS CLOSED / BUTTERFLIES ELECTROCUTED\").  \n\nA rusted gear juts from the lower left, impaling a mannequin’s severed hand, its fingers clutching a smudged bureaucratic stamp marked *\"VOID.\"* To the right, a urinal’s porcelain curve collides with a lithograph of a bourgeois figure, their face replaced by a spinning roulette wheel. Glue streaks and cigarette burns scar the surface, exposing layers of discarded ledger paper beneath. The palette is a nauseating clash of industrial grime—muddy ochres, bile yellow, and printer’s cyan—smeared with grease and erratic charcoal scribbles.  \n\nText fragments swarm like agitated insects: *\"DEFAULT\"* repeats in a spastic sans-serif, while *\"PROMPT\"* fractures into Cyrillic glyphs and Morse code. A child’s alphabet block teeters atop a coiled spring, its *\"A\"* sideways. The background is a field of shredded theater tickets and typewriter keys, their meanings obliterated by rubber stamp overprints (*\"REJECTED\"*, *\"NONSENSE\"*). No focal point exists; the eye is assaulted by competing vectors—a knife-cut photograph of a horse leaping into a diagram of sewer pipes, a silhouette of a screaming mouth transposed over a ticking metronome.  \n\nThe materials revolt against art: glue globs crust over newsprint, a broken ruler bisects a teacup sawn in half. A spliced film strip frames static, its sprocket holes threaded with barbed wire. The work exhales Weimar-era cynicism—every element is a spit at meaning, a sneer at coherence. The *banner* is not a banner but a corpse of one, its declarative function mocked by the chaos devouring it."
+        "**Dadaist Anti-Composition – *Default Prompt* Deconstructed**  \n\nThe image is a violent collision of fractured meaning, a *photomontage* of dissected bureaucracy and absurdist rebellion. The central axis is a shredded banner—text torn into jagged strips, each fragment reading *\"Default Prompt\"* in mismatched typefaces: one segment in rigid, bureaucratic Times New Roman, another in smeared, hand-stenciled graffiti, a third in the cold precision of a typewriter’s Courier. The letters are inverted, stacked vertically, or splayed diagonally as if flung by centrifugal force. Behind it, a lithograph of a Wilhelmine officer is collaged with the face replaced by a spinning gear, his uniform spliced with diagrammatic cross-sections of sewer pipes.  \n\nTo the left, a mannequin arm—plaster cracked, fingers snapped—protrudes from a crumpled newspaper clipping of stock market figures, its wrist bolted to a bisected porcelain urinal (Duchamp’s ghost laughing in negative exposure). The urinal overflows with inky text fragments: *\"system error\"*, *\"void\"*, *\"reload\"*, screen-printed in jagged halftone. Below, a mechanical duck’s leg (traced from a 1912 patent schematic) stomps on a child’s alphabet block, the letter *\"A\"* splintered under its claw.  \n\nThe palette is industrial decay: rust-brown, printer’s cyan, and the jaundiced yellow of aged glue. Paper edges are visibly torn, some layers peeling back to expose earlier iterations of the collage—a half-obscured *\"KEEP CALM\"* poster, a smudged lithograph of a grenade. Streaks of black ink mimic oil stains, bleeding into a stencil of a faceless crowd marching upside-down. A trompe-l’œil nail pierces the canvas, dangling a luggage tag scrawled with *\"NO INSTRUCTIONS\"* in agitated charcoal.  \n\nTop-right, a photostat of a screaming mouth (lifted from a 1920s psychiatric manual) floats beside a halftone advertisement for *\"Efficiency Tonic\"*, the brand name crossed out and replaced with *\"CHAOS\"* in dripping red paint. Overlapping these, a grid of punch cards perforates the space, their binary code interrupted by a hand-drawn cockatoo with a monocle. The bird perches on a tilted *\"EXIT\"* sign, its arrow pointing into the belly of a dissected clockwork bee.  \n\nNo hierarchy governs the composition. A compass rose near the bottom-left spins wildly, its directions labeled *\"YES\"*, *\"NO\"*, *\"LATER\"*, *\"BROKEN\"*. A strip of film stock runs along the upper edge, frames showing a repeating loop of a falling hat, a blinking eye, and a static television test pattern. The background is a wall of peeling wheatpaste—layers of fragmented newsprint, receipts, and a Soviet propaganda poster shredded to reveal the German word *\"STOP\"* stenciled beneath.  \n\nThe mood is sardonic entropy. Everything useful has been sabotaged: the banner’s command is unreadable, the urinal’s function perverted, the text’s logic disassembled. This is art as a sneer—a revolt against coherence, a fistful of society’s debris hurled onto the canvas."
       ]
     },
     {
@@ -562,7 +430,7 @@
         26
       ],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -595,7 +463,7 @@
         1059.449951171875
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -641,6 +509,105 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 27,
+      "type": "ai4artsed_ollama",
+      "pos": [
+        -496.8997802734375,
+        -339.7808532714844
+      ],
+      "size": [
+        294,
+        136
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            27,
+            28
+          ]
+        }
+      ],
+      "title": "ai4artsed_prompt_interception",
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_ollama"
+      },
+      "widgets_values": [
+        "",
+        "qwen2.5:32b",
+        "Properly translate into english. Output only the translation without any additions."
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        401.6502380371094,
+        -153.00001525878906
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            30,
+            31
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3.5_large_fp8_scaled.safetensors"
+      ]
     }
   ],
   "links": [
@@ -709,22 +676,6 @@
       "STRING"
     ],
     [
-      21,
-      21,
-      0,
-      6,
-      0,
-      "CLIP"
-    ],
-    [
-      22,
-      21,
-      0,
-      7,
-      0,
-      "CLIP"
-    ],
-    [
       24,
       15,
       0,
@@ -763,16 +714,32 @@
       29,
       0,
       "STRING"
+    ],
+    [
+      30,
+      4,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      31,
+      4,
+      1,
+      7,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6830134553650705,
+      "scale": 0.9090909090909091,
       "offset": [
-        1327.4398932488386,
-        937.6816957891378
+        1173.8011353975987,
+        693.7015503345922
       ]
     }
   },
