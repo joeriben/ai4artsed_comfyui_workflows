@@ -204,7 +204,8 @@
         "ver": "0.3.28"
       },
       "widgets_values": [
-        "ComfyUI"
+        "ComfyUI",
+        ""
       ]
     },
     {
@@ -465,7 +466,7 @@
       },
       "widgets_values": [
         "",
-        "**Prompt:**  \n\n**\"Reconstruct a literati landscape painting adhering to Xie He’s *Six Laws*, prioritizing *qiyun shengdong* (spirit-resonance and life-movement) over Western realism. Compose a scene where towering pines (*bone structure brushwork* in *bifa* technique) dominate dwarfed scholar figures (*Wu Daozi-inspired drapery, minimal facial strokes*). Apply *Guo Xi’s Three Distances*:  \n\n1. **High Distance (*Gao Yuan*)**—Cliffside pavilion (*Confucian moral authority*), rendered in dry *cun* strokes (*arduous path of governance*).  \n2. **Deep Distance (*Shen Yuan*)**—Terraced fields (*stratified social order*) in layered ink wash.  \n3. **Level Distance (*Ping Yuan*)**—Recluse’s hut (*Mi Fu’s mist-cloud technique*), vanishing into *liubai* (*>40% negative space, Daoist tension*).  \n\n**Ink Ethics:**  \n- Scholar’s robes: *Hemp-fiber strokes* (*pima cun*).  \n- Hermit’s hut: *Axe-cut texture* (*fupi cun*).  \n- Mineral pigments (*Zhou Rites’ Five Colors*): Azure cliffs, vermilion seals.  \n\n**Inscriptions:**  \n- *Running-script poetry*: 30% *Analects* quotations (*e.g., ‘The wise find joy in water’*).  \n- *Yinshou seal*: Vermillion, Qin-Han imperial style.  \n\n**Digital Constraints:**  \n- Algorithmic brushwork mimics *Dong Yuan’s fangtou cun* randomness.  \n- RGB channels follow *Record of Artisans’* chromatic hierarchy (*no Photoshop filters*).  \n\n**Validation:**  \n- *Qi-Appraisal*: Identifiable as *Yuan-era* from three meters.  \n- *Painting-Reading*: Composition logic deducible from inscriptions.\"**  \n\n*(Strict adherence to *Mustard Seed Garden Manual* and *Ten Bamboo Studio* techniques. No 3D rendering; preserve *shuhua tongyuan*.)*"
+        "## Visually Observable Entities and Relationships\n| Entity 1 | Relation | Entity 2 | Relation Type |\n|----------|----------|----------|---------------|\n| Recessed panel | is surrounded by | Text \"CUSTOM-RESPONSE\" | property |\n| Text \"CUSTOM-RESPONSE\" | frames | Recessed panel | spatial |\n\n## Inferred or Interpretative Semantic Relations\n| Subject | Inferred Relation | Object / Value | Type | Source |\n|---------|-------------------|----------------|------|--------|\n| Recessed panel | serves as | Permanent fixture or final element | narrative | contextual inference |\n| Text \"CUSTOM-RESPONSE\" | indicates | Personal or emotional context | symbolic | associative logic |\n| Recessed panel | communicates | Customized state information | functional | contextual inference |"
       ]
     },
     {
@@ -543,7 +544,7 @@
       },
       "widgets_values": [
         "",
-        "literati landscape painting, towering pines with bone structure brushwork, dwarfed scholar figures in Wu Daozi-inspired drapery, minimal facial strokes, cliffside pavilion in dry cun strokes, terraced fields in layered ink wash, recluse’s hut vanishing into mist-cloud technique, negative space over 40%, hemp-fiber strokes on robes, axe-cut texture on hut, azure cliffs, vermilion seals, running-script poetry inscriptions, yinshou seal in Qin-Han style, mineral pigments, high distance perspective, deep distance layering, level distance mist, ink wash textures, fangtou cun randomness, subdued chromatic hierarchy, Yuan-era aesthetic, centered composition, ethereal lighting, traditional Chinese brushwork, misty atmosphere, symbolic spatial order"
+        "recessed panel with embossed text \"CUSTOM-RESPONSE\", sleek modern design, matte metallic finish, soft ambient lighting, minimalist background, clean sharp edges, centered composition, high-tech aesthetic"
       ]
     },
     {
@@ -713,7 +714,7 @@
       "widgets_values": [
         "",
         "1. Detect all entities and visual elements in the source image-description.\n2. Transform each element into its diametrical opposite: female → male, old → young, large → small, red → green, joyful → sorrowful, friendly → hostile, etc. Ensure the inversion is categorical and exhaustive.\n3. Identify all inter-entity relations: spatial (above → below, inside → outside), logical (cause → effect), narrative (protagonist → bystander), and kinship (mother → son or stranger). Invert each relation accordingly.\n4. Reconstruct a coherent image concept using the transformed entities in their reversed relations. Preserve the structural logic of the original while applying full semantic reversal.\n5. Output only the final configuration. Do not include commentary, explanations, or meta-descriptions.",
-        "Transform the image-description according to the logic and instructions defined in the input labeled “input_context”.\nThis is not a linguistic translation, but a semantic and structural transformation.\nReconstruct all entities and their relations as specified, ensuring that:\n- Each entity is retained and transformed as instructed.\n- Each relation is inverted or altered in line with the logic of the “Context”.\n- The resulting structure reflects a complete semantic inversion.\nDo not explain your reasoning.\nOutput only the transformed description, either as structured data (if input was structured), or as plain descriptive text (if input was textual).",
+        "Transform the image-description according to the logic and instructions defined in the input labeled “input_context”.\nThis is not a linguistic translation, but a semantic and structural transformation.\nReconstruct all entities and their relations as specified, ensuring that:\n- Each entity is retained and transformed as instructed.\n- Each relation is inverted or altered in line with the logic of the “Context”.\n- The resulting structure reflects a complete semantic inversion.\n- You avoid double negations that lead to the same result as the input.\nDo not explain your reasoning.\nOutput only the transformed description, either as structured data (if input was structured), or as plain descriptive text (if input was textual).",
         "",
         "anthropic/claude-3.7-sonnet:thinking",
         "enable"
@@ -880,10 +881,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6209213230591552,
+      "scale": 1.3310000000000004,
       "offset": [
-        2191.6143429287845,
-        976.6429461223562
+        1135.8616829287853,
+        265.2890334476754
       ]
     }
   },
