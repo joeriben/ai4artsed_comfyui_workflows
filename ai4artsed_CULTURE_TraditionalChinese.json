@@ -2,7 +2,7 @@
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
   "last_node_id": 32,
-  "last_link_id": 43,
+  "last_link_id": 44,
   "nodes": [
     {
       "id": 20,
@@ -220,7 +220,7 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -308,7 +308,7 @@
         268
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -355,40 +355,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 11,
-      "type": "ai4artsed_openrouter_key",
-      "pos": [
-        -1564.00244140625,
-        -167.54867553710938
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            37,
-            38
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": [],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 26,
       "type": "PrimitiveString",
       "pos": [
@@ -400,7 +366,7 @@
         100.95500183105469
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -436,7 +402,7 @@
         98
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -684,6 +650,14 @@
             "name": "input_prompt"
           },
           "link": 42
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 44
         }
       ],
       "outputs": [
@@ -709,6 +683,41 @@
         "deepseek/deepseek-chat-v3-0324",
         "enable"
       ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 11,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -1189.1927490234375,
+        958.3442993164062
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            37,
+            38,
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": [],
       "color": "#322",
       "bgcolor": "#533"
     }
@@ -857,16 +866,24 @@
       6,
       1,
       "STRING"
+    ],
+    [
+      44,
+      11,
+      0,
+      31,
+      1,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7513148009015777,
+      "scale": 0.6830134553650707,
       "offset": [
-        1325.8020746015009,
-        -212.24363159559118
+        1820.3604136014985,
+        -346.8596405955914
       ]
     }
   },
