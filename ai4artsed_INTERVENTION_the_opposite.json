@@ -1,8 +1,8 @@
 {
   "id": "51774992-2cc6-467d-b81d-cbed57895b7f",
   "revision": 0,
-  "last_node_id": 53,
-  "last_link_id": 87,
+  "last_node_id": 54,
+  "last_link_id": 88,
   "nodes": [
     {
       "id": 5,
@@ -223,7 +223,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        253422614188484,
+        686009769849515,
         "randomize",
         20,
         7,
@@ -272,95 +272,8 @@
       },
       "widgets_values": [
         "",
-        "## Visually Observable Entities and Relationships\n\n| Entity 1 | Relation | Entity 2 | Relation Type |\n|----------|----------|----------|---------------|\n| Stone | on top of | Paper | spatial |\n| Paper | lies on | Crossroads | spatial |\n| Crossroads | located in | Desert | spatial |\n| Desert | experiences | Hot weather | property |\n| Day | is | Sunny | property |\n| Day | is | Hot | property |\n| Day | is | Summer day | temporal |\n| Environment | has | No wind | property |\n\n## Inferred or Interpretative Semantic Relations\n\n| Subject | Inferred Relation | Object / Value | Type | Source |\n|---------|-------------------|----------------|------|--------|\n| Scene | conveys | Stillness/Silence | environmental | visual cue |\n| Stone | anchors | Paper | functional | contextual inference |\n| Paper | appears out of place in | Desert environment | environmental | contextual inference |\n| Crossroads | represents | Decision point/Junction | symbolic | cultural trope |\n| Desert | evokes | Isolation/Emptiness | emotional | associative logic |\n| Heat | creates | Harsh conditions | environmental | contextual inference |\n| No wind | emphasizes | Motionlessness | environmental | visual cue |\n| Arrangement | suggests | Deliberate placement | narrative | contextual inference |\n| Desert crossroads | connotes | Life choices/paths | symbolic | cultural trope |\n| Paper | contrasts with | Natural environment | environmental | visual cue |"
+        "**First Table: Visually Observable Entities and Relationships**  \n| Entity 1      | Relation      | Entity 2          | Relation Type |  \n|---------------|---------------|-------------------|---------------|  \n| Banner        | displays      | \"DEFAULT TOKEN\"   | spatial       |  \n| Banner        | has color     | green background  | property      |  \n\n**Second Table: Inferred or Interpretative Semantic Relations**  \n| Subject          | Inferred Relation        | Object / Value          | Type       | Source               |  \n|------------------|--------------------------|-------------------------|------------|----------------------|  \n| \"DEFAULT TOKEN\"  | implies provisional use  | placeholder designation | symbolic   | contextual inference |  \n| Green background | symbolizes               | growth/safety           | symbolic   | cultural trope       |  \n| Banner           | suggests purpose         | public communication   | narrative  | associative logic    |  \n| Banner           | draws attention to       | textual content         | attentional| visual cue           |"
       ]
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -222.99925231933594,
-        642.9842529296875
-      ],
-      "size": [
-        730.3237915039062,
-        114.64132690429688
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [
-            1
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "slot_index": 1,
-          "links": [
-            3,
-            5
-          ]
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "slot_index": 2,
-          "links": [
-            8
-          ]
-        }
-      ],
-      "title": "Choose your model (or leave the preset)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "sd3.5_large_fp8_scaled.safetensors"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 49,
-      "type": "ai4artsed_openrouter_key",
-      "pos": [
-        -391.9677734375,
-        -353.01904296875
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            77,
-            86,
-            87
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": []
     },
     {
       "id": 46,
@@ -402,8 +315,169 @@
       },
       "widgets_values": [
         "",
-        "weathered metal plate suspended above natural sponge, solitary path winding through dense lush forest, overcast winter night, strong wind bending branches, cold blue atmosphere, frost-covered ground, moss-edged metal naturally blending with environment, cinematic wide angle, dramatic moonlight filtering through clouds, swirling mist, detailed bark textures, shallow depth of field"
+        "red banner concealing hidden emblem, dramatic folds, rich crimson fabric, golden embroidery edges, mysterious obscured center, cinematic lighting, high contrast shadows, close-up shot, intricate fabric texture, deep red hues, ominous atmosphere, ceremonial drapery, velvety material, implied importance, symbolic concealment, regal ambiance, warm highlights, dark undertones, ceremonial backdrop, ornate details, implied secrecy, luxurious cloth, weighted drapery, ceremonial gravitas, torchlight glow, textured surface, historical artifact vibe, sacred geometry suggestion, velvet sheen, ritualistic overtones, dramatic reveal potential, hidden power symbolism, rich color saturation, formal presentation, draped elegance, concealed centerpiece, anticipatory mood, ceremonial mystery, fabric cascades, implied significance, visual tension, obscured focal point, ceremonial grandeur, textured crimson, golden thread accents, weighted symbolism, dramatic composition, implied narrative, luxurious textile, hidden importance, atmospheric depth"
       ]
+    },
+    {
+      "id": 45,
+      "type": "ShowText",
+      "pos": [
+        671.0230102539062,
+        -1200.15625
+      ],
+      "size": [
+        562.836181640625,
+        445.6963195800781
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "prompt modification",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "**First Table: Visually Observable Entities and Relationships**  \n| Entity 1      | Relation      | Entity 2          | Relation Type |  \n|---------------|---------------|-------------------|---------------|  \n| Banner        | conceals      | \"FINALIZED EMBLEM\"| spatial       |  \n| Banner        | has color     | red background    | property      |  \n\n**Second Table: Inferred or Interpretative Semantic Relations**  \n| Subject             | Inferred Relation        | Object / Value          | Type       | Source               |  \n|---------------------|--------------------------|-------------------------|------------|----------------------|  \n| \"FINALIZED EMBLEM\"  | implies permanent use    | definitive designation  | symbolic   | contextual inference |  \n| Red background      | symbolizes               | danger/restriction      | symbolic   | cultural trope       |  \n| Banner              | suggests purpose         | private obscurity       | narrative  | associative logic    |  \n| Banner              | diverts attention from   | non-textual elements    | attentional| visual cue           |"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1339.85205078125,
+        -920.318115234375
+      ],
+      "size": [
+        782.6429443359375,
+        895.6958618164062
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27"
+      },
+      "widgets_values": [
+        "ComfyUI",
+        ""
+      ]
+    },
+    {
+      "id": 49,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -537.1494750976562,
+        -224.0814208984375
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            77,
+            86,
+            87
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        147.0615234375,
+        785.1202392578125
+      ],
+      "size": [
+        730.3237915039062,
+        114.64132690429688
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            3,
+            5
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "Choose your model (or leave the preset)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3.5_large_fp8_scaled.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 53,
@@ -454,14 +528,50 @@
       },
       "widgets_values": [
         "",
-        "the final prompt should have minimum 75 token, maximum 500 token",
+        "the final prompt should have 75 token minimum, 500 token maximum",
         "Use the input to create a prompt suitable for Stable Diffusion 3.5.\nInstructions:\n1. Select only information that can be rendered visually: entities, their visual properties, spatial configurations, symbolic or narrative roles if they have visual consequences (e.g. pose, gesture, setting, costume).\n2. Ignore non-visual symbolic or abstract relations unless they manifest as visible differences (e.g. \"freedom\" → \"confinement\" becomes \"open field\" → \"prison room\").\n3. Condense the result into a comma-separated prompt with no more than 75 tokens. Use compressed, stylized language typical for SD prompts.\n4. Do not use full sentences. Avoid repetition. Do not include any meta-text or explanation.\n5. Emphasize key compositional and stylistic features if evident (e.g. centered, dramatic lighting, overcast, wide angle, cinematic).\nOutput: Only the resulting prompt as plain text. No table, no explanation, no formatting.\n\nIf the resulting prompt is clearly under 75 tokens, expand it by:\n– adding visually descriptive adjectives (e.g. lighting, texture, motion, color quality)\n– specifying environmental or background elements that imply the mood\n– including camera or compositional hints (e.g. angle, framing, focus)\n– inserting emotional or symbolic indicators only if they have visual impact\n\nDo not pad artificially or repeat. Prioritize meaningful, image-relevant details.",
         "",
-        "anthropic/claude-3.7-sonnet:thinking",
+        "deepseek/deepseek-chat-v3-0324",
         "enable"
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 54,
+      "type": "PrimitiveString",
+      "pos": [
+        -530.1057739257812,
+        -911.921630859375
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            88
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Banner: DEFAULT TOKEN, on green background"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 52,
@@ -522,85 +632,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 45,
-      "type": "ShowText",
-      "pos": [
-        671.0230102539062,
-        -1200.15625
-      ],
-      "size": [
-        562.836181640625,
-        445.6963195800781
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 81
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "prompt modification",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "## Visually Observable Entities and Relationships\n\n| Entity 1 | Relation | Entity 2 | Relation Type |\n|----------|----------|----------|---------------|\n| Sponge | underneath | Metal plate | spatial |\n| Metal plate | is suspended above | Single path | spatial |\n| Single path | extends beyond | Lush forest | spatial |\n| Lush forest | shields from | Cold weather | property |\n| Night | is | Overcast | property |\n| Night | is | Cold | property |\n| Night | is | Winter night | temporal |\n| Environment | has | Strong wind | property |\n\n## Inferred or Interpretative Semantic Relations\n\n| Subject | Inferred Relation | Object / Value | Type | Source |\n|---------|-------------------|----------------|------|--------|\n| Scene | obscures | Activity/Noise | environmental | visual cue |\n| Sponge | liberates | Metal plate | functional | contextual inference |\n| Metal plate | fits perfectly with | Forest environment | environmental | contextual inference |\n| Single path | contradicts | Ambiguity | symbolic | cultural trope |\n| Forest | suppresses | Isolation/Emptiness | emotional | associative logic |\n| Cold | eliminates | Harsh conditions | environmental | contextual inference |\n| Strong wind | emphasizes | Movement | environmental | visual cue |\n| Chaotic arrangement | suggests | Accidental placement | narrative | contextual inference |\n| Forest path | negates | Predetermined destiny | symbolic | cultural trope |\n| Metal plate | blends with | Natural environment | environmental | visual cue |"
-      ]
-    },
-    {
-      "id": 47,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        -455.00494384765625,
-        -1017.158935546875
-      ],
-      "size": [
-        400,
-        200
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            75
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_input",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "ein Stein auf einem Blatt Papier. Das Papier liegt auf einer Kreuzung mitten in der Wüste. Es ist ein sonniger, heißer Sommertag. Es weht kein Wind."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 50,
       "type": "ai4artsed_openrouter",
       "pos": [
@@ -621,7 +652,7 @@
           "widget": {
             "name": "input_prompt"
           },
-          "link": 75
+          "link": 88
         },
         {
           "name": "api_key",
@@ -658,37 +689,6 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
-    },
-    {
-      "id": 9,
-      "type": "SaveImage",
-      "pos": [
-        1339.85205078125,
-        -920.318115234375
-      ],
-      "size": [
-        782.6429443359375,
-        895.6958618164062
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 9
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27"
-      },
-      "widgets_values": [
-        "ComfyUI",
-        ""
-      ]
     }
   ],
   "links": [
@@ -765,14 +765,6 @@
       "IMAGE"
     ],
     [
-      75,
-      47,
-      0,
-      50,
-      0,
-      "STRING"
-    ],
-    [
       77,
       49,
       0,
@@ -843,16 +835,24 @@
       52,
       1,
       "STRING"
+    ],
+    [
+      88,
+      54,
+      0,
+      50,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8140274938683995,
+      "scale": 0.9849732675807636,
       "offset": [
-        1125.1870241786019,
-        1374.8017663711428
+        847.8808687832702,
+        1228.1737768067896
       ]
     }
   },
