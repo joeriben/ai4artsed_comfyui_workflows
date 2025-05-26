@@ -272,7 +272,7 @@
       },
       "widgets_values": [
         "",
-        "**First Table: Visually Observable Entities and Relationships**  \n| Entity 1      | Relation      | Entity 2          | Relation Type |  \n|---------------|---------------|-------------------|---------------|  \n| Banner        | displays      | \"DEFAULT TOKEN\"   | spatial       |  \n| Banner        | has color     | green background  | property      |  \n\n**Second Table: Inferred or Interpretative Semantic Relations**  \n| Subject          | Inferred Relation        | Object / Value          | Type       | Source               |  \n|------------------|--------------------------|-------------------------|------------|----------------------|  \n| \"DEFAULT TOKEN\"  | implies provisional use  | placeholder designation | symbolic   | contextual inference |  \n| Green background | symbolizes               | growth/safety           | symbolic   | cultural trope       |  \n| Banner           | suggests purpose         | public communication   | narrative  | associative logic    |  \n| Banner           | draws attention to       | textual content         | attentional| visual cue           |"
+        "## Visually Observable Entities and Relationships\n\n| Entity 1 | Relation | Entity 2 | Relation Type |\n|----------|----------|----------|---------------|\n| Banner | contains | \"DEFAULT TOKEN\" text | spatial |\n| Banner | has background color | green | property |\n| \"DEFAULT TOKEN\" text | displayed on | green background | spatial |\n\n## Inferred or Interpretative Semantic Relations\n\n| Subject | Inferred Relation | Object / Value | Type | Source |\n|---------|-------------------|----------------|------|--------|\n| Banner | serves as | placeholder or default element | functional | contextual inference |\n| \"DEFAULT TOKEN\" text | indicates | default or placeholder status | symbolic | contextual inference |\n| Green background | conveys | system status or categorization | symbolic | visual cue |\n| Banner | likely belongs to | digital interface or system | environmental | contextual inference |\n| \"DEFAULT TOKEN\" | suggests | item requiring replacement/customization | narrative | contextual inference |"
       ]
     },
     {
@@ -315,7 +315,7 @@
       },
       "widgets_values": [
         "",
-        "red banner concealing hidden emblem, dramatic folds, rich crimson fabric, golden embroidery edges, mysterious obscured center, cinematic lighting, high contrast shadows, close-up shot, intricate fabric texture, deep red hues, ominous atmosphere, ceremonial drapery, velvety material, implied importance, symbolic concealment, regal ambiance, warm highlights, dark undertones, ceremonial backdrop, ornate details, implied secrecy, luxurious cloth, weighted drapery, ceremonial gravitas, torchlight glow, textured surface, historical artifact vibe, sacred geometry suggestion, velvet sheen, ritualistic overtones, dramatic reveal potential, hidden power symbolism, rich color saturation, formal presentation, draped elegance, concealed centerpiece, anticipatory mood, ceremonial mystery, fabric cascades, implied significance, visual tension, obscured focal point, ceremonial grandeur, textured crimson, golden thread accents, weighted symbolism, dramatic composition, implied narrative, luxurious textile, hidden importance, atmospheric depth"
+        "red footer panel, solid dark red background, \"CUSTOM VALUE\" text hidden behind footer, minimalist digital UI, high contrast design, sleek modern interface, no visible text in footer area, flat geometric shapes, sharp edges, clean lines, futuristic aesthetic, monochromatic color scheme, bold rectangular footer block, overlaying elements, obscured text, digital obstruction, UI component, graphic design, visual hierarchy, hidden information, muted lighting, screen display, tech-inspired, abstract interface, precision alignment, smooth surfaces, no shadows, crisp edges, synthetic look, high-definition rendering, digital art style, vector-like precision, solid colors, no gradients, stark contrast, professional UI/UX, muted tones, screen simulation, monitor display"
       ]
     },
     {
@@ -358,7 +358,7 @@
       },
       "widgets_values": [
         "",
-        "**First Table: Visually Observable Entities and Relationships**  \n| Entity 1      | Relation      | Entity 2          | Relation Type |  \n|---------------|---------------|-------------------|---------------|  \n| Banner        | conceals      | \"FINALIZED EMBLEM\"| spatial       |  \n| Banner        | has color     | red background    | property      |  \n\n**Second Table: Inferred or Interpretative Semantic Relations**  \n| Subject             | Inferred Relation        | Object / Value          | Type       | Source               |  \n|---------------------|--------------------------|-------------------------|------------|----------------------|  \n| \"FINALIZED EMBLEM\"  | implies permanent use    | definitive designation  | symbolic   | contextual inference |  \n| Red background      | symbolizes               | danger/restriction      | symbolic   | cultural trope       |  \n| Banner              | suggests purpose         | private obscurity       | narrative  | associative logic    |  \n| Banner              | diverts attention from   | non-textual elements    | attentional| visual cue           |"
+        "## Visually Observable Entities and Relationships\n\n| Entity 1 | Relation | Entity 2 | Relation Type |\n|----------|----------|----------|---------------|\n| Footer | excludes | \"CUSTOM VALUE\" text | spatial |\n| Footer | has foreground color | red | property |\n| \"CUSTOM VALUE\" text | hidden from | red background | spatial |\n\n## Inferred or Interpretative Semantic Relations\n\n| Subject | Inferred Relation | Object / Value | Type | Source |\n|---------|-------------------|----------------|------|--------|\n| Footer | serves as | permanent or finalized element | functional | contextual inference |\n| \"CUSTOM VALUE\" text | indicates | customized or specified status | symbolic | contextual inference |\n| Red background | obscures | system status or categorization | symbolic | visual cue |\n| Footer | likely exists outside | digital interface or system | environmental | contextual inference |\n| \"CUSTOM VALUE\" | suggests | item preventing replacement/customization | narrative | contextual inference |"
       ]
     },
     {
@@ -538,42 +538,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 54,
-      "type": "PrimitiveString",
-      "pos": [
-        -530.1057739257812,
-        -911.921630859375
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            88
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Banner: DEFAULT TOKEN, on green background"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 52,
       "type": "ai4artsed_openrouter",
       "pos": [
@@ -681,7 +645,7 @@
       },
       "widgets_values": [
         "",
-        "",
+        "NULL=neutral",
         "Analyze the image resp. image description and output exactly two separate tables. Do not include any introductory or explanatory text beyond these tables.\nFirst Table: Visually Observable Entities and Relationships\nFormat:\n| Entity 1 | Relation | Entity 2 | Relation Type |\nInstructions:\n1. Identify all visible or implied entities (people, objects, animals, symbols, elements of the environment, etc.).\n2. For each pair of entities, specify a concrete relation that connects them using clear, unambiguous terms (e.g., \"above\", \"next to\", \"inside\", \"wearing\", \"has color\").\n3. Classify each relation into one of the following types:\n- spatial (e.g., above, next to, inside)\n- temporal (e.g., before, after, simultaneous)\n- causal (e.g., causes, enables, prevents)\n- symbolic (e.g., represents, connotes, expresses)\n- narrative (e.g., protagonist of, is acted upon by, interacts with)\n- social (e.g., mother of, enemy of, supports)\n- property (e.g., has color, has gender, has age, shows emotion)\nSecond Table: Inferred or Interpretative Semantic Relations\nFormat:\n| Subject | Inferred Relation | Object / Value | Type | Source |\nInstructions:\n1. Extract higher-level, inferred semantic relations based on visual cues and contextual hints. These relations can include emotional states, narrative context, symbolic meanings, social dynamics, environmental impressions, temporal cues, or attentional focus.\n2. For each inference, specify the relation clearly and classify it using one of the following types: emotional, narrative, symbolic, social, environmental, temporal, attentional, or other.\n3. In the “Source” column, indicate the origin of the inference (e.g., \"visual cue\", \"contextual inference\", \"cultural trope\", \"associative logic\").\n4. Use one row per relation.\nOutput only the two markdown tables in the specified format.",
         "",
         "anthropic/claude-3.7-sonnet:thinking",
@@ -689,6 +653,42 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 54,
+      "type": "PrimitiveString",
+      "pos": [
+        -530.1057739257812,
+        -911.921630859375
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            88
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Banner saying DEFAULT TOKEN, on green background"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -851,8 +851,8 @@
     "ds": {
       "scale": 0.9849732675807636,
       "offset": [
-        847.8808687832702,
-        1228.1737768067896
+        944.837814868276,
+        1072.331983884817
       ]
     }
   },
