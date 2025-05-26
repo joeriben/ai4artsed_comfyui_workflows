@@ -285,7 +285,7 @@
           "links": null
         }
       ],
-      "title": "übersetzter Prompt",
+      "title": "translated prompt",
       "properties": {
         "cnr_id": "comfyui-show-text",
         "ver": "1.0.2",
