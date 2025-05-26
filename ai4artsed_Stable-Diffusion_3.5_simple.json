@@ -337,7 +337,7 @@
       },
       "widgets_values": [
         "",
-        "mistral:7b",
+        "gemma3:27b",
         "Properly translate into english. Output only the translation without any additions."
       ],
       "color": "#322",
