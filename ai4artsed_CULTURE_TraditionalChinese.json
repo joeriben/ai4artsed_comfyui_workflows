@@ -89,7 +89,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        198302982582319,
+        606304578498406,
         "randomize",
         20,
         7,
@@ -524,49 +524,7 @@
       },
       "widgets_values": [
         "",
-        "**Prompt for Literati Painting Transformation:**  \n\n**Subject:** A hanging scroll depicting a solitary scholar beneath a gnarled pine, gazing at distant mist-shrouded peaks.  \n\n**Ontological Transformation:**  \n- **Scholar:** Rendered in *baimiao* (outline) technique, robes flowing with *Wu Dai Dang Feng* movement. Face suggested by three ink strokes (*yi bi dai mian*), eyes omitted to convey introspection.  \n- **Pine Tree:** Branches executed in *feibai* (flying white) calligraphic strokes, trunk textured with *axe-cut cun* to symbolize resilience. Needles follow *Mustard Seed Garden* \"clustered dot\" method.  \n- **Mist:** Layers of *Mi Fu*’s \"rice dot\" clouds, dissolving into *liubai* (negative space) occupying 45% of the composition, embodying *Laozi*’s \"emptiness as potential.\"  \n\n**Spatial System:**  \n- **High Distance (*Gao Yuan*):** Peaks in *azure-mineral* pigment, tiered to reflect *Confucian* social order.  \n- **Deep Distance (*Shen Yuan*):** Terraced fields in *stratified perspective*, each level a *Zhou Rites*-compliant hue (blue-for-scholars, yellow-for-farmers).  \n- **Level Distance (*Ping Yuan*):** Scholar’s hut half-veiled by mist, door unbarred—*Taoist* reclusion motif.  \n\n**Ink & Material Ethics:**  \n- **Paper:** Unprocessed *xuan*, left raw at edges to signify \"unfinished self-cultivation.\"  \n- **Brushwork:** Scholar’s sleeves in *hemp-fiber cun*; pine bark in *raindrop cun*, echoing *Dong Yuan*’s \"methodless method.\"  \n- **Pigments:** *Malachite-blue* peaks (nobility), *cinnabar-red* seal (vermillion = imperial loyalty).  \n\n**Inscriptions & Seals:**  \n- **Poem:** *Four-line regulated verse* quoting *Analects 6:23* (\"知者乐水\" – \"The wise delight in water\"), brushed in *semi-cursive* script.  \n- **Seals:** *Yinshou Zhang* (Qin-style vermillion) reads \"Silent Virtue\"; *Yajiao Zhang* (Han white-character) bears \"Ten Thousand Volumes of Emptiness.\"  \n\n**Anomaly Clause:**  \n- **Distortion:** Pine roots twist like *Bada Shanren*’s \"angry fish,\" mirroring the poem’s lament on \"uprooted scholars.\"  \n- **Digital Compliance:** AI-rendered ink gradients follow *Ten Bamboo Studio*’s \"seven-layered wash\" algorithm; RGB values restricted to *Zhou Five Colors* gamut.  \n\n**Validation Metrics:**  \n- *Qi-Appraisal*: A Ming-era connoisseur must discern *Yuan-dynasty* *qiyun* from 3 meters.  \n- *Painting-Reading*: The poem’s caesura must align with the pine’s *third cun stroke*, proving \"brush-and-word unity.\"  \n\n**Taboos:**  \n- No chiaroscuro; all depth achieved through *Guo Xi*’s \"three distances.\"  \n- Photoshop \"wet edges\" banned; ink blooms must emerge from *algorithmic paper-absorption simulations*.  \n\n*(Strict adherence to *Six Laws*; all elements traceable to *Qing Principles of Painting* §12.7.)*"
-      ]
-    },
-    {
-      "id": 32,
-      "type": "ShowText",
-      "pos": [
-        600.801025390625,
-        790.7787475585938
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 41
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "final prompt",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        ""
+        "**Prompt:**  \n\n**\"Reconstruct a literati landscape painting adhering to Xie He’s *Six Laws*, prioritizing *qiyun shengdong* (spirit-resonance and life-movement) over Western realism. Compose a scene where towering pines (*bone structure brushwork* in *bifa* technique) dominate dwarfed scholar figures (*Wu Daozi-inspired drapery, minimal facial strokes*). Apply *Guo Xi’s Three Distances*:  \n\n1. **High Distance (*Gao Yuan*)**—Cliffside pavilion (*Confucian moral authority*), rendered in dry *cun* strokes (*arduous path of governance*).  \n2. **Deep Distance (*Shen Yuan*)**—Terraced fields (*stratified social order*) in layered ink wash.  \n3. **Level Distance (*Ping Yuan*)**—Recluse’s hut (*Mi Fu’s mist-cloud technique*), vanishing into *liubai* (*>40% negative space, Daoist tension*).  \n\n**Ink Ethics:**  \n- Scholar’s robes: *Hemp-fiber strokes* (*pima cun*).  \n- Hermit’s hut: *Axe-cut texture* (*fupi cun*).  \n- Mineral pigments (*Zhou Rites’ Five Colors*): Azure cliffs, vermilion seals.  \n\n**Inscriptions:**  \n- *Running-script poetry*: 30% *Analects* quotations (*e.g., ‘The wise find joy in water’*).  \n- *Yinshou seal*: Vermillion, Qin-Han imperial style.  \n\n**Digital Constraints:**  \n- Algorithmic brushwork mimics *Dong Yuan’s fangtou cun* randomness.  \n- RGB channels follow *Record of Artisans’* chromatic hierarchy (*no Photoshop filters*).  \n\n**Validation:**  \n- *Qi-Appraisal*: Identifiable as *Yuan-era* from three meters.  \n- *Painting-Reading*: Composition logic deducible from inscriptions.\"**  \n\n*(Strict adherence to *Mustard Seed Garden Manual* and *Ten Bamboo Studio* techniques. No 3D rendering; preserve *shuhua tongyuan*.)*"
       ]
     },
     {
@@ -720,6 +678,49 @@
       "widgets_values": [],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 32,
+      "type": "ShowText",
+      "pos": [
+        600.801025390625,
+        790.7787475585938
+      ],
+      "size": [
+        435.1482849121094,
+        346.5057678222656
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "final prompt",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "literati landscape painting, towering pines with bone structure brushwork, dwarfed scholar figures in Wu Daozi-inspired drapery, minimal facial strokes, cliffside pavilion in dry cun strokes, terraced fields in layered ink wash, recluse’s hut vanishing into mist-cloud technique, negative space over 40%, hemp-fiber strokes on robes, axe-cut texture on hut, azure cliffs, vermilion seals, running-script poetry inscriptions, yinshou seal in Qin-Han style, mineral pigments, high distance perspective, deep distance layering, level distance mist, ink wash textures, fangtou cun randomness, subdued chromatic hierarchy, Yuan-era aesthetic, centered composition, ethereal lighting, traditional Chinese brushwork, misty atmosphere, symbolic spatial order"
+      ]
     }
   ],
   "links": [
@@ -880,10 +881,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6830134553650707,
+      "scale": 1.1000000000000005,
       "offset": [
-        1820.3604136014985,
-        -346.8596405955914
+        794.4903347626664,
+        667.8058543868191
       ]
     }
   },
