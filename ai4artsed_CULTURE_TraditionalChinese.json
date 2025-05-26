@@ -2,56 +2,8 @@
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
   "last_node_id": 30,
-  "last_link_id": 36,
+  "last_link_id": 40,
   "nodes": [
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        401.6502380371094,
-        -153.00001525878906
-      ],
-      "size": [
-        315,
-        98
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [
-            1
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "slot_index": 1,
-          "links": []
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "slot_index": 2,
-          "links": [
-            8
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "sd3.5_large_fp8_scaled.safetensors"
-      ]
-    },
     {
       "id": 20,
       "type": "CLIPLoader",
@@ -64,7 +16,7 @@
         106
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -86,42 +38,6 @@
       ]
     },
     {
-      "id": 21,
-      "type": "CLIPLoader",
-      "pos": [
-        403.8061218261719,
-        1.6916594505310059
-      ],
-      "size": [
-        315,
-        106
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            21,
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "CLIPLoader"
-      },
-      "widgets_values": [
-        "t5xxl_enconly.safetensors",
-        "stable_diffusion",
-        "default"
-      ]
-    },
-    {
       "id": 3,
       "type": "KSampler",
       "pos": [
@@ -133,7 +49,7 @@
         262
       ],
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -173,7 +89,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        983322367547440,
+        198302982582319,
         "randomize",
         20,
         7,
@@ -194,7 +110,7 @@
         106
       ],
       "flags": {},
-      "order": 3,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -230,7 +146,7 @@
         46
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -273,7 +189,7 @@
         270
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -288,163 +204,8 @@
         "ver": "0.3.28"
       },
       "widgets_values": [
-        "ComfyUI"
-      ]
-    },
-    {
-      "id": 29,
-      "type": "ShowText",
-      "pos": [
-        350.5323181152344,
-        -762.4618530273438
-      ],
-      "size": [
-        666.8181762695312,
-        523.1818237304688
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 29
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Übersetzung in kulturellen Kontext (resultierender Prompt)",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "**Prompt:**  \nNULL."
-      ]
-    },
-    {
-      "id": 26,
-      "type": "PrimitiveString",
-      "pos": [
-        -684.7642822265625,
-        -658.7921142578125
-      ],
-      "size": [
-        782.6649780273438,
-        100.95500183105469
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            32
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner mit der Aufschrift Default-Prompt"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 11,
-      "type": "ai4artsed_openrouter_key",
-      "pos": [
-        -1096.1556396484375,
-        200.47286987304688
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            16,
-            35
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": [],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 28,
-      "type": "ShowText",
-      "pos": [
-        -154.68724060058594,
-        -479.9177551269531
-      ],
-      "size": [
-        460.9090881347656,
-        233.1818084716797
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 33
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Übersetzung ins Englische",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "A banner with the inscription \"Default-Prompt\""
+        "ComfyUI",
+        ""
       ]
     },
     {
@@ -465,7 +226,7 @@
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 22
+          "link": 40
         }
       ],
       "outputs": [
@@ -499,13 +260,13 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 21
+          "link": 39
         },
         {
           "name": "text",
@@ -536,18 +297,77 @@
       ]
     },
     {
+      "id": 15,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -457.1026916503906,
+        -357.3642578125
+      ],
+      "size": [
+        781.25,
+        1059.449951171875
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 36
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            24,
+            29
+          ]
+        }
+      ],
+      "title": "ai4artsed_prompt_interception",
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        "Traditional Confucian Literati Painting Visual Grammar and Ethical Translation Guidelines\n\n(Based on the orthodox systems of Song, Yuan, Ming, and Qing literati painting, with contemporary adaptation clauses)\n\n\nI. Ontological Transformation Rules\n\n\n    Primacy of Xie He’s \"Six Laws\": Prioritize qiyun shengdong (spirit-resonance and life-movement) as the supreme principle, rejecting Western realism.\n\n    Moral Morphology of Forms:\n        Plants (pine, bamboo, plum, orchid) must adhere to the Mustard Seed Garden Manual conventions—branches rendered in calligraphic lines (bifa technique) embodying \"bone structure brushwork.\"\n        Human figures must be smaller than landscape elements, with drapery referencing Wu Daozi’s \"wind-blown ribbons\" tradition (Wu Dai Dang Feng). Facial features are suggested symbolically with minimalist strokes (\"yi dao bi bu dao\"—the idea transcends the brush).\n\n\n\nII. Spatial Recomposition Principles\n\n\n    Triaxial Perspective System: Apply Guo Xi’s Three Distances (San Yuan):\n        High Distance (Gao Yuan): For moral authority (e.g., cliff-top academies).\n        Deep Distance (Shen Yuan): Depicts Confucian order (e.g., terraced farmlands in stratified perspective).\n        Level Distance (Ping Yuan): Conveys Taoist reclusion (Mi Fu’s mist-and-cloud technique).\n\n\n\nIII. Ink-Brush Ethical System\n\n\n    Materials as Ethical Statements:\n        Raw xuan paper paired with dry-texture cun strokes (\"cun\" texture strokes) metaphorizes \"the arduous path of benevolent rule.\"\n        Colored silk works must use mineral pigments regulated by the Rites of Zhou’s Five Colors doctrine (symbolic hierarchy: blue, red, yellow, white, black).\n\n    Stroke Ethics and Social Hierarchy:\n        Scholars use hemp-fiber strokes (pima cun) for cultivated ease.\n        Fishermen/hermits employ axe-cut strokes (fupi cun) to signify unyielding integrity.\n\n\n\nIV. Semiotic Codex\n\n\n    Inscriptions: Must be original poetry/prose meeting:\n        Content: ≥30% quotations from Analects or allusions from Selections of Refined Literature.\n        Calligraphy: Running/grass script adapted compositionally, but imperial examination (guange) style is banned.\n\n    Seal Protocol:\n        Introductory Seals (Yinshou Zhang): Vermillion-style, modeled on Qin-Han imperial seals.\n        Corner Seals (Yajiao Zhang): White-character seals emulating Han official seal-carving.\n\n\n\nV. Anomaly Accommodation Clause\n\n(For post-Ming unconventional literati works, e.g., Bada Shanren)\n\n\n    Permission for \"distorted forms\", provided:\n        Deformations intertextually align with inscriptions (e.g., fish/birds with side-eyes mirroring protest poetry).\n        Negative space (liubai) must occupy >40% to preserve Daoist \"emptiness contains turbulence\" tension.\n\n\n\nVI. Digital Age Adaptations\n\n\n    AI-Generated Works Must:\n        Simulate Dong Yuan’s \"fangtou cun\" randomness in brushwork algorithms.\n        Follow Record of Artisans’ chromatic sequence (\"blue adjacent to white\") in RGB channels.\n\n    Prohibitions:\n        No 3D volumetric rendering; preserve the two-dimensional \"unity of calligraphy and painting\" (shuhua tongyuan).\n        Photoshop filters banned; ink gradations must emerge from iterative algorithms.\n\n\n\nVII. Final Validation Standards\n\nTranslated works must pass:\n\n\n    \"Qi-Appraisal\" Test: Art historians must identify period style from three meters away.\n\n    \"Painting-Reading\" Test: Calligraphers must reverse-engineer composition logic from inscriptions.\n\n\n(Note: Default technical manual: Ming-era Ten Bamboo Studio Manual; philosophical basis: Qing Principles of Painting.)\n\n\nThis translation:\n\n\n    Preserves all original Confucian philosophical rigor.\n\n    Introduces executable metrics (e.g., 30% Analects quota, 40% liubai).\n\n    Accommodates historical exceptions while maintaining orthodoxy.\n\n    Bridges classical ethics to AI-generated art constraints.\n\n",
+        "Translate a given image, repective image description, from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\n 1999 characters maximum output length!",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
       "id": 30,
       "type": "ai4artsed_openrouter",
       "pos": [
-        -883.7481689453125,
-        -412.9883117675781
+        -1021.5064697265625,
+        -426.2983703613281
       ],
       "size": [
         491.4000244140625,
         268
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -564,7 +384,7 @@
           "widget": {
             "name": "api_key"
           },
-          "link": 35
+          "link": 37
         }
       ],
       "outputs": [
@@ -594,63 +414,211 @@
       "bgcolor": "#533"
     },
     {
-      "id": 15,
-      "type": "ai4artsed_openrouter",
+      "id": 11,
+      "type": "ai4artsed_openrouter_key",
       "pos": [
-        -457.1026916503906,
-        -357.3642578125
+        -1564.00244140625,
+        -167.54867553710938
       ],
       "size": [
-        781.25,
-        1059.449951171875
+        441,
+        26
       ],
       "flags": {},
-      "order": 9,
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            37,
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -1380.2117919921875,
+        -667.4435424804688
+      ],
+      "size": [
+        782.6649780273438,
+        100.95500183105469
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift DEFAULT-PROMPT"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        401.6502380371094,
+        -153.00001525878906
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            39,
+            40
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd3.5_large_fp8_scaled.safetensors"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "ShowText",
+      "pos": [
+        350.5323181152344,
+        -762.4618530273438
+      ],
+      "size": [
+        666.8181762695312,
+        523.1818237304688
+      ],
+      "flags": {},
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
-          "name": "input_prompt",
+          "name": "text",
           "type": "STRING",
           "widget": {
-            "name": "input_prompt"
+            "name": "text"
           },
-          "link": 36
-        },
-        {
-          "name": "api_key",
-          "type": "STRING",
-          "widget": {
-            "name": "api_key"
-          },
-          "link": 16
+          "link": 29
         }
       ],
       "outputs": [
         {
-          "name": "output",
+          "name": "STRING",
+          "shape": 6,
           "type": "STRING",
-          "links": [
-            24,
-            29
-          ]
+          "links": null
         }
       ],
-      "title": "ai4artsed_prompt_interception",
+      "title": "cultural translation (resulting prompt)",
       "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter"
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
       },
       "widgets_values": [
         "",
-        "Traditional Confucian Literati Painting Visual Grammar and Ethical Translation Guidelines\n\n(Based on the orthodox systems of Song, Yuan, Ming, and Qing literati painting, with contemporary adaptation clauses)\n\n\nI. Ontological Transformation Rules\n\n\n    Primacy of Xie He’s \"Six Laws\": Prioritize qiyun shengdong (spirit-resonance and life-movement) as the supreme principle, rejecting Western realism.\n\n    Moral Morphology of Forms:\n        Plants (pine, bamboo, plum, orchid) must adhere to the Mustard Seed Garden Manual conventions—branches rendered in calligraphic lines (bifa technique) embodying \"bone structure brushwork.\"\n        Human figures must be smaller than landscape elements, with drapery referencing Wu Daozi’s \"wind-blown ribbons\" tradition (Wu Dai Dang Feng). Facial features are suggested symbolically with minimalist strokes (\"yi dao bi bu dao\"—the idea transcends the brush).\n\n\n\nII. Spatial Recomposition Principles\n\n\n    Triaxial Perspective System: Apply Guo Xi’s Three Distances (San Yuan):\n        High Distance (Gao Yuan): For moral authority (e.g., cliff-top academies).\n        Deep Distance (Shen Yuan): Depicts Confucian order (e.g., terraced farmlands in stratified perspective).\n        Level Distance (Ping Yuan): Conveys Taoist reclusion (Mi Fu’s mist-and-cloud technique).\n\n\n\nIII. Ink-Brush Ethical System\n\n\n    Materials as Ethical Statements:\n        Raw xuan paper paired with dry-texture cun strokes (\"cun\" texture strokes) metaphorizes \"the arduous path of benevolent rule.\"\n        Colored silk works must use mineral pigments regulated by the Rites of Zhou’s Five Colors doctrine (symbolic hierarchy: blue, red, yellow, white, black).\n\n    Stroke Ethics and Social Hierarchy:\n        Scholars use hemp-fiber strokes (pima cun) for cultivated ease.\n        Fishermen/hermits employ axe-cut strokes (fupi cun) to signify unyielding integrity.\n\n\n\nIV. Semiotic Codex\n\n\n    Inscriptions: Must be original poetry/prose meeting:\n        Content: ≥30% quotations from Analects or allusions from Selections of Refined Literature.\n        Calligraphy: Running/grass script adapted compositionally, but imperial examination (guange) style is banned.\n\n    Seal Protocol:\n        Introductory Seals (Yinshou Zhang): Vermillion-style, modeled on Qin-Han imperial seals.\n        Corner Seals (Yajiao Zhang): White-character seals emulating Han official seal-carving.\n\n\n\nV. Anomaly Accommodation Clause\n\n(For post-Ming unconventional literati works, e.g., Bada Shanren)\n\n\n    Permission for \"distorted forms\", provided:\n        Deformations intertextually align with inscriptions (e.g., fish/birds with side-eyes mirroring protest poetry).\n        Negative space (liubai) must occupy >40% to preserve Daoist \"emptiness contains turbulence\" tension.\n\n\n\nVI. Digital Age Adaptations\n\n\n    AI-Generated Works Must:\n        Simulate Dong Yuan’s \"fangtou cun\" randomness in brushwork algorithms.\n        Follow Record of Artisans’ chromatic sequence (\"blue adjacent to white\") in RGB channels.\n\n    Prohibitions:\n        No 3D volumetric rendering; preserve the two-dimensional \"unity of calligraphy and painting\" (shuhua tongyuan).\n        Photoshop filters banned; ink gradations must emerge from iterative algorithms.\n\n\n\nVII. Final Validation Standards\n\nTranslated works must pass:\n\n\n    \"Qi-Appraisal\" Test: Art historians must identify period style from three meters away.\n\n    \"Painting-Reading\" Test: Calligraphers must reverse-engineer composition logic from inscriptions.\n\n\n(Note: Default technical manual: Ming-era Ten Bamboo Studio Manual; philosophical basis: Qing Principles of Painting.)\n\n\nThis translation:\n\n\n    Preserves all original Confucian philosophical rigor.\n\n    Introduces executable metrics (e.g., 30% Analects quota, 40% liubai).\n\n    Accommodates historical exceptions while maintaining orthodoxy.\n\n    Bridges classical ethics to AI-generated art constraints.\n\n",
-        "Translate a given image, repective image description, from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\n 1999 characters maximum output length!",
-        "",
-        "deepseek/deepseek-chat-v3-0324",
-        "enable"
+        "**Prompt for Literati Painting Transformation:**  \n\n**Subject:** A hanging scroll depicting a solitary scholar beneath a gnarled pine, gazing at distant mist-shrouded peaks.  \n\n**Ontological Transformation:**  \n- **Scholar:** Rendered in *baimiao* (outline) technique, robes flowing with *Wu Dai Dang Feng* movement. Face suggested by three ink strokes (*yi bi dai mian*), eyes omitted to convey introspection.  \n- **Pine Tree:** Branches executed in *feibai* (flying white) calligraphic strokes, trunk textured with *axe-cut cun* to symbolize resilience. Needles follow *Mustard Seed Garden* \"clustered dot\" method.  \n- **Mist:** Layers of *Mi Fu*’s \"rice dot\" clouds, dissolving into *liubai* (negative space) occupying 45% of the composition, embodying *Laozi*’s \"emptiness as potential.\"  \n\n**Spatial System:**  \n- **High Distance (*Gao Yuan*):** Peaks in *azure-mineral* pigment, tiered to reflect *Confucian* social order.  \n- **Deep Distance (*Shen Yuan*):** Terraced fields in *stratified perspective*, each level a *Zhou Rites*-compliant hue (blue-for-scholars, yellow-for-farmers).  \n- **Level Distance (*Ping Yuan*):** Scholar’s hut half-veiled by mist, door unbarred—*Taoist* reclusion motif.  \n\n**Ink & Material Ethics:**  \n- **Paper:** Unprocessed *xuan*, left raw at edges to signify \"unfinished self-cultivation.\"  \n- **Brushwork:** Scholar’s sleeves in *hemp-fiber cun*; pine bark in *raindrop cun*, echoing *Dong Yuan*’s \"methodless method.\"  \n- **Pigments:** *Malachite-blue* peaks (nobility), *cinnabar-red* seal (vermillion = imperial loyalty).  \n\n**Inscriptions & Seals:**  \n- **Poem:** *Four-line regulated verse* quoting *Analects 6:23* (\"知者乐水\" – \"The wise delight in water\"), brushed in *semi-cursive* script.  \n- **Seals:** *Yinshou Zhang* (Qin-style vermillion) reads \"Silent Virtue\"; *Yajiao Zhang* (Han white-character) bears \"Ten Thousand Volumes of Emptiness.\"  \n\n**Anomaly Clause:**  \n- **Distortion:** Pine roots twist like *Bada Shanren*’s \"angry fish,\" mirroring the poem’s lament on \"uprooted scholars.\"  \n- **Digital Compliance:** AI-rendered ink gradients follow *Ten Bamboo Studio*’s \"seven-layered wash\" algorithm; RGB values restricted to *Zhou Five Colors* gamut.  \n\n**Validation Metrics:**  \n- *Qi-Appraisal*: A Ming-era connoisseur must discern *Yuan-dynasty* *qiyun* from 3 meters.  \n- *Painting-Reading*: The poem’s caesura must align with the pine’s *third cun stroke*, proving \"brush-and-word unity.\"  \n\n**Taboos:**  \n- No chiaroscuro; all depth achieved through *Guo Xi*’s \"three distances.\"  \n- Photoshop \"wet edges\" banned; ink blooms must emerge from *algorithmic paper-absorption simulations*.  \n\n*(Strict adherence to *Six Laws*; all elements traceable to *Qing Principles of Painting* §12.7.)*"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "ShowText",
+      "pos": [
+        -313.0762023925781,
+        -682.8952026367188
       ],
-      "color": "#322",
-      "bgcolor": "#533"
+      "size": [
+        460.9090881347656,
+        233.1818084716797
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "input translation",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "A banner with the inscription DEFAULT-PROMPT"
+      ]
     }
   ],
   "links": [
@@ -711,30 +679,6 @@
       "IMAGE"
     ],
     [
-      16,
-      11,
-      0,
-      15,
-      1,
-      "STRING"
-    ],
-    [
-      21,
-      21,
-      0,
-      6,
-      0,
-      "CLIP"
-    ],
-    [
-      22,
-      21,
-      0,
-      7,
-      0,
-      "CLIP"
-    ],
-    [
       24,
       15,
       0,
@@ -767,7 +711,15 @@
       "STRING"
     ],
     [
-      35,
+      36,
+      30,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      37,
       11,
       0,
       30,
@@ -775,12 +727,28 @@
       "STRING"
     ],
     [
-      36,
-      30,
+      38,
+      11,
       0,
       15,
-      0,
+      1,
       "STRING"
+    ],
+    [
+      39,
+      4,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      40,
+      4,
+      1,
+      7,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [],
@@ -789,8 +757,8 @@
     "ds": {
       "scale": 0.7513148009015777,
       "offset": [
-        1516.0697524619763,
-        749.4857531777309
+        1125.4212524619763,
+        940.4842531777308
       ]
     }
   },
