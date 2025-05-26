@@ -337,7 +337,7 @@
       },
       "widgets_values": [
         "",
-        "gemma3:27b",
+        "qwen2.5:32b",
         "Properly translate into english. Output only the translation without any additions."
       ],
       "color": "#322",
