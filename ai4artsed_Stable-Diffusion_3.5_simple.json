@@ -305,7 +305,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        702152249339510,
+        992739593509426,
         "randomize",
         20,
         7,
@@ -313,42 +313,6 @@
         "normal",
         1
       ]
-    },
-    {
-      "id": 11,
-      "type": "PrimitiveString",
-      "pos": [
-        -171,
-        -83
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            16
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 14,
@@ -362,7 +326,7 @@
         26
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -420,7 +384,7 @@
       },
       "widgets_values": [
         "",
-        "A banner in front of a green background: \"Dies ist ein Default-Prompt\"."
+        "A ship, no wave in sight, scattered clouds, dolphins surrounding the ship. Irritatingly, a British telephone booth is visible on the ship."
       ]
     },
     {
@@ -473,13 +437,49 @@
       "widgets_values": [
         "",
         "NULL=neutral",
-        "Translate the prompt into english. However, should there be quotations, leave those parts untouched. Do not add any comment or text. Translate as precisely as possible.",
+        "Translate the prompt into english. Make sure to be precise.  However, should there be quotations, leave those parts untouched. Do not add any comment or text.",
         "",
         "deepseek/deepseek-chat-v3-0324",
         "enable"
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 11,
+      "type": "PrimitiveString",
+      "pos": [
+        -171,
+        -83
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
