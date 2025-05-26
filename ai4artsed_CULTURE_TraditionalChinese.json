@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 29,
-  "last_link_id": 29,
+  "last_node_id": 30,
+  "last_link_id": 34,
   "nodes": [
     {
       "id": 6,
@@ -336,8 +336,7 @@
         "ver": "0.3.28"
       },
       "widgets_values": [
-        "ComfyUI",
-        ""
+        "ComfyUI"
       ]
     },
     {
@@ -414,133 +413,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 26,
-      "type": "PrimitiveString",
-      "pos": [
-        -508.4002685546875,
-        -514.2463989257812
-      ],
-      "size": [
-        782.6649780273438,
-        100.95500183105469
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            26
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner mit der Aufschrift Default-Prompt"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 28,
-      "type": "ShowText",
-      "pos": [
-        -170.2827911376953,
-        -332.79315185546875
-      ],
-      "size": [
-        454.0909118652344,
-        116.81817626953125
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 28
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Übersetzung ins Englische",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "NULL"
-      ]
-    },
-    {
-      "id": 27,
-      "type": "ai4artsed_ollama",
-      "pos": [
-        -486.89984130859375,
-        -340.23541259765625
-      ],
-      "size": [
-        294,
-        136
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 26
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            27,
-            28
-          ]
-        }
-      ],
-      "title": "ai4artsed_prompt_interception",
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_ollama"
-      },
-      "widgets_values": [
-        "",
-        "mistral:7b",
-        "Properly translate into english. Output only the translation without any additions."
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 29,
       "type": "ShowText",
       "pos": [
@@ -595,7 +467,7 @@
         1059.449951171875
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -604,7 +476,7 @@
           "widget": {
             "name": "input_prompt"
           },
-          "link": 27
+          "link": 34
         },
         {
           "name": "api_key",
@@ -641,6 +513,135 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -684.7642822265625,
+        -658.7921142578125
+      ],
+      "size": [
+        782.6649780273438,
+        100.95500183105469
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift Default-Prompt"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 30,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -715.3765258789062,
+        -471.5523681640625
+      ],
+      "size": [
+        491.4000244140625,
+        268
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            33,
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        "NULL=neutral",
+        "Translate the prompt into english. Make sure to be precise.  However, should there be quotations, leave those parts untouched. Do not add any comment or text.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 28,
+      "type": "ShowText",
+      "pos": [
+        -195.28274536132812,
+        -464.6112976074219
+      ],
+      "size": [
+        460.9090881347656,
+        233.1818084716797
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Übersetzung ins Englische",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "NULL"
+      ]
     }
   ],
   "links": [
@@ -733,34 +734,34 @@
       "STRING"
     ],
     [
-      26,
-      26,
-      0,
-      27,
-      0,
-      "STRING"
-    ],
-    [
-      27,
-      27,
-      0,
-      15,
-      0,
-      "STRING"
-    ],
-    [
-      28,
-      27,
-      0,
-      28,
-      0,
-      "STRING"
-    ],
-    [
       29,
       15,
       0,
       29,
+      0,
+      "STRING"
+    ],
+    [
+      32,
+      26,
+      0,
+      30,
+      0,
+      "STRING"
+    ],
+    [
+      33,
+      30,
+      0,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      34,
+      30,
+      0,
+      15,
       0,
       "STRING"
     ]
@@ -771,8 +772,8 @@
     "ds": {
       "scale": 1.1,
       "offset": [
-        583.558797916522,
-        372.9162077231839
+        1356.2860706437934,
+        695.6434804504576
       ]
     }
   },
