@@ -2,7 +2,7 @@
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
   "last_node_id": 30,
-  "last_link_id": 34,
+  "last_link_id": 35,
   "nodes": [
     {
       "id": 6,
@@ -380,39 +380,6 @@
       ]
     },
     {
-      "id": 11,
-      "type": "ai4artsed_openrouter_key",
-      "pos": [
-        -481.1553955078125,
-        993.2000732421875
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            16
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": [],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 29,
       "type": "ShowText",
       "pos": [
@@ -526,7 +493,7 @@
         100.95500183105469
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -572,6 +539,14 @@
             "name": "input_prompt"
           },
           "link": 32
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 35
         }
       ],
       "outputs": [
@@ -642,6 +617,40 @@
         "",
         "NULL"
       ]
+    },
+    {
+      "id": 11,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -1096.1556396484375,
+        200.47286987304688
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16,
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -764,6 +773,14 @@
       15,
       0,
       "STRING"
+    ],
+    [
+      35,
+      11,
+      0,
+      30,
+      1,
+      "STRING"
     ]
   ],
   "groups": [],
@@ -772,8 +789,8 @@
     "ds": {
       "scale": 1.1,
       "offset": [
-        1356.2860706437934,
-        695.6434804504576
+        1484.013343371068,
+        364.73438954136697
       ]
     }
   },
