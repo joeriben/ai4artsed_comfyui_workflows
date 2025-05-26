@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 30,
-  "last_link_id": 31,
+  "last_node_id": 31,
+  "last_link_id": 37,
   "nodes": [
     {
       "id": 6,
@@ -137,7 +137,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        604465314503801,
+        1069290701543237,
         "randomize",
         20,
         7,
@@ -252,8 +252,7 @@
         "ver": "0.3.28"
       },
       "widgets_values": [
-        "ComfyUI",
-        ""
+        "ComfyUI"
       ]
     },
     {
@@ -268,7 +267,7 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -297,42 +296,6 @@
       ]
     },
     {
-      "id": 26,
-      "type": "PrimitiveString",
-      "pos": [
-        -508.4002685546875,
-        -514.2463989257812
-      ],
-      "size": [
-        782.6649780273438,
-        100.95500183105469
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            26
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner mit der Aufschrift Default-Prompt"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 28,
       "type": "ShowText",
       "pos": [
@@ -344,7 +307,7 @@
         116.81817626953125
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -353,7 +316,7 @@
           "widget": {
             "name": "text"
           },
-          "link": 28
+          "link": 35
         }
       ],
       "outputs": [
@@ -372,7 +335,7 @@
       },
       "widgets_values": [
         "",
-        "A banner reading Default Prompt"
+        "A banner with the inscription \"Default-Prompt\""
       ]
     },
     {
@@ -419,39 +382,6 @@
       ]
     },
     {
-      "id": 11,
-      "type": "ai4artsed_openrouter_key",
-      "pos": [
-        -473.1694030761719,
-        1049.767578125
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            16
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": [],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 15,
       "type": "ai4artsed_openrouter",
       "pos": [
@@ -463,7 +393,7 @@
         1059.449951171875
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -472,7 +402,7 @@
           "widget": {
             "name": "input_prompt"
           },
-          "link": 27
+          "link": 36
         },
         {
           "name": "api_key",
@@ -511,54 +441,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 27,
-      "type": "ai4artsed_ollama",
-      "pos": [
-        -496.8997802734375,
-        -339.7808532714844
-      ],
-      "size": [
-        294,
-        136
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "prompt"
-          },
-          "link": 26
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            27,
-            28
-          ]
-        }
-      ],
-      "title": "ai4artsed_prompt_interception",
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_ollama"
-      },
-      "widgets_values": [
-        "",
-        "qwen2.5:32b",
-        "Properly translate into english. Output only the translation without any additions."
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
       "id": 4,
       "type": "CheckpointLoaderSimple",
       "pos": [
@@ -570,7 +452,7 @@
         98
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -608,6 +490,134 @@
       "widgets_values": [
         "sd3.5_large_fp8_scaled.safetensors"
       ]
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -508.4002685546875,
+        -595.6463012695312
+      ],
+      "size": [
+        782.6649780273438,
+        100.95500183105469
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift Default-Prompt"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 31,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -710.7011108398438,
+        -409.3515319824219
+      ],
+      "size": [
+        491.4000244140625,
+        268
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 34
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            35,
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        "NULL=neutral",
+        "Translate the prompt into english. Make sure to be precise.  However, should there be quotations, leave those parts untouched. Do not add any comment or text.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 11,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -1040.7694091796875,
+        98.26770782470703
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16,
+            37
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "e511931edb551d65374c44689e76c08794ed31e7",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -684,30 +694,6 @@
       "STRING"
     ],
     [
-      26,
-      26,
-      0,
-      27,
-      0,
-      "STRING"
-    ],
-    [
-      27,
-      27,
-      0,
-      15,
-      0,
-      "STRING"
-    ],
-    [
-      28,
-      27,
-      0,
-      28,
-      0,
-      "STRING"
-    ],
-    [
       29,
       15,
       0,
@@ -730,6 +716,38 @@
       7,
       0,
       "CLIP"
+    ],
+    [
+      34,
+      26,
+      0,
+      31,
+      0,
+      "STRING"
+    ],
+    [
+      35,
+      31,
+      0,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      36,
+      31,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      37,
+      11,
+      0,
+      31,
+      1,
+      "STRING"
     ]
   ],
   "groups": [],
@@ -738,8 +756,8 @@
     "ds": {
       "scale": 0.9090909090909091,
       "offset": [
-        1173.8011353975987,
-        693.7015503345922
+        1345.951135397597,
+        727.8015503345918
       ]
     }
   },
