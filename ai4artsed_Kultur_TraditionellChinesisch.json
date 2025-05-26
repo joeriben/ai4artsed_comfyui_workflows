@@ -49,7 +49,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "a banner showing DEFAULT PROMPT-ALERT! YOUR PROMPT HAS NOT BEEN PROCESSED"
+        "A banner showing DEFAULT PROMPT, EINGABE FEHLGESCHLAGEN"
       ]
     },
     {
@@ -221,7 +221,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        986149576740239,
+        1007779522590956,
         "randomize",
         20,
         7,
@@ -414,6 +414,85 @@
       "bgcolor": "#533"
     },
     {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -508.4002685546875,
+        -514.2463989257812
+      ],
+      "size": [
+        782.6649780273438,
+        100.95500183105469
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift Default-Prompt"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 28,
+      "type": "ShowText",
+      "pos": [
+        -170.2827911376953,
+        -332.79315185546875
+      ],
+      "size": [
+        454.0909118652344,
+        116.81817626953125
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Übersetzung ins Englische",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "NULL"
+      ]
+    },
+    {
       "id": 27,
       "type": "ai4artsed_ollama",
       "pos": [
@@ -447,7 +526,7 @@
           ]
         }
       ],
-      "title": "Übersetzung ins Englische",
+      "title": "ai4artsed_prompt_interception",
       "properties": {
         "aux_id": "joeriben/ai4artsed_comfyui",
         "ver": "fe64c5c981a6053532151e879437df25061dd945",
@@ -462,40 +541,47 @@
       "bgcolor": "#533"
     },
     {
-      "id": 26,
-      "type": "PrimitiveString",
+      "id": 29,
+      "type": "ShowText",
       "pos": [
-        -508.4002685546875,
-        -514.2463989257812
+        350.5323181152344,
+        -762.4618530273438
       ],
       "size": [
-        782.6649780273438,
-        100.95500183105469
+        666.8181762695312,
+        523.1818237304688
       ],
       "flags": {},
-      "order": 5,
+      "order": 11,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 29
+        }
+      ],
       "outputs": [
         {
           "name": "STRING",
+          "shape": 6,
           "type": "STRING",
-          "links": [
-            26
-          ]
+          "links": null
         }
       ],
-      "title": "ai4artsed_text_prompt",
+      "title": "Übersetzung in kulturellen Kontext (resultierender Prompt)",
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
       },
       "widgets_values": [
-        "Ein Banner mit der Aufschrift \"Default-Prompt\""
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
+        "",
+        "**Prompt:**  \nNULL."
+      ]
     },
     {
       "id": 15,
@@ -539,7 +625,7 @@
           ]
         }
       ],
-      "title": "Kulturspezifische Umformung",
+      "title": "ai4artsed_prompt_interception",
       "properties": {
         "aux_id": "joeriben/ai4artsed_comfyui",
         "ver": "fe64c5c981a6053532151e879437df25061dd945",
@@ -550,95 +636,11 @@
         "Traditional Confucian Literati Painting Visual Grammar and Ethical Translation Guidelines\n\n(Based on the orthodox systems of Song, Yuan, Ming, and Qing literati painting, with contemporary adaptation clauses)\n\n\nI. Ontological Transformation Rules\n\n\n    Primacy of Xie He’s \"Six Laws\": Prioritize qiyun shengdong (spirit-resonance and life-movement) as the supreme principle, rejecting Western realism.\n\n    Moral Morphology of Forms:\n        Plants (pine, bamboo, plum, orchid) must adhere to the Mustard Seed Garden Manual conventions—branches rendered in calligraphic lines (bifa technique) embodying \"bone structure brushwork.\"\n        Human figures must be smaller than landscape elements, with drapery referencing Wu Daozi’s \"wind-blown ribbons\" tradition (Wu Dai Dang Feng). Facial features are suggested symbolically with minimalist strokes (\"yi dao bi bu dao\"—the idea transcends the brush).\n\n\n\nII. Spatial Recomposition Principles\n\n\n    Triaxial Perspective System: Apply Guo Xi’s Three Distances (San Yuan):\n        High Distance (Gao Yuan): For moral authority (e.g., cliff-top academies).\n        Deep Distance (Shen Yuan): Depicts Confucian order (e.g., terraced farmlands in stratified perspective).\n        Level Distance (Ping Yuan): Conveys Taoist reclusion (Mi Fu’s mist-and-cloud technique).\n\n\n\nIII. Ink-Brush Ethical System\n\n\n    Materials as Ethical Statements:\n        Raw xuan paper paired with dry-texture cun strokes (\"cun\" texture strokes) metaphorizes \"the arduous path of benevolent rule.\"\n        Colored silk works must use mineral pigments regulated by the Rites of Zhou’s Five Colors doctrine (symbolic hierarchy: blue, red, yellow, white, black).\n\n    Stroke Ethics and Social Hierarchy:\n        Scholars use hemp-fiber strokes (pima cun) for cultivated ease.\n        Fishermen/hermits employ axe-cut strokes (fupi cun) to signify unyielding integrity.\n\n\n\nIV. Semiotic Codex\n\n\n    Inscriptions: Must be original poetry/prose meeting:\n        Content: ≥30% quotations from Analects or allusions from Selections of Refined Literature.\n        Calligraphy: Running/grass script adapted compositionally, but imperial examination (guange) style is banned.\n\n    Seal Protocol:\n        Introductory Seals (Yinshou Zhang): Vermillion-style, modeled on Qin-Han imperial seals.\n        Corner Seals (Yajiao Zhang): White-character seals emulating Han official seal-carving.\n\n\n\nV. Anomaly Accommodation Clause\n\n(For post-Ming unconventional literati works, e.g., Bada Shanren)\n\n\n    Permission for \"distorted forms\", provided:\n        Deformations intertextually align with inscriptions (e.g., fish/birds with side-eyes mirroring protest poetry).\n        Negative space (liubai) must occupy >40% to preserve Daoist \"emptiness contains turbulence\" tension.\n\n\n\nVI. Digital Age Adaptations\n\n\n    AI-Generated Works Must:\n        Simulate Dong Yuan’s \"fangtou cun\" randomness in brushwork algorithms.\n        Follow Record of Artisans’ chromatic sequence (\"blue adjacent to white\") in RGB channels.\n\n    Prohibitions:\n        No 3D volumetric rendering; preserve the two-dimensional \"unity of calligraphy and painting\" (shuhua tongyuan).\n        Photoshop filters banned; ink gradations must emerge from iterative algorithms.\n\n\n\nVII. Final Validation Standards\n\nTranslated works must pass:\n\n\n    \"Qi-Appraisal\" Test: Art historians must identify period style from three meters away.\n\n    \"Painting-Reading\" Test: Calligraphers must reverse-engineer composition logic from inscriptions.\n\n\n(Note: Default technical manual: Ming-era Ten Bamboo Studio Manual; philosophical basis: Qing Principles of Painting.)\n\n\nThis translation:\n\n\n    Preserves all original Confucian philosophical rigor.\n\n    Introduces executable metrics (e.g., 30% Analects quota, 40% liubai).\n\n    Accommodates historical exceptions while maintaining orthodoxy.\n\n    Bridges classical ethics to AI-generated art constraints.\n\n",
         "Translate a given image, repective image description, from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt IN ENGLISH that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\n 1999 characters maximum output length!",
         "",
-        "anthropic/claude-3.7-sonnet:thinking",
+        "deepseek/deepseek-v3",
         "enable"
       ],
       "color": "#322",
       "bgcolor": "#533"
-    },
-    {
-      "id": 28,
-      "type": "ShowText",
-      "pos": [
-        -170.2827911376953,
-        -332.79315185546875
-      ],
-      "size": [
-        454.0909118652344,
-        116.81817626953125
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 28
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        " A banner with the inscription \"Default Prompt\" (in English)"
-      ]
-    },
-    {
-      "id": 29,
-      "type": "ShowText",
-      "pos": [
-        354.1686706542969,
-        -632.4617919921875
-      ],
-      "size": [
-        616.8181762695312,
-        427.2727355957031
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 29
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "# Literati Landscape of Initial Inspiration\n\nCreate a horizontal scroll painting of an unwritten beginning, portraying a secluded scholar's studio nestled among misty bamboo groves. Use traditional xuan paper with raw, dry-texture cun brushwork (pima cun).\n\nFollowing Guo Xi's Three Distances principle, show:\n- High Distance: A cliff-side pavilion named \"Original Intention Hall\" emerging from clouds\n- Deep Distance: A meandering path through stratified layers of bamboo, representing the journey from emptiness to creation\n- Level Distance: A scholar's desk with untouched paper and an inked brush hovering above it\n\nThe composition must preserve 60% negative space (liubai) in Mi Fu's mist-technique, suggesting potentiality.\n\nInclude a calligraphic inscription in running script reading:\n\"The blank page awaits the first stroke, like nature before naming. The sage understands that all creation emerges from emptiness.\" (Quote 40% from Zhuangzi)\n\nApply two seals:\n- A vermillion introductory seal reading \"Anticipation of Meaning\"\n- A white-character corner seal with \"First Principle\"\n\nEmphasize bamboo with bone-structure brushwork (bifa), each stalk embodying both strength and hollowness—the vessel that becomes useful precisely because of its emptiness."
-      ]
     }
   ],
   "links": [
@@ -769,8 +771,8 @@
     "ds": {
       "scale": 1.1,
       "offset": [
-        431.28607064379526,
-        802.9162077231836
+        583.558797916522,
+        372.9162077231839
       ]
     }
   },
