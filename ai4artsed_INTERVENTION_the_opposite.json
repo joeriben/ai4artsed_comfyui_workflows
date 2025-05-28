@@ -204,8 +204,7 @@
         "ver": "0.3.28"
       },
       "widgets_values": [
-        "ComfyUI",
-        ""
+        "ComfyUI"
       ]
     },
     {
@@ -714,7 +713,7 @@
       "widgets_values": [
         "",
         "1. Detect all entities and visual elements in the source image-description.\n2. Transform each element into its diametrical opposite: female → male, old → young, large → small, red → green, joyful → sorrowful, friendly → hostile, etc. Ensure the inversion is categorical and exhaustive.\n3. Identify all inter-entity relations: spatial (above → below, inside → outside), logical (cause → effect), narrative (protagonist → bystander), and kinship (mother → son or stranger). Invert each relation accordingly.\n4. Reconstruct a coherent image concept using the transformed entities in their reversed relations. Preserve the structural logic of the original while applying full semantic reversal.\n5. Output only the final configuration. Do not include commentary, explanations, or meta-descriptions.",
-        "Transform the image-description according to the logic and instructions defined in the input labeled “input_context”.\nThis is not a linguistic translation, but a semantic and structural transformation.\nReconstruct all entities and their relations as specified, ensuring that:\n- Each entity is retained and transformed as instructed.\n- Each relation is inverted or altered in line with the logic of the “Context”.\n- The resulting structure reflects a complete semantic inversion.\n- You avoid double negations that lead to the same result as the input.\nDo not explain your reasoning.\nOutput only the transformed description, either as structured data (if input was structured), or as plain descriptive text (if input was textual).",
+        "1. Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.\n\n2.\nTransform the image-description according to the logic and instructions defined in the input labeled “input_context”.\nThis is not a linguistic translation, but a semantic and structural transformation.\nReconstruct all entities and their relations as specified, ensuring that:\n- Each entity is retained and transformed as instructed.\n- Each relation is inverted or altered in line with the logic of the “Context”.\n- The resulting structure reflects a complete semantic inversion.\n- You avoid double negations that lead to the same result as the input.\nDo not explain your reasoning.\nOutput only the transformed description, either as structured data (if input was structured), or as plain descriptive text (if input was textual).",
         "",
         "anthropic/claude-3.7-sonnet:thinking",
         "enable"
@@ -883,8 +882,8 @@
     "ds": {
       "scale": 1.3310000000000004,
       "offset": [
-        1135.8616829287853,
-        265.2890334476754
+        1604.3064612909197,
+        880.2401979856172
       ]
     }
   },
