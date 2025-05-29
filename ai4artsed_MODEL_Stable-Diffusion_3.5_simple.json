@@ -498,6 +498,7 @@
         "Node name for S&R": "ai4artsed_openrouter"
       },
       "widgets_values": [
+        "",
         "NULL=neutral",
         "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
         "",
