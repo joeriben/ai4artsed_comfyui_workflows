@@ -419,7 +419,7 @@
     },
     {
       "id": 15,
-      "type": "TripleCLIPLoader",
+      "type": "CLIPLoader",
       "pos": [
         -43.37272262573242,
         703.3182373046875
@@ -444,13 +444,13 @@
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.38",
-        "Node name for S&R": "TripleCLIPLoader"
+        "ver": "0.3.36",
+        "Node name for S&R": "CLIPLoader"
       },
       "widgets_values": [
-        "clip_g.safetensors",
-        "clip_l.safetensors",
-        "t5xxl_enconly.safetensors"
+        "t5xxl_enconly.safetensors",
+        "stable_diffusion",
+        "default"
       ]
     },
     {
