@@ -32,7 +32,7 @@
         "Node name for S&R": "CLIPLoader"
       },
       "widgets_values": [
-        "clip_g.safetensors",
+        "t5xxlenc.safetensors",
         "stable_diffusion",
         "default"
       ]
