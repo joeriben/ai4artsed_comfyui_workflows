@@ -192,8 +192,8 @@
         "Node name for S&R": "ShowText"
       },
       "widgets_values": [
-        "A ship, no wave in sight, scattered clouds, dolphins surrounding the ship. Irritatingly, a British telephone booth is visible on the ship.",
-        "A banner against a green background: \"This is a default prompt.\""
+        "A banner against a green background: \"This is a default prompt.\"",
+        "A banner against a green background: \"This is a default prompt\"."
       ]
     },
     {
@@ -231,60 +231,6 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
-    },
-    {
-      "id": 13,
-      "type": "ai4artsed_openrouter",
-      "pos": [
-        -169.73638916015625,
-        88.31816864013672
-      ],
-      "size": [
-        491.4000244140625,
-        268
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input_prompt",
-          "type": "STRING",
-          "link": 16
-        },
-        {
-          "name": "api_key",
-          "type": "STRING",
-          "widget": {
-            "name": "api_key"
-          },
-          "link": 18
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "STRING",
-          "links": [
-            17,
-            19
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter"
-      },
-      "widgets_values": [
-        "NULL=neutral",
-        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
-        "",
-        "deepseek/deepseek-chat-v3-0324",
-        "enable"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 5,
@@ -414,7 +360,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1109386551471557,
+        373555273980299,
         "randomize",
         20,
         7,
@@ -506,6 +452,60 @@
         "clip_l.safetensors",
         "t5xxl_enconly.safetensors"
       ]
+    },
+    {
+      "id": 13,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -169.73638916015625,
+        88.31816864013672
+      ],
+      "size": [
+        491.4000244140625,
+        268
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "link": 16
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            17,
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "NULL=neutral",
+        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -620,8 +620,8 @@
     "ds": {
       "scale": 1.1000000000000005,
       "offset": [
-        566.5545454545435,
-        208.49999999999895
+        447.0090909090888,
+        183.04545454545365
       ]
     },
     "frontendVersion": "1.20.7"
