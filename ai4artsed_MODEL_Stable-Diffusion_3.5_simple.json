@@ -1,49 +1,9 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 14,
-  "last_link_id": 19,
+  "last_node_id": 15,
+  "last_link_id": 22,
   "nodes": [
-    {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [
-        413,
-        389
-      ],
-      "size": [
-        425.27801513671875,
-        180.6060791015625
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 5
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            6
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "text, watermark"
-      ]
-    },
     {
       "id": 8,
       "type": "VAEDecode",
@@ -56,7 +16,7 @@
         46
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -99,7 +59,7 @@
         270
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -129,13 +89,13 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 3
+          "link": 22
         },
         {
           "name": "text",
@@ -166,18 +126,179 @@
       ]
     },
     {
+      "id": 14,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -654.7364501953125,
+        281.50006103515625
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
+      "type": "ShowText",
+      "pos": [
+        423.6817932128906,
+        -78.40919494628906
+      ],
+      "size": [
+        315,
+        126
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "übersetzter Prompt",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "A ship, no wave in sight, scattered clouds, dolphins surrounding the ship. Irritatingly, a British telephone booth is visible on the ship.",
+        "A banner against a green background: \"This is a default prompt.\""
+      ]
+    },
+    {
+      "id": 11,
+      "type": "PrimitiveString",
+      "pos": [
+        -171,
+        -83
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 13,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -169.73638916015625,
+        88.31816864013672
+      ],
+      "size": [
+        491.4000244140625,
+        268
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "link": 16
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            17,
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "NULL=neutral",
+        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
       "id": 5,
       "type": "EmptyLatentImage",
       "pos": [
-        473,
-        609
+        963.9091796875,
+        621.2728881835938
       ],
       "size": [
         315,
         106
       ],
       "flags": {},
-      "order": 0,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -202,18 +323,58 @@
       ]
     },
     {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        406.63641357421875,
+        619.4548950195312
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ]
+    },
+    {
       "id": 3,
       "type": "KSampler",
       "pos": [
-        863,
-        186
+        894.3629760742188,
+        183.7272491455078
       ],
       "size": [
         315,
         262
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -253,7 +414,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        992739593509426,
+        1109386551471557,
         "randomize",
         20,
         7,
@@ -261,116 +422,6 @@
         "normal",
         1
       ]
-    },
-    {
-      "id": 14,
-      "type": "ai4artsed_openrouter_key",
-      "pos": [
-        -654.7364501953125,
-        281.50006103515625
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            18
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 12,
-      "type": "ShowText",
-      "pos": [
-        423.6817932128906,
-        -78.40919494628906
-      ],
-      "size": [
-        315,
-        112
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 19
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "übersetzter Prompt",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "A ship, no wave in sight, scattered clouds, dolphins surrounding the ship. Irritatingly, a British telephone booth is visible on the ship."
-      ]
-    },
-    {
-      "id": 11,
-      "type": "PrimitiveString",
-      "pos": [
-        -171,
-        -83
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            16
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 4,
@@ -400,10 +451,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "slot_index": 1,
-          "links": [
-            3,
-            5
-          ]
+          "links": []
         },
         {
           "name": "VAE",
@@ -424,62 +472,40 @@
       ]
     },
     {
-      "id": 13,
-      "type": "ai4artsed_openrouter",
+      "id": 15,
+      "type": "TripleCLIPLoader",
       "pos": [
-        -169.73638916015625,
-        88.31816864013672
+        -43.37272262573242,
+        703.3182373046875
       ],
       "size": [
-        491.4000244140625,
-        268
+        270,
+        106
       ],
       "flags": {},
       "order": 4,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "input_prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "input_prompt"
-          },
-          "link": 16
-        },
-        {
-          "name": "api_key",
-          "type": "STRING",
-          "widget": {
-            "name": "api_key"
-          },
-          "link": 18
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "name": "output",
-          "type": "STRING",
+          "name": "CLIP",
+          "type": "CLIP",
           "links": [
-            17,
-            19
+            21,
+            22
           ]
         }
       ],
       "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter"
+        "cnr_id": "comfy-core",
+        "ver": "0.3.38",
+        "Node name for S&R": "TripleCLIPLoader"
       },
       "widgets_values": [
-        "",
-        "NULL=neutral",
-        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
-        "",
-        "deepseek/deepseek-chat-v3-0324",
-        "enable"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
+        "clip_g.safetensors",
+        "clip_l.safetensors",
+        "t5xxl_enconly.safetensors"
+      ]
     }
   ],
   "links": [
@@ -500,28 +526,12 @@
       "LATENT"
     ],
     [
-      3,
-      4,
-      1,
-      6,
-      0,
-      "CLIP"
-    ],
-    [
       4,
       6,
       0,
       3,
       1,
       "CONDITIONING"
-    ],
-    [
-      5,
-      4,
-      1,
-      7,
-      0,
-      "CLIP"
     ],
     [
       6,
@@ -586,6 +596,22 @@
       12,
       0,
       "STRING"
+    ],
+    [
+      21,
+      15,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      22,
+      15,
+      0,
+      6,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [],
@@ -594,10 +620,11 @@
     "ds": {
       "scale": 1.1000000000000005,
       "offset": [
-        483.3727272727268,
-        136.68181818181765
+        566.5545454545435,
+        208.49999999999895
       ]
-    }
+    },
+    "frontendVersion": "1.20.7"
   },
   "version": 0.4
 }
