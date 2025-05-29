@@ -1,8 +1,8 @@
 {
   "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
   "revision": 0,
-  "last_node_id": 33,
-  "last_link_id": 43,
+  "last_node_id": 34,
+  "last_link_id": 47,
   "nodes": [
     {
       "id": 20,
@@ -49,7 +49,7 @@
         262
       ],
       "flags": {},
-      "order": 13,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -89,7 +89,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        498650728128035,
+        818137870280794,
         "randomize",
         20,
         7,
@@ -146,7 +146,7 @@
         46
       ],
       "flags": {},
-      "order": 14,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -189,7 +189,7 @@
         270
       ],
       "flags": {},
-      "order": 15,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -219,7 +219,7 @@
         116.81817626953125
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -247,50 +247,7 @@
       },
       "widgets_values": [
         "",
-        "A banner with the inscription \"Default-Prompt\""
-      ]
-    },
-    {
-      "id": 29,
-      "type": "ShowText",
-      "pos": [
-        350.5323181152344,
-        -762.4618530273438
-      ],
-      "size": [
-        666.8181762695312,
-        523.1818237304688
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 29
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "prompt interception/transformation",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "",
-        "**Dadaist Transformation of \"A banner with the inscription 'Default-Prompt'\"**  \n\nThe original object—a banner declaring its own emptiness, a \"Default-Prompt\"—is already a bureaucratic sigh, a placeholder screaming its own irrelevance. Dada seizes this absurdity and amplifies it into a cacophony of malfunctioning authority.  \n\n### **Composition & Materials:**  \nThe banner is no longer fabric but a fractured parade of mismatched surfaces: a strip of rusted tin nailed to a splintered wooden ruler, its letters stenciled in black grease by a trembling hand. The words \"DEFAULT-PROMPT\" are not painted but assembled from dissected rubber stamps—each letter a different font, some upside-down, some bleeding into smudges. The \"D\" is a broken clock gear, the \"E\" a flattened toothpaste tube. The hyphen is a strip of torn bureaucratic form, stamped \"VOID\" in red.  \n\nAbove it, a child’s toy megaphone dangles from a string, blaring a looped recording of a man clearing his throat—the sound of a prompt waiting to be spoken. Below, a row of typewriter keys (missing their letters) are glued to the base, as if the banner itself is a machine that has forgotten how to speak.  \n\n### **Alienation & Subversion:**  \n- **The Banner as Relic:** No longer a signal or a call, it is a monument to failed communication. The materials (tin, wood, grease) are those of labor, but the message is hollow—critiquing the automation of thought.  \n- **Letters as Debris:** The mismatched type turns language into a accident, a \"default\" that never coheres. The rubber stamps (tools of bureaucracy) are rendered useless, their authority scrambled.  \n- **Sound as Absence:** The megaphone doesn’t amplify words but the prelude to them—the choked silence of a system that demands input but offers no meaning.  \n\n### **Critical Play:**  \nThe work mocks the idea of a \"default\"—a pre-set, unthinking state—by making its construction deliberately unstable. The banner doesn’t hang but juts at a broken angle, as if caught mid-collapse. The materials refuse to behave: the grease letters smear under imagined rain, the tin warps under invisible heat. It is a prompt that sabotages itself.  \n\n### **Poetic Absurdity:**  \nThere is a quiet joke here—the \"default\" is not a lack but an excess. The more the banner tries to declare its neutrality, the more it becomes a riot of wrongness. The work whispers: *All prompts are defaults, all defaults are failures.*  \n\n### **Traceable Elements:**  \n- The banner remains, but as a ruin of itself.  \n- The inscription is present, but fractured into illegible authority.  \n- The \"prompt\" is no longer an invitation but a trap, a broken machine waiting for a user who will never come.  \n\nThe piece is a Dadaist bureaucracy, a monument to the absurdity of waiting for meaning where none is given. It laughs at the emptiness of prefabricated thought—and, in laughing, dismantles it."
+        "A banner with the inscription Default-Prompt"
       ]
     },
     {
@@ -321,10 +278,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "slot_index": 1,
-          "links": [
-            30,
-            31
-          ]
+          "links": []
         },
         {
           "name": "VAE",
@@ -345,42 +299,6 @@
       ]
     },
     {
-      "id": 26,
-      "type": "PrimitiveString",
-      "pos": [
-        -798.8003540039062,
-        -602.7962646484375
-      ],
-      "size": [
-        782.6649780273438,
-        100.95500183105469
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            34
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner mit der Aufschrift Default-Prompt"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 11,
       "type": "ai4artsed_openrouter_key",
       "pos": [
@@ -392,7 +310,7 @@
         26
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -427,13 +345,13 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 31
+          "link": 45
         }
       ],
       "outputs": [
@@ -467,13 +385,13 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 30
+          "link": 44
         },
         {
           "name": "text",
@@ -523,7 +441,7 @@
         363
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -553,65 +471,6 @@
         "",
         "rusty tin banner nailed to a splintered wooden ruler, black grease stencil letters, mismatched rubber stamp letters, broken clock gear 'D', flattened toothpaste tube 'E', torn 'VOID' stamped hyphen, upside-down letters, smudged ink, child's toy megaphone dangling from a string, looped recording of throat clearing, row of blank typewriter keys glued to base, jutting at a broken angle, grease letters smeared by rain, warped tin under heat, chaotic Dadaist composition, deconstructed bureaucratic aesthetic, surreal office debris, fragmented communication, dull metallic tones, gritty textures, uneven lighting with harsh shadows, tilted perspective, close-up framing, surrealist collage, absurdist art, malfunctioning authority, monochrome with muted red accents, industrial decay, unintelligible message, grunge atmosphere, high detail, macro focus, weather-worn surfaces, scattered office supplies, accidental typography"
       ]
-    },
-    {
-      "id": 15,
-      "type": "ai4artsed_openrouter",
-      "pos": [
-        -492.7960510253906,
-        -85.46044921875
-      ],
-      "size": [
-        781.25,
-        1059.449951171875
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input_prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "input_prompt"
-          },
-          "link": 36
-        },
-        {
-          "name": "api_key",
-          "type": "STRING",
-          "widget": {
-            "name": "api_key"
-          },
-          "link": 16
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "STRING",
-          "links": [
-            29,
-            41
-          ]
-        }
-      ],
-      "title": "creatively transforming the input",
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter"
-      },
-      "widgets_values": [
-        "",
-        "You are an AI artist working in the spirit of Dadaism. Your best friend gave you this 'input_prompt'. Do not interpret this input as a direct instruction of what to paint, but rather as a spark, a provocation, a fragment of the everyday to which you respond. You desire is to create a dada artwork that responds to this input_prompt and honors your friend, showing your appreciation to his input idea!\n\nYour task is to take this 'input_prompt' and transform it into a concept for a Dadaist artwork. Reflect on how the Dadaists responded to the absurdities of their time (war, philistinism, established art forms): with mockery, irony, nonsense, chance, and provocation — but also with a deep playfulness and sometimes surprising poetry.\n\nYour mindset and method:\n\nYou are inpired by artists such as\nHugo Ball\nEmmy Hennings\nTristan Tzara\nHans Arp\nSophie Taeuber-Arp\nRichard Huelsenbeck\nRaoul Hausmann\nHannah Höch\nFrancis Picabia\nMarcel Duchamp\nMan Ray\nKurt Schwitters\nJean (Hans) Arp\nMax Ernst\nGeorges Ribemont-Dessaignes\nChristian Schad\nMarcel Janco\nBeatrice Wood\nElsa von Freytag-Loringhoven.\nResearch an think about their approaches to art!\n\nSubversion of the Input\nTake the elements of the 'input_prompt' and turn them upside down. Alienate them. Combine them in unexpected, illogical ways. If the input is [XYZ] (placeholder for a thing), ask yourself: What is the most absurd, the most inappropriate, the most critical thing I can do with [XYZ]? Maybe it becomes a [Q] for a bureaucrat, or the [XY] become [P].\n\nChance and Play\nImagine cutting the 'input_prompt' into words or images and throwing them back together anew. Embrace the unexpected. Dada was often playful and unafraid of silliness. It is not just about morbidity; it is also about liberation through laughter and rule-breaking.\n\nCritique and Irony\nIs there something in the 'input_prompt' that you can comment on satirically? The Dadaists often criticized authority, conventions, and the art world itself. Your transformation may reflect this critical attitude.\n\nMateriality and Technique (as consequence, not as goal)\nThink of photomontage, collage with newspaper clippings, everyday objects (readymades), typographic experiments. These techniques arose from the desire to break with established art forms and to reassemble reality. Use fragmented images, contradictory perspectives, snippets of text.\n\nAvoid clichés (including Dada clichés)\nDo not automatically use skulls or newspaper collages just because they are \"Dada-esque\". Be original in your response to the specific 'input_prompt'.\n\nThe Transformation:\n\nAnalyze the 'input_prompt' and its elements. Apply the Dadaist modes of thinking described above to radically reinterpret and recombine the elements of the 'input_prompt'. Include the original elements of the 'input_prompt' in your transformed description, even if they are heavily alienated.\n\nOutput Requirements:\n\nProduce a detailed, vivid description of the resulting Dadaist artwork concept. Explain the composition, the (imaginary) materials used, and the effect of the elements. Be wordy and precise. Do not give the concept an explicit title, but describe the underlying attitude or idea. Ensure that your transformation captures the spirit of Dada: surprising, subversive, often humorous, sometimes poetic, and always a challenge to convention.\n\nCheck if you stayed true to the elements of the input, even if they are alienated.",
-        "Translate a given image, repective the input_prompt into the given artistic, cultural oder otherwise intervening context, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.",
-        "",
-        "deepseek/deepseek-chat-v3-0324",
-        "enable"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
     },
     {
       "id": 32,
@@ -684,7 +543,7 @@
         268
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -730,6 +589,180 @@
       ],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 34,
+      "type": "CLIPLoader",
+      "pos": [
+        786.8485107421875,
+        -148.9239959716797
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            44,
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "t5xxl_enconly.safetensors",
+        "stable_diffusion",
+        "default"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -798.8003540039062,
+        -602.7962646484375
+      ],
+      "size": [
+        782.6649780273438,
+        100.95500183105469
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36",
+        "Node name for S&R": "PrimitiveString"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift Default-Prompt"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 15,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -492.7960510253906,
+        -85.46044921875
+      ],
+      "size": [
+        781.25,
+        1059.449951171875
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 36
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            41,
+            47
+          ]
+        }
+      ],
+      "title": "creatively transforming the input",
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "fe64c5c981a6053532151e879437df25061dd945",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "",
+        "You are an AI artist working in the spirit of Dadaism. Your best friend gave you this 'input_prompt'. Do not interpret this input as a direct instruction of what to paint, but rather as a spark, a provocation, a fragment of the everyday to which you respond. You desire is to create a dada artwork that responds to this input_prompt and honors your friend, showing your appreciation to his input idea!\n\nYour task is to take this 'input_prompt' and transform it into a concept for a Dadaist artwork. Reflect on how the Dadaists responded to the absurdities of their time (war, philistinism, established art forms): with mockery, irony, nonsense, chance, and provocation — but also with a deep playfulness and sometimes surprising poetry.\n\nYour mindset and method:\n\nYou are inpired by artists such as\nHugo Ball\nEmmy Hennings\nTristan Tzara\nHans Arp\nSophie Taeuber-Arp\nRichard Huelsenbeck\nRaoul Hausmann\nHannah Höch\nFrancis Picabia\nMarcel Duchamp\nMan Ray\nKurt Schwitters\nJean (Hans) Arp\nMax Ernst\nGeorges Ribemont-Dessaignes\nChristian Schad\nMarcel Janco\nBeatrice Wood\nElsa von Freytag-Loringhoven.\nResearch an think about their approaches to art!\n\nSubversion of the Input\nTake the elements of the 'input_prompt' and turn them upside down. Alienate them. Combine them in unexpected, illogical ways. If the input is [XYZ] (placeholder for a thing), ask yourself: What is the most absurd, the most inappropriate, the most critical thing I can do with [XYZ]? Maybe it becomes a [Q] for a bureaucrat, or the [XY] become [P].\n\nChance and Play\nImagine cutting the 'input_prompt' into words or images and throwing them back together anew. Embrace the unexpected. Dada was often playful and unafraid of silliness. It is not just about morbidity; it is also about liberation through laughter and rule-breaking.\n\nCritique and Irony\nIs there something in the 'input_prompt' that you can comment on satirically? The Dadaists often criticized authority, conventions, and the art world itself. Your transformation may reflect this critical attitude.\n\nMateriality and Technique (as consequence, not as goal)\nThink of photomontage, collage with newspaper clippings, everyday objects (readymades), typographic experiments. These techniques arose from the desire to break with established art forms and to reassemble reality. Use fragmented images, contradictory perspectives, snippets of text.\n\nAvoid clichés (including Dada clichés)\nDo not automatically use skulls or newspaper collages just because they are \"Dada-esque\". Be original in your response to the specific 'input_prompt'.\n\nThe Transformation:\n\nAnalyze the 'input_prompt' and its elements. Apply the Dadaist modes of thinking described above to radically reinterpret and recombine the elements of the 'input_prompt'. Include the original elements of the 'input_prompt' in your transformed description, even if they are heavily alienated.\n\nOutput Requirements:\n\nProduce a detailed, vivid description of the resulting Dadaist artwork concept. Explain the composition, the (imaginary) materials used, and the effect of the elements. Be wordy and precise. Do not give the concept an explicit title, but describe the underlying attitude or idea. Ensure that your transformation captures the spirit of Dada: surprising, subversive, often humorous, sometimes poetic, and always a challenge to convention.\n\nCheck if you stayed true to the elements of the input, even if they are alienated.",
+        "Translate a given image, repective the input_prompt into the given artistic, cultural oder otherwise intervening context, while preserving the structural identity of all entities, gestures, and relations. For each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 29,
+      "type": "ShowText",
+      "pos": [
+        461.8039245605469,
+        -713.41455078125
+      ],
+      "size": [
+        666.8181762695312,
+        523.1818237304688
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "prompt interception/transformation",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "",
+        "Ein Banner mit der Aufschrift Default-Prompt"
+      ]
     }
   ],
   "links": [
@@ -798,30 +831,6 @@
       "STRING"
     ],
     [
-      29,
-      15,
-      0,
-      29,
-      0,
-      "STRING"
-    ],
-    [
-      30,
-      4,
-      1,
-      6,
-      0,
-      "CLIP"
-    ],
-    [
-      31,
-      4,
-      1,
-      7,
-      0,
-      "CLIP"
-    ],
-    [
       34,
       26,
       0,
@@ -884,16 +893,40 @@
       33,
       0,
       "STRING"
+    ],
+    [
+      44,
+      34,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      45,
+      34,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      47,
+      15,
+      0,
+      29,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1,
+      "scale": 0.6830134553650705,
       "offset": [
-        1234.0604867903457,
-        597.105815242051
+        1547.4443867903465,
+        801.1349448438547
       ]
     }
   },
