@@ -1,15 +1,15 @@
 {
-  "id": "b47129ab-1738-49f8-8311-b8d786b8a690",
+  "id": "e5d6db21-8bbe-485f-8090-b2a757d42468",
   "revision": 0,
-  "last_node_id": 15,
-  "last_link_id": 22,
+  "last_node_id": 58,
+  "last_link_id": 106,
   "nodes": [
     {
       "id": 8,
       "type": "VAEDecode",
       "pos": [
-        1209,
-        188
+        1200,
+        96
       ],
       "size": [
         210,
@@ -27,7 +27,7 @@
         {
           "name": "vae",
           "type": "VAE",
-          "link": 8
+          "link": 53
         }
       ],
       "outputs": [
@@ -36,13 +36,13 @@
           "type": "IMAGE",
           "slot_index": 0,
           "links": [
-            9
+            51
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.28",
+        "ver": "0.3.39",
         "Node name for S&R": "VAEDecode"
       },
       "widgets_values": []
@@ -51,12 +51,12 @@
       "id": 9,
       "type": "SaveImage",
       "pos": [
-        1451,
-        189
+        1440,
+        96
       ],
       "size": [
-        210,
-        270
+        952.510009765625,
+        1007.9299926757812
       ],
       "flags": {},
       "order": 11,
@@ -65,45 +65,37 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 9
+          "link": 51
         }
       ],
       "outputs": [],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.28"
+        "ver": "0.3.39"
       },
       "widgets_values": [
         "ComfyUI"
       ]
     },
     {
-      "id": 6,
+      "id": 40,
       "type": "CLIPTextEncode",
       "pos": [
-        415,
-        186
+        384,
+        336
       ],
       "size": [
-        422.84503173828125,
-        164.31304931640625
+        432,
+        192
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 22
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "widget": {
-            "name": "text"
-          },
-          "link": 17
+          "link": 102
         }
       ],
       "outputs": [
@@ -112,103 +104,35 @@
           "type": "CONDITIONING",
           "slot_index": 0,
           "links": [
-            4
+            80
           ]
         }
       ],
+      "title": "Negative Prompt",
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.28",
+        "ver": "0.3.39",
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "A banner: \"DEFAULT PROMPT ALERT\""
-      ]
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
-      "id": 14,
-      "type": "ai4artsed_openrouter_key",
+      "id": 53,
+      "type": "EmptySD3LatentImage",
       "pos": [
-        -654.7364501953125,
-        281.50006103515625
-      ],
-      "size": [
-        441,
-        26
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            18
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter_key"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 12,
-      "type": "ShowText",
-      "pos": [
-        423.6817932128906,
-        -78.40919494628906
-      ],
-      "size": [
-        315,
-        126
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 19
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "übersetzter Prompt",
-      "properties": {
-        "cnr_id": "comfyui-show-text",
-        "ver": "1.0.2",
-        "Node name for S&R": "ShowText"
-      },
-      "widgets_values": [
-        "A banner against a green background: \"This is a default prompt\".",
-        "A banner in front of a green background: \"This is a Default-Prompt\"."
-      ]
-    },
-    {
-      "id": 5,
-      "type": "EmptyLatentImage",
-      "pos": [
-        963.9091796875,
-        621.2728881835938
+        480,
+        576
       ],
       "size": [
         315,
         106
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -217,14 +141,14 @@
           "type": "LATENT",
           "slot_index": 0,
           "links": [
-            2
+            100
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "EmptyLatentImage"
+        "ver": "0.3.39",
+        "Node name for S&R": "EmptySD3LatentImage"
       },
       "widgets_values": [
         1024,
@@ -233,58 +157,18 @@
       ]
     },
     {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [
-        406.63641357421875,
-        619.4548950195312
-      ],
-      "size": [
-        425.27801513671875,
-        180.6060791015625
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 21
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "slot_index": 0,
-          "links": [
-            6
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.28",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "text, watermark"
-      ]
-    },
-    {
       "id": 4,
       "type": "CheckpointLoaderSimple",
       "pos": [
-        -25.818178176879883,
-        502.6364440917969
+        -48,
+        96
       ],
       "size": [
-        315,
+        384.760009765625,
         98
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -293,165 +177,42 @@
           "type": "MODEL",
           "slot_index": 0,
           "links": [
-            1
+            99
           ]
         },
         {
           "name": "CLIP",
           "type": "CLIP",
           "slot_index": 1,
-          "links": []
+          "links": [
+            101,
+            102
+          ]
         },
         {
           "name": "VAE",
           "type": "VAE",
           "slot_index": 2,
           "links": [
-            8
+            53
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.28",
+        "ver": "0.3.39",
         "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "sd3.5_large.safetensors"
-      ]
-    },
-    {
-      "id": 13,
-      "type": "ai4artsed_openrouter",
-      "pos": [
-        -169.73638916015625,
-        88.31816864013672
-      ],
-      "size": [
-        491.4000244140625,
-        268
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "input_prompt",
-          "type": "STRING",
-          "link": 16
-        },
-        {
-          "name": "api_key",
-          "type": "STRING",
-          "widget": {
-            "name": "api_key"
-          },
-          "link": 18
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "STRING",
-          "links": [
-            17,
-            19
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "joeriben/ai4artsed_comfyui",
-        "ver": "fe64c5c981a6053532151e879437df25061dd945",
-        "Node name for S&R": "ai4artsed_openrouter"
-      },
-      "widgets_values": [
-        "NULL=neutral",
-        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
-        "",
-        "deepseek/deepseek-chat-v3-0324",
-        "enable"
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 11,
-      "type": "PrimitiveString",
-      "pos": [
-        -488.72723388671875,
-        -92.54545593261719
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            16
-          ]
-        }
-      ],
-      "title": "ai4artsed_text_prompt",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.36",
-        "Node name for S&R": "PrimitiveString"
-      },
-      "widgets_values": [
-        "Ein Banner vor grünem Hintergund: \"Dies ist ein Default-Prompt\"."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 15,
-      "type": "TripleCLIPLoader",
-      "pos": [
-        -43.37272262573242,
-        703.3182373046875
-      ],
-      "size": [
-        270,
-        106
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            21,
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.38",
-        "Node name for S&R": "TripleCLIPLoader"
-      },
-      "widgets_values": [
-        "clip_l.safetensors",
-        "clip_g.safetensors",
-        "t5xxl_enconly.safetensors"
+        "sd3.5_large_fp8_scaled.safetensors"
       ]
     },
     {
       "id": 3,
       "type": "KSampler",
       "pos": [
-        864.3628540039062,
-        184.18179321289062
+        864,
+        96
       ],
       "size": [
         315,
@@ -464,22 +225,22 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 1
+          "link": 99
         },
         {
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 4
+          "link": 21
         },
         {
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 6
+          "link": 80
         },
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 2
+          "link": 100
         }
       ],
       "outputs": [
@@ -494,54 +255,251 @@
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.28",
+        "ver": "0.3.39",
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        722605039929195,
+        118930251034318,
         "randomize",
         20,
-        7,
+        4.01,
         "euler",
-        "normal",
+        "sgm_uniform",
         1
       ]
+    },
+    {
+      "id": 54,
+      "type": "MarkdownNote",
+      "pos": [
+        -45,
+        240
+      ],
+      "size": [
+        225,
+        88
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "🛈 [Learn more about this workflow](https://comfyanonymous.github.io/ComfyUI_examples/sd3/#sd35)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 55,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -1000.10595703125,
+        77.5252685546875
+      ],
+      "size": [
+        283.70001220703125,
+        26
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "ae1745d01695181553d9014ad501e74f3c6581dc",
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      }
+    },
+    {
+      "id": 57,
+      "type": "ShowText",
+      "pos": [
+        -995.816650390625,
+        680.656005859375
+      ],
+      "size": [
+        652.368408203125,
+        180.38597106933594
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 105
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Translated Prompt",
+      "properties": {
+        "cnr_id": "comfyui-show-text",
+        "ver": "1.0.2",
+        "Node name for S&R": "ShowText"
+      },
+      "widgets_values": [
+        "A billboard showing THIS WILL BE REPLACED BY YOUR PROMPT in green ink on gray. Billboard on the right side of a highway, meadows in the background."
+      ]
+    },
+    {
+      "id": 58,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1004.060302734375,
+        146.13766479492188
+      ],
+      "size": [
+        661.6217651367188,
+        194.94100952148438
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.38",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "a billboard showing THIS WILL BE REPLACED BY YOUR PROMPT in green ink on gray. billboard right side of a highway, meadonws in the background."
+      ]
+    },
+    {
+      "id": 56,
+      "type": "ai4artsed_openrouter",
+      "pos": [
+        -1007.35546875,
+        385.1026611328125
+      ],
+      "size": [
+        675.353271484375,
+        237.84950256347656
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_prompt",
+          "type": "STRING",
+          "link": 103
+        },
+        {
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 104
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "STRING",
+          "links": [
+            105,
+            106
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "ae1745d01695181553d9014ad501e74f3c6581dc",
+        "Node name for S&R": "ai4artsed_openrouter"
+      },
+      "widgets_values": [
+        "Input CONTEXT here",
+        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDO NOT COMMENT! DO NOT ASK ANY QUESTION. Do not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
+        "",
+        "deepseek/deepseek-chat-v3-0324",
+        "enable"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "CLIPTextEncode",
+      "pos": [
+        384,
+        96
+      ],
+      "size": [
+        432,
+        192
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 101
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 106
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a bottle with a pink and red galaxy inside it on top of a wooden table on a table in the middle of a modern kitchen with a window to the outdoors mountain range bright sun clouds forest"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
     [
-      1,
-      4,
-      0,
-      3,
-      0,
-      "MODEL"
-    ],
-    [
-      2,
-      5,
-      0,
-      3,
-      3,
-      "LATENT"
-    ],
-    [
-      4,
-      6,
-      0,
-      3,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      6,
-      7,
-      0,
-      3,
-      2,
-      "CONDITIONING"
-    ],
-    [
       7,
       3,
       0,
@@ -550,15 +508,15 @@
       "LATENT"
     ],
     [
-      8,
-      4,
-      2,
-      8,
+      21,
+      16,
+      0,
+      3,
       1,
-      "VAE"
+      "CONDITIONING"
     ],
     [
-      9,
+      51,
       8,
       0,
       9,
@@ -566,62 +524,108 @@
       "IMAGE"
     ],
     [
+      53,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      80,
+      40,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      99,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      100,
+      53,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      101,
+      4,
+      1,
       16,
-      11,
-      0,
-      13,
-      0,
-      "STRING"
-    ],
-    [
-      17,
-      13,
-      0,
-      6,
-      1,
-      "STRING"
-    ],
-    [
-      18,
-      14,
-      0,
-      13,
-      1,
-      "STRING"
-    ],
-    [
-      19,
-      13,
-      0,
-      12,
-      0,
-      "STRING"
-    ],
-    [
-      21,
-      15,
-      0,
-      7,
       0,
       "CLIP"
     ],
     [
-      22,
-      15,
-      0,
-      6,
+      102,
+      4,
+      1,
+      40,
       0,
       "CLIP"
+    ],
+    [
+      103,
+      58,
+      0,
+      56,
+      0,
+      "STRING"
+    ],
+    [
+      104,
+      55,
+      0,
+      56,
+      1,
+      "STRING"
+    ],
+    [
+      105,
+      56,
+      0,
+      57,
+      0,
+      "STRING"
+    ],
+    [
+      106,
+      56,
+      0,
+      16,
+      1,
+      "STRING"
     ]
   ],
-  "groups": [],
+  "groups": [
+    {
+      "id": 2,
+      "title": "AI4ArtsEd - Text Prompt Input + Translation (OpenRouter)",
+      "bounding": [
+        -1037.2100830078125,
+        -17.588247299194336,
+        725.5584106445312,
+        915.0331420898438
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1000000000000005,
+      "scale": 0.8564988730277987,
       "offset": [
-        454.7363636363614,
-        186.22727272727184
+        1088.9185964912272,
+        158.76281354211926
       ]
     },
     "frontendVersion": "1.20.7"
