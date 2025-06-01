@@ -1,0 +1,232 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 718349764225645,
+      "steps": 25,
+      "cfg": 7,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "OfficialStableDiffusion/sd3.5_large_fp8_scaled.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Choose your model (or leave the preset)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "41",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "41": {
+    "inputs": {
+      "input_context": [
+        "59",
+        0
+      ],
+      "style_prompt": "YOUR OUTPUT WILL BE NOT MORE THAN 75 CLIP-Tokens, THAT IS ROUGHLY 60 WORDS. IF YOUR OUTPUT IS LONGER; SHORTEN YOUR OUTPUT!\n\nNO META-COMMENTS IN THE OUTPUT, NO META-REMARKS ABOUT THE OUTPUT!\n\n1) Transform the image description according to the contextual input. Make sure the result maintains a traceable relation to the input, however transformed.  Make very sure it does not serve shallow understandings or mere clichees, unless these are part of the input already and intended as such.\n\n2) Restructure the result by reordering for CLIP models that strongly weight early tokens and truncate at 75 tokens.\nCLIP-Specific Rules\nAbsolute token limit: 75 (recommended ≤70)\nEarly tokens = critical: The first 20–30 tokens largely determine the image\nClear, direct terms: CLIP prefers concrete nouns and simple adjectives\nDo not alter the input text – no substitutions, paraphrasing, or lexical replacements allowed\nCLIP Dimensions and Token Budget\n1) Core Motif (15–20 tokens, 25–30%):\\nPlace the main subject FIRST\\nUse the exact wording provided in the original prompt\n2) Action (10–15 tokens, 15–20%):\\nFollows the subject directly for strong subject-action linkage\\nPrefer simple verb phrases; maintain exact original wording\n3) Context (10–15 tokens, 15–20%):\\nLocation or setting, compressed\\nReorder only; do not paraphrase\n4) Attributes (5–10 tokens, 10–15%):\\nMinimize; include only if essential\\nNo changes to wording – do not replace or reformulate\n5) Style/Medium (10–15 tokens, 15–20%):\\nPlace early in the prompt for maximum impact on CLIP\\nTypical examples: “oil painting”, “photography”, “3D render”\\nUse only if present in the original prompt\n6) Technical Aspects (0–5 tokens, 0–7%):\\nInclude only if tokens remain and if originally present\\n\\nCLIP Editing Procedure\\n\\nAnalyze each part of the original prompt\\nPrioritize clear, image-defining elements (subject, action, style)\\nCompress by removing redundancies (not rewording)\nCheck CLIPtoken count (must be ≤75)",
+      "api_key": [
+        "47",
+        0
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324",
+      "debug": "enable",
+      "input_prompt": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ai4artsed_openrouter",
+    "_meta": {
+      "title": "transformed prompt"
+    }
+  },
+  "43": {
+    "inputs": {
+      "instruction": "Describe the image.\nṢif aṣ-ṣūra.\n\nIdentify its likely cultural context.\nḤaddid as-siyāq ath-thaqāfī al-muḥtamal lahā.\n\nEnrich your description with analyses of the cultural constellations and meanings, the relationships, values, and emotions the image expresses.\nAthri waṣfaka bitaḥlīlāt li-takawwunāt wa-maʿānī thaqāfiyya, wa-l-ʿalāqāt wa-l-qiyam wa-l-mashāʿir allatī tuʿabbiru ʿanhā aṣ-ṣūra.\n\nAlso, explore “meaning” in a more abstract way: what do the depicted elements, actions, or relationships suggest within their specific cultural context?\nKaḏālik, istakshif al-ʿ\"maʿnā\" bi-ṭarīqa akthar tajrīdًا: mā alladhī tūḥī bihī al-ʿanāṣir aw al-afʿāl aw al-ʿalāqāt al-muṣawwara fī siyāqihā ath-thaqāfī al-khāṣṣ?",
+      "api_key": [
+        "47",
+        0
+      ],
+      "model": "openai/gpt-4o",
+      "max_tokens": 1024,
+      "temperature": 0.7,
+      "images": [
+        "56",
+        0
+      ]
+    },
+    "class_type": "ai4artsed_openrouter_imageanalysis",
+    "_meta": {
+      "title": "AI4ArtsEd OpenRouter Image Analysis"
+    }
+  },
+  "47": {
+    "inputs": {},
+    "class_type": "ai4artsed_openrouter_key",
+    "_meta": {
+      "title": "Secure Access to OpenRouter API Key"
+    }
+  },
+  "50": {
+    "inputs": {
+      "input_context": "NULL",
+      "style_prompt": "Translate the prompt into English with maximal semantic preservation. \\nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \\nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \\nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \\nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\\nReturn only the translated prompt as plain text.",
+      "api_key": [
+        "47",
+        0
+      ],
+      "model": "deepseek/deepseek-chat-v3-0324",
+      "debug": "enable",
+      "input_prompt": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "ai4artsed_openrouter",
+    "_meta": {
+      "title": "english translation"
+    }
+  },
+  "52": {
+    "inputs": {
+      "value": "Ein Schild mit der Aufschrift DAS IST KEIN PROMPT!"
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "ai4artsed_text_prompt"
+    }
+  },
+  "56": {
+    "inputs": {
+      "image": "ComfyUI_00029_.png [output]",
+      "refresh": "refresh"
+    },
+    "class_type": "LoadImageOutput",
+    "_meta": {
+      "title": "Load Image (from Outputs)"
+    }
+  },
+  "57": {
+    "inputs": {
+      "text": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "ShowText",
+    "_meta": {
+      "title": "transformed prompt"
+    }
+  },
+  "58": {
+    "inputs": {
+      "text": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ShowText",
+    "_meta": {
+      "title": "english translation"
+    }
+  },
+  "59": {
+    "inputs": {
+      "value": "Targeted Aesthetic Characteristics for Transforming an Image in the Style of Islamic Art\n\nI. Ontological and Semiotic Structure\n\n    Non-Mimetic Representation\n    Eschew visual strategies that suggest optical realism or spatial naturalism. Forms should function as signs or inscriptions (āyāt), not as imitative representations. This applies especially to sacred, ornamental, or cosmological contexts, where depiction does not seek to mirror the external world but to evoke layers of meaning.\n\n    Symbolic Embeddedness\n    Each element must visually and conceptually participate in a broader symbolic, metaphysical, or ornamental matrix. Forms should not appear isolated or compositionally autonomous. This reflects the historical integration of aesthetics with theological, philosophical, and cosmological frameworks in many (though not all) Islamic visual cultures.\n\nII. Spatial Logic and Compositional Strategies\n\n    Decentralization of Vision\n    Avoid the logic of monocular central perspective or a singular visual anchor. Compositions often employ modular repetition, bilateral or radial symmetry, or rhizomatic dispersal—visual strategies that imply spatial continuity beyond the frame, rather than convergence toward a pictorial vanishing point.\n\n    Surface Emphasis and Anti-Illusionism\n    Depth is not constructed via perspectival projection or shading but—where present—through planar layering or density of detail. Surfaces are treated as fields of inscription or invocation, not windows into a fictive space.\n\n    Pattern Repetition and Visual Continuity\n    Repeating ornamental elements—especially in geometric or vegetal idioms—establish rhythms of visual recurrence that signal continuity, not progression. This rhythm often replaces narrative temporality with ritual or cosmological duration.\n\nIII. Formal-Aesthetic Elements\n\n    Geometry\n    Use of mathematically precise structures based on:\n\n        Recursive circularity and rotational symmetry\n\n        Quaternary, hexagonal, or octagonal frameworks\n\n        Tessellation (tiling) with non-hierarchical modularity\n\n        Recursive or fractal-like generation of nested forms\n\n    Geometry here is not merely decorative but encodes epistemic, cosmological, and spiritual orders—though its interpretation varies across historical contexts (e.g., Andalusian, Timurid, Safavid).\n\n    Vegetal Ornament (Arabesque)\n    Incorporate stylized, non-naturalistic plant forms in continuous, non-terminating movement. Arabesques are not depictions of flora, but visual enactments of non-finitude, divine overflow (baraka), or metaphysical life. Avoid mimetic detail; emphasize rhythm, stylization, and interlacing.\n\n    Arabic Calligraphy\n    When applicable, integrate Arabic script not merely as textual content, but as an architectural or ornamental element within the composition. Calligraphy—especially in its cursive and geometric variants—should be structurally interwoven, often following the rhythm of the pattern or form rather than occupying a separate layer.\n\nIV. Representation of the Human and the Living\n\n    Avoid Figuration in Sacred or Contemplative Contexts\n    In religious or metaphysical domains (e.g., Qur'anic, mihrab, meditative), omit depictions of humans or animals. Instead, indicate presence through geometry, light, symbolic inscriptions, or abstract forms. This principle reflects theological and juridical considerations—but is interpreted diversely across time and region.\n\n    Contextual Figuration in Literary or Courtly Imagery\n    Where figuration is historically attested (e.g., Persianate manuscript painting):\n\n        Employ stylized, non-naturalistic bodily forms and flattened space.\n\n        Avoid anatomical realism, chiaroscuro, or emotive theatricality.\n\n        Faces may be veiled, abstracted, or replaced by luminous or symbolic elements.\n\n        Embed figures into richly articulated architectural, vegetal, or decorative space—never as autonomous subjects.\n\nV. Chromatic Logic and Material Simulation\n\n    Color Harmony\n    Use historically resonant and harmonically calibrated palettes:\n\n        Lapis blue, turquoise, gold leaf, crimson, verdigris, ivory, ochre\n\n        Avoid photorealistic light or atmospheric gradients; color defines contour, rhythm, and surface articulation, not light behavior.\n\n    Surface Materiality\n    Textures should evoke historically grounded materials:\n\n        Glazed tile\n\n        Gilded parchment or paper\n\n        Burnished pigments\n\n        Ink and gold on vellum or ceramic\n        Avoid photographic realism or digital artefacts (e.g. lens blur, noise).\n\nVI. Temporality and Aesthetic Narrative\n\n    Atemporal Display\n    Visual temporality should avoid \"captured moments\" or implicit story arcs. Instead, suggest sacred or cyclical time—ritual, celestial, or metaphysical.\n\n    Symbolic Narrativity\n    Where historical or literary narratives are rendered (e.g., Shahnama, Maqamat al-Hariri), prefer symbolic condensation over dramatic realism. Events unfold as emblematic constellations, not sequential episodes.\n\nVII. Philosophical-Aesthetic Ethos\n\n    Modesty and Ethical Form\n    Avoid aesthetic gestures of excess: violence, sentimentality, or self-aggrandizement. Beauty is disciplined, generative, and directed beyond the ego. Ornament is not display but invocation.\n\n    Anti-Individualism without Anonymity\n    Reduce emphasis on psychological portraiture or named individuality. Figures—where present—stand for types, roles, or stations (maqāmāt), not idiosyncratic subjects. Yet this does not erase expressive presence—it reframes it within ethical and cosmological orders.\n\nCoda: Intentionality and Sincerity\n\nDespite the stylization and abstraction, visual meaning must remain sincere and resonant. Islamic visual cultures, across their diversity, are marked by a deep ethic of hospitality, attentiveness, and generative care—not detachment or indifference."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "Cultural/artistic context"
+    }
+  }
+}
