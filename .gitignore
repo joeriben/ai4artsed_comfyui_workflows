@@ -49,3 +49,7 @@ in_progress/
 broken/
 obsolete/
 
+# Workflow files - only allow ai4artsed workflows
+*.json
+!ai4artsed*.json
+!README.md
