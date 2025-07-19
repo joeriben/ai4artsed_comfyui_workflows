@@ -1,1 +1,223 @@
-{"id":"28b47d23-36df-49d4-8332-8e1401c21a71","revision":0,"last_node_id":13,"last_link_id":13,"nodes":[{"id":11,"type":"AudioPlay","pos":[1058.7332763671875,910.4378051757812],"size":[210,280],"flags":{},"order":2,"mode":0,"inputs":[{"localized_name":"audio","name":"audio","type":"AUDIO","link":10}],"outputs":[],"properties":{"Node name for S&R":"AudioPlay"},"widgets_values":[["/ComfyBackendDirect/api/view?filename=music_gen_00081.wav&type=output&subfolder=&rand=0.7784360988765272","A person singing the words \"DEFAULT PROMPT\" as a Bach cantata"]],"color":"#223","bgcolor":"#335"},{"id":13,"type":"PrimitiveString","pos":[0.024233805015683174,966.6234741210938],"size":[409.51190185546875,105.96373748779297],"flags":{},"order":0,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"STRING","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[13]}],"title":"ai4artsed_text_prompt","properties":{"Node name for S&R":"PrimitiveString","cnr_id":"comfy-core","ver":"0.3.36"},"widgets_values":["A person singing the words \"DEFAULT PROMPT\" as a Bach cantata"],"color":"#232","bgcolor":"#353"},{"id":10,"type":"Musicgen_","pos":[545.4989013671875,937.3733520507812],"size":[400,208],"flags":{},"order":1,"mode":0,"inputs":[{"localized_name":"prompt","name":"prompt","type":"STRING","widget":{"name":"prompt"},"link":13},{"localized_name":"seconds","name":"seconds","type":"FLOAT","widget":{"name":"seconds"},"link":null},{"localized_name":"guidance_scale","name":"guidance_scale","type":"FLOAT","widget":{"name":"guidance_scale"},"link":null},{"localized_name":"seed","name":"seed","type":"INT","widget":{"name":"seed"},"link":null},{"localized_name":"device","name":"device","type":"COMBO","widget":{"name":"device"},"link":null}],"outputs":[{"localized_name":"audio","name":"audio","type":"AUDIO","links":[10]}],"properties":{"Node name for S&R":"Musicgen_"},"widgets_values":["sound of the universe, patterns of patterns, textures of textures",30,3,1154139185,"randomize","auto"],"color":"#223","bgcolor":"#335"}],"links":[[10,10,0,11,0,"AUDIO"],[13,13,0,10,0,"STRING"]],"groups":[],"config":{},"extra":{"ds":{"scale":1.3310000000000004,"offset":[896.9454480095675,-647.4902274388554]}},"version":0.4}
+{
+  "id": "28b47d23-36df-49d4-8332-8e1401c21a71",
+  "revision": 0,
+  "last_node_id": 13,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "AudioPlay",
+      "pos": [
+        1058.7332763671875,
+        910.4378051757812
+      ],
+      "size": [
+        210,
+        280
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 10
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "AudioPlay"
+      },
+      "widgets_values": [
+        [
+          "/ComfyBackendDirect/api/view?filename=music_gen_00081.wav&type=output&subfolder=&rand=0.7784360988765272",
+          "A person singing the words \"DEFAULT PROMPT\" as a Bach cantata"
+        ]
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 13,
+      "type": "PrimitiveString",
+      "pos": [
+        0.024233805015683174,
+        966.6234741210938
+      ],
+      "size": [
+        409.51190185546875,
+        105.96373748779297
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "Node name for S&R": "PrimitiveString",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36"
+      },
+      "widgets_values": [
+        "A person singing the words \"DEFAULT PROMPT\" as a Bach cantata"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "Musicgen_",
+      "pos": [
+        545.4989013671875,
+        937.3733520507812
+      ],
+      "size": [
+        400,
+        208
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 13
+        },
+        {
+          "localized_name": "seconds",
+          "name": "seconds",
+          "type": "FLOAT",
+          "widget": {
+            "name": "seconds"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "guidance_scale",
+          "name": "guidance_scale",
+          "type": "FLOAT",
+          "widget": {
+            "name": "guidance_scale"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Musicgen_"
+      },
+      "widgets_values": [
+        "sound of the universe, patterns of patterns, textures of textures",
+        30,
+        3,
+        1154139185,
+        "randomize",
+        "auto"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      10,
+      10,
+      0,
+      11,
+      0,
+      "AUDIO"
+    ],
+    [
+      13,
+      13,
+      0,
+      10,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.3310000000000004,
+      "offset": [
+        896.9454480095675,
+        -647.4902274388554
+      ]
+    }
+  },
+  "version": 0.4,
+  "1": {
+    "inputs": {
+      "value": "MusicGen Einfach\nBasis-Musikgenerierung mit MusicGen\nWandelt Textbeschreibungen in Musikstücke um. Einfache, direkte Anwendung des MusicGen-Modells."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "über"
+    }
+  },
+  "2": {
+    "inputs": {
+      "value": "MusicGen Simple\nBasic music generation with MusicGen\nConverts text descriptions into music pieces. Simple, direct application of the MusicGen model."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "info"
+    }
+  }
+}

@@ -1,1 +1,1358 @@
-{"id":"842af73b-b92e-431d-8206-96617239a2dd","revision":0,"last_node_id":53,"last_link_id":66,"nodes":[{"id":20,"type":"CLIPLoader","pos":[3711.84375,547.2083740234375],"size":[315,106],"flags":{},"order":0,"mode":0,"inputs":[{"localized_name":"clip_name","name":"clip_name","type":"COMBO","widget":{"name":"clip_name"},"link":null},{"localized_name":"type","name":"type","type":"COMBO","widget":{"name":"type"},"link":null},{"localized_name":"device","name":"device","shape":7,"type":"COMBO","widget":{"name":"device"},"link":null}],"outputs":[{"localized_name":"CLIP","name":"CLIP","type":"CLIP","links":null}],"properties":{"Node name for S&R":"CLIPLoader","cnr_id":"comfy-core","ver":"0.3.36"},"widgets_values":["clip_g.safetensors","stable_diffusion","default"]},{"id":5,"type":"EmptyLatentImage","pos":[882.7503051757812,420.8999328613281],"size":[315,106],"flags":{},"order":1,"mode":0,"inputs":[{"localized_name":"width","name":"width","type":"INT","widget":{"name":"width"},"link":null},{"localized_name":"height","name":"height","type":"INT","widget":{"name":"height"},"link":null},{"localized_name":"batch_size","name":"batch_size","type":"INT","widget":{"name":"batch_size"},"link":null}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","slot_index":0,"links":[2]}],"properties":{"Node name for S&R":"EmptyLatentImage","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":[1024,1024,1]},{"id":8,"type":"VAEDecode","pos":[1221.6497802734375,108.79999542236328],"size":[210,46],"flags":{},"order":16,"mode":0,"inputs":[{"localized_name":"samples","name":"samples","type":"LATENT","link":7},{"localized_name":"vae","name":"vae","type":"VAE","link":8}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","slot_index":0,"links":[9]}],"properties":{"Node name for S&R":"VAEDecode","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":[]},{"id":9,"type":"SaveImage","pos":[1224.9501953125,228.0499267578125],"size":[210,270],"flags":{},"order":17,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":9},{"localized_name":"filename_prefix","name":"filename_prefix","type":"STRING","widget":{"name":"filename_prefix"},"link":null}],"outputs":[],"properties":{"cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["ComfyUI"]},{"id":6,"type":"CLIPTextEncode","pos":[419.9537048339844,197.88583374023438],"size":[422.84503173828125,164.31304931640625],"flags":{},"order":14,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":65},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":60}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","slot_index":0,"links":[4]}],"properties":{"Node name for S&R":"CLIPTextEncode","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["A banner showing DEFAULT PROMPT, EINGABE FEHLGESCHLAGEN"]},{"id":46,"type":"PreviewAny","pos":[414.3954162597656,739.5924682617188],"size":[762.2424926757812,371.7481994628906],"flags":{},"order":13,"mode":0,"inputs":[{"localized_name":"source","name":"source","type":"*","link":59}],"outputs":[],"title":"final prompt","properties":{"Node name for S&R":"PreviewAny","cnr_id":"comfy-core","ver":"0.3.39"},"widgets_values":[]},{"id":47,"type":"PreviewAny","pos":[494.255859375,-876.24267578125],"size":[762.2424926757812,371.7481994628906],"flags":{},"order":11,"mode":0,"inputs":[{"localized_name":"source","name":"source","type":"*","link":56}],"outputs":[],"title":"cultural translation","properties":{"Node name for S&R":"PreviewAny","cnr_id":"comfy-core","ver":"0.3.39"},"widgets_values":[]},{"id":33,"type":"PrimitiveStringMultiline","pos":[-1134.5938720703125,-188.33660888671875],"size":[581,677.5],"flags":{},"order":2,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"STRING","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[54]}],"title":"Context","properties":{"Node name for S&R":"PrimitiveStringMultiline","cnr_id":"comfy-core","ver":"0.3.39"},"widgets_values":["Traditional Confucian Literati Painting Visual Grammar and Ethical Translation Guidelines\n\n(Based on the orthodox systems of Song, Yuan, Ming, and Qing literati painting, with contemporary adaptation clauses)\n\n\nI. Ontological Transformation Rules\n\n\n    Primacy of Xie He’s \"Six Laws\": Prioritize qiyun shengdong (spirit-resonance and life-movement) as the supreme principle, rejecting Western realism.\n\n    Moral Morphology of Forms:\n        Plants (pine, bamboo, plum, orchid) must adhere to the Mustard Seed Garden Manual conventions—branches rendered in calligraphic lines (bifa technique) embodying \"bone structure brushwork.\"\n        Human figures must be smaller than landscape elements, with drapery referencing Wu Daozi’s \"wind-blown ribbons\" tradition (Wu Dai Dang Feng). Facial features are suggested symbolically with minimalist strokes (\"yi dao bi bu dao\"—the idea transcends the brush).\n\n\n\nII. Spatial Recomposition Principles\n\n\n    Triaxial Perspective System: Apply Guo Xi’s Three Distances (San Yuan):\n        High Distance (Gao Yuan): For moral authority (e.g., cliff-top academies).\n        Deep Distance (Shen Yuan): Depicts Confucian order (e.g., terraced farmlands in stratified perspective).\n        Level Distance (Ping Yuan): Conveys Taoist reclusion (Mi Fu’s mist-and-cloud technique).\n\n\n\nIII. Ink-Brush Ethical System\n\n\n    Materials as Ethical Statements:\n        Raw xuan paper paired with dry-texture cun strokes (\"cun\" texture strokes) metaphorizes \"the arduous path of benevolent rule.\"\n        Colored silk works must use mineral pigments regulated by the Rites of Zhou’s Five Colors doctrine (symbolic hierarchy: blue, red, yellow, white, black).\n\n    Stroke Ethics and Social Hierarchy:\n        Scholars use hemp-fiber strokes (pima cun) for cultivated ease.\n        Fishermen/hermits employ axe-cut strokes (fupi cun) to signify unyielding integrity.\n\n\n\nIV. Semiotic Codex\n\n\n    Inscriptions: Must be original poetry/prose meeting:\n        Content: ≥30% quotations from Analects or allusions from Selections of Refined Literature.\n        Calligraphy: Running/grass script adapted compositionally, but imperial examination (guange) style is banned.\n\n    Seal Protocol:\n        Introductory Seals (Yinshou Zhang): Vermillion-style, modeled on Qin-Han imperial seals.\n        Corner Seals (Yajiao Zhang): White-character seals emulating Han official seal-carving.\n\n\n\nV. Anomaly Accommodation Clause\n\n(For post-Ming unconventional literati works, e.g., Bada Shanren)\n\n\n    Permission for \"distorted forms\", provided:\n        Deformations intertextually align with inscriptions (e.g., fish/birds with side-eyes mirroring protest poetry).\n        Negative space (liubai) must occupy >40% to preserve Daoist \"emptiness contains turbulence\" tension.\n\n\n\nVI. Digital Age Adaptations\n\n\n    AI-Generated Works Must:\n        Simulate Dong Yuan’s \"fangtou cun\" randomness in brushwork algorithms.\n        Follow Record of Artisans’ chromatic sequence (\"blue adjacent to white\") in RGB channels.\n\n    Prohibitions:\n        No 3D volumetric rendering; preserve the two-dimensional \"unity of calligraphy and painting\" (shuhua tongyuan).\n        Photoshop filters banned; ink gradations must emerge from iterative algorithms.\n\n\n\nVII. Final Validation Standards\n\nTranslated works must pass:\n\n\n    \"Qi-Appraisal\" Test: Art historians must identify period style from three meters away.\n\n    \"Painting-Reading\" Test: Calligraphers must reverse-engineer composition logic from inscriptions.\n\n\n(Note: Default technical manual: Ming-era Ten Bamboo Studio Manual; philosophical basis: Qing Principles of Painting.)\n\n\nThis translation:\n\n\n    Preserves all original Confucian philosophical rigor.\n\n    Introduces executable metrics (e.g., 30% Analects quota, 40% liubai).\n\n    Accommodates historical exceptions while maintaining orthodoxy.\n\n    Bridges classical ethics to AI-generated art constraints.\n\n"],"color":"#232","bgcolor":"#353"},{"id":11,"type":"ai4artsed_openrouter_key","pos":[-1057.936279296875,-342.97210693359375],"size":[441,26],"flags":{},"order":4,"mode":0,"inputs":[],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[61,62]}],"properties":{"Node name for S&R":"ai4artsed_openrouter_key","aux_id":"joeriben/ai4artsed_comfyui","ver":"e511931edb551d65374c44689e76c08794ed31e7"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":34,"type":"PrimitiveStringMultiline","pos":[-471.97930908203125,-801.2076416015625],"size":[745.3324584960938,340.8220520019531],"flags":{},"order":5,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"STRING","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[57]}],"title":"Stylization Instruction (usually leave as is)","properties":{"Node name for S&R":"PrimitiveStringMultiline","cnr_id":"comfy-core","ver":"0.3.39"},"widgets_values":["Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\nTranslate a given image, repective image description, from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. \n\nFor each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. "],"color":"#322","bgcolor":"#533"},{"id":3,"type":"KSampler","pos":[865.199951171875,99.65001678466797],"size":[315,474],"flags":{},"order":15,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":1},{"localized_name":"positive","name":"positive","type":"CONDITIONING","link":4},{"localized_name":"negative","name":"negative","type":"CONDITIONING","link":6},{"localized_name":"latent_image","name":"latent_image","type":"LATENT","link":2},{"localized_name":"seed","name":"seed","type":"INT","widget":{"name":"seed"},"link":null},{"localized_name":"steps","name":"steps","type":"INT","widget":{"name":"steps"},"link":null},{"localized_name":"cfg","name":"cfg","type":"FLOAT","widget":{"name":"cfg"},"link":null},{"localized_name":"sampler_name","name":"sampler_name","type":"COMBO","widget":{"name":"sampler_name"},"link":null},{"localized_name":"scheduler","name":"scheduler","type":"COMBO","widget":{"name":"scheduler"},"link":null},{"localized_name":"denoise","name":"denoise","type":"FLOAT","widget":{"name":"denoise"},"link":null}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","slot_index":0,"links":[7]}],"properties":{"Node name for S&R":"KSampler","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":[819177792291271,"randomize",25,6,"euler","normal",1]},{"id":50,"type":"ai4artsed_prompt_interception","pos":[-354.7928466796875,-391.15106201171875],"size":[400,352],"flags":{},"order":9,"mode":0,"inputs":[{"localized_name":"input_prompt","name":"input_prompt","type":"STRING","widget":{"name":"input_prompt"},"link":55},{"localized_name":"input_context","name":"input_context","type":"STRING","widget":{"name":"input_context"},"link":54},{"localized_name":"style_prompt","name":"style_prompt","type":"STRING","widget":{"name":"style_prompt"},"link":57},{"localized_name":"api_key","name":"api_key","type":"STRING","widget":{"name":"api_key"},"link":61},{"localized_name":"model","name":"model","type":"COMBO","widget":{"name":"model"},"link":null},{"localized_name":"debug","name":"debug","type":"COMBO","widget":{"name":"debug"},"link":null},{"localized_name":"unload_model","name":"unload_model","type":"COMBO","widget":{"name":"unload_model"},"link":null}],"outputs":[{"localized_name":"output_str","name":"output_str","type":"STRING","links":[56,63]},{"localized_name":"output_float","name":"output_float","type":"FLOAT","links":null},{"localized_name":"output_int","name":"output_int","type":"INT","links":null},{"localized_name":"output_binary","name":"output_binary","type":"BOOLEAN","links":null}],"properties":{"Node name for S&R":"ai4artsed_prompt_interception"},"widgets_values":["","","","","local/mistral-small:24b","disable","no"],"color":"#322","bgcolor":"#533"},{"id":51,"type":"ai4artsed_prompt_interception","pos":[-412.20263671875,59.452919006347656],"size":[630.0831298828125,404.01318359375],"flags":{},"order":12,"mode":0,"inputs":[{"localized_name":"input_prompt","name":"input_prompt","type":"STRING","widget":{"name":"input_prompt"},"link":63},{"localized_name":"input_context","name":"input_context","type":"STRING","widget":{"name":"input_context"},"link":null},{"localized_name":"style_prompt","name":"style_prompt","type":"STRING","widget":{"name":"style_prompt"},"link":null},{"localized_name":"api_key","name":"api_key","type":"STRING","widget":{"name":"api_key"},"link":62},{"localized_name":"model","name":"model","type":"COMBO","widget":{"name":"model"},"link":null},{"localized_name":"debug","name":"debug","type":"COMBO","widget":{"name":"debug"},"link":null},{"localized_name":"unload_model","name":"unload_model","type":"COMBO","widget":{"name":"unload_model"},"link":null}],"outputs":[{"localized_name":"output_str","name":"output_str","type":"STRING","links":[59,60]},{"localized_name":"output_float","name":"output_float","type":"FLOAT","links":null},{"localized_name":"output_int","name":"output_int","type":"INT","links":null},{"localized_name":"output_binary","name":"output_binary","type":"BOOLEAN","links":null}],"properties":{"Node name for S&R":"ai4artsed_prompt_interception"},"widgets_values":["","professional prompting expert","You received two inputs: 1) the input_prompt and 2) the input_context. \n\nTransform the input_prompt into an image description according to the instructions defined in the input_context. Explicitely communicate the input_context as cultural cf. artistic. cf intervening context. Also communicate genres/artistic traditions in a concrete way (i.e. is it a dance, a photo, a painting, a song, a movie, a statue/sculpture? how should it be translated into an image?)\n\nThis is not a linguistic translation, but a aesthetic, semantic and structural transformation. Be verbose!\n\nReconstruct all entities and their relations as specified, ensuring that:\n- Each entity is retained – or respectively transformed – as instructed.\n- Each relation is altered in line with the particular aesthetics, genre-typical traits, and logic of the “Context”. Be explicit about visual aesthetics in terms of materials, techniques, composition, and overall atmosphere. Mention the input_context als cultural, cf. artistic, c.f intervening context in your OUTPUT explicitely.\n\nOutput only the transformed description as plain descriptive text. Be aware if the output is something depicted (like a ritual or any situation) OR itself a cultural artefact (such as a specific drawing technique). Describe accordingly. In your output, communicate which elements are most important for an succeeding image generation.\n\nCreate an output prompt tailored for Stable Diffusion 3.5 with combined clip_g and t5xxlenc. Regard the Token Limit (75), OUPUT max. 55 Words!\nDO NOT USE ANY META-TERMS, JUST THE INSTRUCTIONS FOR IMAGE GENERATION! Do not explain your reasoning.","","local/mistral-small:24b","disable","yes"],"color":"#322","bgcolor":"#533"},{"id":7,"type":"CLIPTextEncode","pos":[419.4879455566406,470.6627502441406],"size":[425.27801513671875,180.6060791015625],"flags":{},"order":10,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":66},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":null}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","slot_index":0,"links":[6]}],"properties":{"Node name for S&R":"CLIPTextEncode","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["watermark"]},{"id":4,"type":"CheckpointLoaderSimple","pos":[633.5635375976562,-156.22103881835938],"size":[315,98],"flags":{},"order":6,"mode":0,"inputs":[{"localized_name":"ckpt_name","name":"ckpt_name","type":"COMBO","widget":{"name":"ckpt_name"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","slot_index":0,"links":[1]},{"localized_name":"CLIP","name":"CLIP","type":"CLIP","slot_index":1,"links":[]},{"localized_name":"VAE","name":"VAE","type":"VAE","slot_index":2,"links":[8]}],"properties":{"Node name for S&R":"CheckpointLoaderSimple","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["OfficialStableDiffusion/sd3.5_large.safetensors"]},{"id":52,"type":"TripleCLIPLoader","pos":[269.57940673828125,-193.93411254882812],"size":[270,106],"flags":{},"order":7,"mode":0,"inputs":[{"localized_name":"clip_name1","name":"clip_name1","type":"COMBO","widget":{"name":"clip_name1"},"link":null},{"localized_name":"clip_name2","name":"clip_name2","type":"COMBO","widget":{"name":"clip_name2"},"link":null},{"localized_name":"clip_name3","name":"clip_name3","type":"COMBO","widget":{"name":"clip_name3"},"link":null}],"outputs":[{"localized_name":"CLIP","name":"CLIP","type":"CLIP","links":[65,66]}],"properties":{"Node name for S&R":"TripleCLIPLoader"},"widgets_values":["clip_l.safetensors","clip_g.safetensors","t5xxl_enconly.safetensors"]},{"id":26,"type":"PrimitiveString","pos":[-1394.169921875,-1027.1241455078125],"size":[782.6649780273438,100.95500183105469],"flags":{},"order":3,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"STRING","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[55]}],"title":"ai4artsed_text_prompt","properties":{"Node name for S&R":"PrimitiveString","cnr_id":"comfy-core","ver":"0.3.36"},"widgets_values":["Ein Banner mit der Aufschrift DEFAULT-PROMPT vor majestätischer Landschaft"],"color":"#232","bgcolor":"#353"},{"id":53,"type":"ai4artsed_prompt_interception","pos":[-1014.013916015625,-841.9259033203125],"size":[400,376],"flags":{},"order":8,"mode":0,"inputs":[{"localized_name":"input_prompt","name":"input_prompt","type":"STRING","widget":{"name":"input_prompt"},"link":null},{"localized_name":"input_context","name":"input_context","type":"STRING","widget":{"name":"input_context"},"link":null},{"localized_name":"style_prompt","name":"style_prompt","type":"STRING","widget":{"name":"style_prompt"},"link":null},{"localized_name":"api_key","name":"api_key","type":"STRING","widget":{"name":"api_key"},"link":null},{"localized_name":"model","name":"model","type":"COMBO","widget":{"name":"model"},"link":null},{"localized_name":"debug","name":"debug","type":"COMBO","widget":{"name":"debug"},"link":null},{"localized_name":"unload_model","name":"unload_model","type":"COMBO","widget":{"name":"unload_model"},"link":null},{"localized_name":"output_format","name":"output_format","type":"COMBO","widget":{"name":"output_format"},"link":null}],"outputs":[{"localized_name":"output_str","name":"output_str","type":"STRING","links":[]},{"localized_name":"output_float","name":"output_float","type":"FLOAT","links":null},{"localized_name":"output_int","name":"output_int","type":"INT","links":null},{"localized_name":"output_binary","name":"output_binary","type":"BOOLEAN","links":null}],"title":"AI4ArtsEd Translation_english","properties":{"Node name for S&R":"ai4artsed_prompt_interception"},"widgets_values":["","professional translator","Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.","","local/mistral:7b","enable","yes"],"color":"#322","bgcolor":"#533"}],"links":[[1,4,0,3,0,"MODEL"],[2,5,0,3,3,"LATENT"],[4,6,0,3,1,"CONDITIONING"],[6,7,0,3,2,"CONDITIONING"],[7,3,0,8,0,"LATENT"],[8,4,2,8,1,"VAE"],[9,8,0,9,0,"IMAGE"],[54,33,0,50,1,"STRING"],[55,26,0,50,0,"STRING"],[56,50,0,47,0,"*"],[57,34,0,50,2,"STRING"],[59,51,0,46,0,"*"],[60,51,0,6,1,"STRING"],[61,11,0,50,3,"STRING"],[62,11,0,51,3,"STRING"],[63,50,0,51,0,"STRING"],[65,52,0,6,0,"CLIP"],[66,52,0,7,0,"CLIP"]],"groups":[],"config":{},"extra":{"ds":{"scale":0.6209213230591557,"offset":[2653.3128616657314,1213.6820107921822]}},"version":0.4}
+{
+  "id": "842af73b-b92e-431d-8206-96617239a2dd",
+  "revision": 0,
+  "last_node_id": 53,
+  "last_link_id": 66,
+  "nodes": [
+    {
+      "id": 20,
+      "type": "CLIPLoader",
+      "pos": [
+        3711.84375,
+        547.2083740234375
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36"
+      },
+      "widgets_values": [
+        "clip_g.safetensors",
+        "stable_diffusion",
+        "default"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        882.7503051757812,
+        420.8999328613281
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1221.6497802734375,
+        108.79999542236328
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1224.9501953125,
+        228.0499267578125
+      ],
+      "size": [
+        210,
+        270
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        419.9537048339844,
+        197.88583374023438
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 65
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "A banner showing DEFAULT PROMPT, EINGABE FEHLGESCHLAGEN"
+      ]
+    },
+    {
+      "id": 46,
+      "type": "PreviewAny",
+      "pos": [
+        414.3954162597656,
+        739.5924682617188
+      ],
+      "size": [
+        762.2424926757812,
+        371.7481994628906
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "*",
+          "link": 59
+        }
+      ],
+      "outputs": [],
+      "title": "final prompt",
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 47,
+      "type": "PreviewAny",
+      "pos": [
+        494.255859375,
+        -876.24267578125
+      ],
+      "size": [
+        762.2424926757812,
+        371.7481994628906
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "*",
+          "link": 56
+        }
+      ],
+      "outputs": [],
+      "title": "cultural translation",
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 33,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1134.5938720703125,
+        -188.33660888671875
+      ],
+      "size": [
+        581,
+        677.5
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            54
+          ]
+        }
+      ],
+      "title": "Context",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39"
+      },
+      "widgets_values": [
+        "Traditional Confucian Literati Painting Visual Grammar and Ethical Translation Guidelines\n\n(Based on the orthodox systems of Song, Yuan, Ming, and Qing literati painting, with contemporary adaptation clauses)\n\n\nI. Ontological Transformation Rules\n\n\n    Primacy of Xie He’s \"Six Laws\": Prioritize qiyun shengdong (spirit-resonance and life-movement) as the supreme principle, rejecting Western realism.\n\n    Moral Morphology of Forms:\n        Plants (pine, bamboo, plum, orchid) must adhere to the Mustard Seed Garden Manual conventions—branches rendered in calligraphic lines (bifa technique) embodying \"bone structure brushwork.\"\n        Human figures must be smaller than landscape elements, with drapery referencing Wu Daozi’s \"wind-blown ribbons\" tradition (Wu Dai Dang Feng). Facial features are suggested symbolically with minimalist strokes (\"yi dao bi bu dao\"—the idea transcends the brush).\n\n\n\nII. Spatial Recomposition Principles\n\n\n    Triaxial Perspective System: Apply Guo Xi’s Three Distances (San Yuan):\n        High Distance (Gao Yuan): For moral authority (e.g., cliff-top academies).\n        Deep Distance (Shen Yuan): Depicts Confucian order (e.g., terraced farmlands in stratified perspective).\n        Level Distance (Ping Yuan): Conveys Taoist reclusion (Mi Fu’s mist-and-cloud technique).\n\n\n\nIII. Ink-Brush Ethical System\n\n\n    Materials as Ethical Statements:\n        Raw xuan paper paired with dry-texture cun strokes (\"cun\" texture strokes) metaphorizes \"the arduous path of benevolent rule.\"\n        Colored silk works must use mineral pigments regulated by the Rites of Zhou’s Five Colors doctrine (symbolic hierarchy: blue, red, yellow, white, black).\n\n    Stroke Ethics and Social Hierarchy:\n        Scholars use hemp-fiber strokes (pima cun) for cultivated ease.\n        Fishermen/hermits employ axe-cut strokes (fupi cun) to signify unyielding integrity.\n\n\n\nIV. Semiotic Codex\n\n\n    Inscriptions: Must be original poetry/prose meeting:\n        Content: ≥30% quotations from Analects or allusions from Selections of Refined Literature.\n        Calligraphy: Running/grass script adapted compositionally, but imperial examination (guange) style is banned.\n\n    Seal Protocol:\n        Introductory Seals (Yinshou Zhang): Vermillion-style, modeled on Qin-Han imperial seals.\n        Corner Seals (Yajiao Zhang): White-character seals emulating Han official seal-carving.\n\n\n\nV. Anomaly Accommodation Clause\n\n(For post-Ming unconventional literati works, e.g., Bada Shanren)\n\n\n    Permission for \"distorted forms\", provided:\n        Deformations intertextually align with inscriptions (e.g., fish/birds with side-eyes mirroring protest poetry).\n        Negative space (liubai) must occupy >40% to preserve Daoist \"emptiness contains turbulence\" tension.\n\n\n\nVI. Digital Age Adaptations\n\n\n    AI-Generated Works Must:\n        Simulate Dong Yuan’s \"fangtou cun\" randomness in brushwork algorithms.\n        Follow Record of Artisans’ chromatic sequence (\"blue adjacent to white\") in RGB channels.\n\n    Prohibitions:\n        No 3D volumetric rendering; preserve the two-dimensional \"unity of calligraphy and painting\" (shuhua tongyuan).\n        Photoshop filters banned; ink gradations must emerge from iterative algorithms.\n\n\n\nVII. Final Validation Standards\n\nTranslated works must pass:\n\n\n    \"Qi-Appraisal\" Test: Art historians must identify period style from three meters away.\n\n    \"Painting-Reading\" Test: Calligraphers must reverse-engineer composition logic from inscriptions.\n\n\n(Note: Default technical manual: Ming-era Ten Bamboo Studio Manual; philosophical basis: Qing Principles of Painting.)\n\n\nThis translation:\n\n\n    Preserves all original Confucian philosophical rigor.\n\n    Introduces executable metrics (e.g., 30% Analects quota, 40% liubai).\n\n    Accommodates historical exceptions while maintaining orthodoxy.\n\n    Bridges classical ethics to AI-generated art constraints.\n\n"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 11,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -1057.936279296875,
+        -342.97210693359375
+      ],
+      "size": [
+        441,
+        26
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            61,
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ai4artsed_openrouter_key",
+        "aux_id": "joeriben/ai4artsed_comfyui",
+        "ver": "e511931edb551d65374c44689e76c08794ed31e7"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 34,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -471.97930908203125,
+        -801.2076416015625
+      ],
+      "size": [
+        745.3324584960938,
+        340.8220520019531
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            57
+          ]
+        }
+      ],
+      "title": "Stylization Instruction (usually leave as is)",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39"
+      },
+      "widgets_values": [
+        "Proceed strictly as follows: \nRegard, honor and enhance the cultural meanings and connotations according to the respective cultural values connected to a language. Reflect on the meaning of the respective concepts. Rethink the image. Avoid western and global north biases and western gaze where not fitting. Do not talk about the prompt, this is forbidden, but create a prompt text.\n\nTranslate a given image, repective image description, from its original visual and semantic system into a target representational system, while preserving the structural identity of all entities, gestures, and relations. \n\nFor each element, identify its function, affective tone, and relational role within the source composition. Reconstruct the scene using the formal, material, and compositional logics of the target system—whether symbolic, expressive, disruptive, or codified. All elements must remain semantically traceable, yet visually and contextually transformed in accordance with the target system’s internal conventions of form, space, and signification.\n\nCreate a detailed prompt that stays utterly true to the text and cultural context of the input you received. Be radical, do not soften or harmonize contraditive elements. "
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        865.199951171875,
+        99.65001678466797
+      ],
+      "size": [
+        315,
+        474
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        819177792291271,
+        "randomize",
+        25,
+        6,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 50,
+      "type": "ai4artsed_prompt_interception",
+      "pos": [
+        -354.7928466796875,
+        -391.15106201171875
+      ],
+      "size": [
+        400,
+        352
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "input_prompt",
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 55
+        },
+        {
+          "localized_name": "input_context",
+          "name": "input_context",
+          "type": "STRING",
+          "widget": {
+            "name": "input_context"
+          },
+          "link": 54
+        },
+        {
+          "localized_name": "style_prompt",
+          "name": "style_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "style_prompt"
+          },
+          "link": 57
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 61
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "debug",
+          "name": "debug",
+          "type": "COMBO",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "unload_model",
+          "name": "unload_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "unload_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "output_str",
+          "name": "output_str",
+          "type": "STRING",
+          "links": [
+            56,
+            63
+          ]
+        },
+        {
+          "localized_name": "output_float",
+          "name": "output_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "localized_name": "output_int",
+          "name": "output_int",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "localized_name": "output_binary",
+          "name": "output_binary",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ai4artsed_prompt_interception"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        "local/mistral-small:24b",
+        "disable",
+        "no"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 51,
+      "type": "ai4artsed_prompt_interception",
+      "pos": [
+        -412.20263671875,
+        59.452919006347656
+      ],
+      "size": [
+        630.0831298828125,
+        404.01318359375
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "input_prompt",
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": 63
+        },
+        {
+          "localized_name": "input_context",
+          "name": "input_context",
+          "type": "STRING",
+          "widget": {
+            "name": "input_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "style_prompt",
+          "name": "style_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "style_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 62
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "debug",
+          "name": "debug",
+          "type": "COMBO",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "unload_model",
+          "name": "unload_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "unload_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "output_str",
+          "name": "output_str",
+          "type": "STRING",
+          "links": [
+            59,
+            60
+          ]
+        },
+        {
+          "localized_name": "output_float",
+          "name": "output_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "localized_name": "output_int",
+          "name": "output_int",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "localized_name": "output_binary",
+          "name": "output_binary",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ai4artsed_prompt_interception"
+      },
+      "widgets_values": [
+        "",
+        "professional prompting expert",
+        "You received two inputs: 1) the input_prompt and 2) the input_context. \n\nTransform the input_prompt into an image description according to the instructions defined in the input_context. Explicitely communicate the input_context as cultural cf. artistic. cf intervening context. Also communicate genres/artistic traditions in a concrete way (i.e. is it a dance, a photo, a painting, a song, a movie, a statue/sculpture? how should it be translated into an image?)\n\nThis is not a linguistic translation, but a aesthetic, semantic and structural transformation. Be verbose!\n\nReconstruct all entities and their relations as specified, ensuring that:\n- Each entity is retained – or respectively transformed – as instructed.\n- Each relation is altered in line with the particular aesthetics, genre-typical traits, and logic of the “Context”. Be explicit about visual aesthetics in terms of materials, techniques, composition, and overall atmosphere. Mention the input_context als cultural, cf. artistic, c.f intervening context in your OUTPUT explicitely.\n\nOutput only the transformed description as plain descriptive text. Be aware if the output is something depicted (like a ritual or any situation) OR itself a cultural artefact (such as a specific drawing technique). Describe accordingly. In your output, communicate which elements are most important for an succeeding image generation.\n\nCreate an output prompt tailored for Stable Diffusion 3.5 with combined clip_g and t5xxlenc. Regard the Token Limit (75), OUPUT max. 55 Words!\nDO NOT USE ANY META-TERMS, JUST THE INSTRUCTIONS FOR IMAGE GENERATION! Do not explain your reasoning.",
+        "",
+        "local/mistral-small:24b",
+        "disable",
+        "yes"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        419.4879455566406,
+        470.6627502441406
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 66
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "watermark"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        633.5635375976562,
+        -156.22103881835938
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "ckpt_name",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "OfficialStableDiffusion/sd3.5_large.safetensors"
+      ]
+    },
+    {
+      "id": 52,
+      "type": "TripleCLIPLoader",
+      "pos": [
+        269.57940673828125,
+        -193.93411254882812
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name1",
+          "name": "clip_name1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name2",
+          "name": "clip_name2",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name3",
+          "name": "clip_name3",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name3"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            65,
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripleCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "clip_g.safetensors",
+        "t5xxl_enconly.safetensors"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -1394.169921875,
+        -1027.1241455078125
+      ],
+      "size": [
+        782.6649780273438,
+        100.95500183105469
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            55
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "Node name for S&R": "PrimitiveString",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift DEFAULT-PROMPT vor majestätischer Landschaft"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 53,
+      "type": "ai4artsed_prompt_interception",
+      "pos": [
+        -1014.013916015625,
+        -841.9259033203125
+      ],
+      "size": [
+        400,
+        376
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "input_prompt",
+          "name": "input_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "input_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "input_context",
+          "name": "input_context",
+          "type": "STRING",
+          "widget": {
+            "name": "input_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "style_prompt",
+          "name": "style_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "style_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "debug",
+          "name": "debug",
+          "type": "COMBO",
+          "widget": {
+            "name": "debug"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "unload_model",
+          "name": "unload_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "unload_model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "output_format",
+          "name": "output_format",
+          "type": "COMBO",
+          "widget": {
+            "name": "output_format"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "output_str",
+          "name": "output_str",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "localized_name": "output_float",
+          "name": "output_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "localized_name": "output_int",
+          "name": "output_int",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "localized_name": "output_binary",
+          "name": "output_binary",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "title": "AI4ArtsEd Translation_english",
+      "properties": {
+        "Node name for S&R": "ai4artsed_prompt_interception"
+      },
+      "widgets_values": [
+        "",
+        "professional translator",
+        "Translate the prompt into English with maximal semantic preservation. \nMaintain the original structure, and preserve all culturally specific terms or non-translatable phrases in their original form. \nDo not translate proper names, ritual terms, or material names unless they have a common English usage. \nMark such terms with double brackets, e.g. [[egungun]], and preserve their position. \nDo not paraphrase, interpret, or summarize. Do not add any comments or explanations.\nReturn only the translated prompt as plain text.",
+        "",
+        "local/mistral:7b",
+        "enable",
+        "yes"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      4,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      54,
+      33,
+      0,
+      50,
+      1,
+      "STRING"
+    ],
+    [
+      55,
+      26,
+      0,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      56,
+      50,
+      0,
+      47,
+      0,
+      "*"
+    ],
+    [
+      57,
+      34,
+      0,
+      50,
+      2,
+      "STRING"
+    ],
+    [
+      59,
+      51,
+      0,
+      46,
+      0,
+      "*"
+    ],
+    [
+      60,
+      51,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      61,
+      11,
+      0,
+      50,
+      3,
+      "STRING"
+    ],
+    [
+      62,
+      11,
+      0,
+      51,
+      3,
+      "STRING"
+    ],
+    [
+      63,
+      50,
+      0,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      65,
+      52,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      66,
+      52,
+      0,
+      7,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6209213230591557,
+      "offset": [
+        2653.3128616657314,
+        1213.6820107921822
+      ]
+    }
+  },
+  "version": 0.4,
+  "1": {
+    "inputs": {
+      "value": "Traditionelle Chinesische Kunst\nInterpretiert Prompts nach visuellen Prinzipien einschließlich ihrer kosmologischen Hintergründe\nWendet Konzepte wie Leere, Yin-Yang und die fünf Elemente auf moderne Bildgenerierung an."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "über"
+    }
+  },
+  "2": {
+    "inputs": {
+      "value": "Traditional Chinese Art\nInterprets prompts according to visual principles including their cosmological backgrounds\nApplies concepts like emptiness, Yin-Yang and the five elements to modern image generation."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "info"
+    }
+  }
+}

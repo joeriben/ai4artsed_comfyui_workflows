@@ -1,1 +1,1010 @@
-{"id":"66f77ba5-8aac-4aea-bde5-bac29cbb3ef1","revision":0,"last_node_id":43,"last_link_id":66,"nodes":[{"id":20,"type":"CLIPLoader","pos":[3711.84375,547.2083740234375],"size":[315,106],"flags":{},"order":0,"mode":0,"inputs":[{"localized_name":"clip_name","name":"clip_name","type":"COMBO","widget":{"name":"clip_name"},"link":null},{"localized_name":"type","name":"type","type":"COMBO","widget":{"name":"type"},"link":null},{"localized_name":"device","name":"device","shape":7,"type":"COMBO","widget":{"name":"device"},"link":null}],"outputs":[{"localized_name":"CLIP","name":"CLIP","type":"CLIP","links":null}],"properties":{"Node name for S&R":"CLIPLoader","cnr_id":"comfy-core","ver":"0.3.36"},"widgets_values":["clip_g.safetensors","stable_diffusion","default"]},{"id":6,"type":"CLIPTextEncode","pos":[243.29266357421875,-536.0072021484375],"size":[422.84503173828125,164.31304931640625],"flags":{},"order":10,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":60},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":65}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","slot_index":0,"links":[4]}],"properties":{"Node name for S&R":"CLIPTextEncode","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["A banner showing DEFAULT PROMPT, EINGABE FEHLGESCHLAGEN"],"color":"#322","bgcolor":"#533"},{"id":8,"type":"VAEDecode","pos":[752.5933227539062,-202.13926696777344],"size":[210,46],"flags":{},"order":12,"mode":0,"inputs":[{"localized_name":"samples","name":"samples","type":"LATENT","link":7},{"localized_name":"vae","name":"vae","type":"VAE","link":8}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","slot_index":0,"links":[9]}],"properties":{"Node name for S&R":"VAEDecode","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":5,"type":"EmptyLatentImage","pos":[704.7546997070312,-96.65591430664062],"size":[315,106],"flags":{},"order":1,"mode":0,"inputs":[{"localized_name":"width","name":"width","type":"INT","widget":{"name":"width"},"link":null},{"localized_name":"height","name":"height","type":"INT","widget":{"name":"height"},"link":null},{"localized_name":"batch_size","name":"batch_size","type":"INT","widget":{"name":"batch_size"},"link":null}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","slot_index":0,"links":[2]}],"properties":{"Node name for S&R":"EmptyLatentImage","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":[1024,1024,1],"color":"#322","bgcolor":"#533"},{"id":9,"type":"SaveImage","pos":[1055.9368896484375,-684.7732543945312],"size":[626.985595703125,683.2880249023438],"flags":{},"order":13,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":9},{"localized_name":"filename_prefix","name":"filename_prefix","type":"STRING","widget":{"name":"filename_prefix"},"link":null}],"outputs":[],"properties":{"cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["ComfyUI"]},{"id":37,"type":"PrimitiveStringMultiline","pos":[-1477.517333984375,-771.42138671875],"size":[806.9450073242188,211.6782989501953],"flags":{},"order":2,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"STRING","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[56]}],"title":"Just a more convenient input for your prompt","properties":{"Node name for S&R":"PrimitiveStringMultiline"},"widgets_values":["Ein Werbeplakat mit der Aufschrift NICHT DEIN PROMPT auf einer grünen Wiese"],"color":"#232","bgcolor":"#353"},{"id":4,"type":"CheckpointLoaderSimple","pos":[246.42034912109375,-689.4536743164062],"size":[417.40997314453125,102.49164581298828],"flags":{},"order":3,"mode":0,"inputs":[{"localized_name":"ckpt_name","name":"ckpt_name","type":"COMBO","widget":{"name":"ckpt_name"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","slot_index":0,"links":[1]},{"localized_name":"CLIP","name":"CLIP","type":"CLIP","slot_index":1,"links":[]},{"localized_name":"VAE","name":"VAE","type":"VAE","slot_index":2,"links":[8]}],"title":"Choose your checkpoint ( = image generation model)","properties":{"Node name for S&R":"CheckpointLoaderSimple","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["OfficialStableDiffusion/sd3.5_large.safetensors"],"color":"#232","bgcolor":"#353"},{"id":7,"type":"CLIPTextEncode","pos":[245.4578857421875,-318.25469970703125],"size":[425.27801513671875,180.6060791015625],"flags":{},"order":7,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":59},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":null}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","slot_index":0,"links":[6]}],"properties":{"Node name for S&R":"CLIPTextEncode","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":["text, watermark"],"color":"#322","bgcolor":"#533"},{"id":40,"type":"TripleCLIPLoader","pos":[732.8792724609375,-673.9069213867188],"size":[270,106],"flags":{},"order":4,"mode":0,"inputs":[{"localized_name":"clip_name1","name":"clip_name1","type":"COMBO","widget":{"name":"clip_name1"},"link":null},{"localized_name":"clip_name2","name":"clip_name2","type":"COMBO","widget":{"name":"clip_name2"},"link":null},{"localized_name":"clip_name3","name":"clip_name3","type":"COMBO","widget":{"name":"clip_name3"},"link":null}],"outputs":[{"localized_name":"CLIP","name":"CLIP","type":"CLIP","links":[59,60]}],"properties":{"Node name for S&R":"TripleCLIPLoader"},"widgets_values":["clip_l.safetensors","clip_g.safetensors","t5xxl_enconly.safetensors"],"color":"#322","bgcolor":"#533"},{"id":3,"type":"KSampler","pos":[719.5446166992188,-521.2147827148438],"size":[300.6266784667969,474],"flags":{},"order":11,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":1},{"localized_name":"positive","name":"positive","type":"CONDITIONING","link":4},{"localized_name":"negative","name":"negative","type":"CONDITIONING","link":6},{"localized_name":"latent_image","name":"latent_image","type":"LATENT","link":2},{"localized_name":"seed","name":"seed","type":"INT","widget":{"name":"seed"},"link":null},{"localized_name":"steps","name":"steps","type":"INT","widget":{"name":"steps"},"link":null},{"localized_name":"cfg","name":"cfg","type":"FLOAT","widget":{"name":"cfg"},"link":null},{"localized_name":"sampler_name","name":"sampler_name","type":"COMBO","widget":{"name":"sampler_name"},"link":null},{"localized_name":"scheduler","name":"scheduler","type":"COMBO","widget":{"name":"scheduler"},"link":null},{"localized_name":"denoise","name":"denoise","type":"FLOAT","widget":{"name":"denoise"},"link":null}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","slot_index":0,"links":[7]}],"properties":{"Node name for S&R":"KSampler","cnr_id":"comfy-core","ver":"0.3.28"},"widgets_values":[347862060649018,"randomize",20,5.5,"euler","normal",1],"color":"#322","bgcolor":"#533"},{"id":41,"type":"PreviewAny","pos":[-366.4149475097656,-280.6267395019531],"size":[383.2861633300781,321.3395690917969],"flags":{},"order":9,"mode":0,"inputs":[{"localized_name":"source","name":"source","type":"*","link":63}],"outputs":[],"title":"Safety-filtered positive prompt","properties":{"Node name for S&R":"PreviewAny"},"widgets_values":[]},{"id":26,"type":"PrimitiveString","pos":[-1488.910400390625,-504.844970703125],"size":[826.6832275390625,109.9383544921875],"flags":{},"order":6,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"STRING","widget":{"name":"value"},"link":56}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[64]}],"title":"ai4artsed_text_prompt","properties":{"Node name for S&R":"PrimitiveString","cnr_id":"comfy-core","ver":"0.3.36"},"widgets_values":["Ein Banner mit der Aufschrift ACHTUNG DEFAULT-PROMPT!"],"color":"#322","bgcolor":"#533"},{"id":43,"type":"ai4artsed_openrouter_key","pos":[-949.2777099609375,-308.9635009765625],"size":[283.3666687011719,26],"flags":{},"order":5,"mode":0,"inputs":[],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":[66]}],"properties":{"Node name for S&R":"ai4artsed_openrouter_key"},"widgets_values":[]},{"id":42,"type":"ai4artsed_switch_promptsafety","pos":[-374.9774475097656,-542.2637939453125],"size":[400,200],"flags":{},"order":8,"mode":0,"inputs":[{"localized_name":"model_override","name":"model_override","shape":7,"type":"STRING","link":null},{"localized_name":"prompt","name":"prompt","type":"STRING","widget":{"name":"prompt"},"link":64},{"localized_name":"filter_level","name":"filter_level","type":"COMBO","widget":{"name":"filter_level"},"link":null},{"localized_name":"model","name":"model","type":"COMBO","widget":{"name":"model"},"link":null},{"localized_name":"api_key","name":"api_key","type":"STRING","widget":{"name":"api_key"},"link":66},{"localized_name":"unload_model","name":"unload_model","type":"COMBO","widget":{"name":"unload_model"},"link":null}],"outputs":[{"localized_name":"filtered_prompt","name":"filtered_prompt","type":"STRING","links":[63,65]}],"properties":{"Node name for S&R":"ai4artsed_switch_promptsafety"},"widgets_values":["","off","openrouter/mistralai/mistral-nemo [multilingual / $0.01/$0.001]","","yes"],"color":"#322","bgcolor":"#533"}],"links":[[1,4,0,3,0,"MODEL"],[2,5,0,3,3,"LATENT"],[4,6,0,3,1,"CONDITIONING"],[6,7,0,3,2,"CONDITIONING"],[7,3,0,8,0,"LATENT"],[8,4,2,8,1,"VAE"],[9,8,0,9,0,"IMAGE"],[56,37,0,26,0,"STRING"],[59,40,0,7,0,"CLIP"],[60,40,0,6,0,"CLIP"],[63,42,0,41,0,"*"],[64,26,0,42,1,"STRING"],[65,42,0,6,1,"STRING"],[66,43,0,42,4,"STRING"]],"groups":[{"id":2,"title":"ai4artsed standard prompt input and translation","bounding":[-1498.910400390625,-845.0213623046875,856.890869140625,994.489501953125],"color":"#3f789e","font_size":24,"flags":{}},{"id":3,"title":"ai4artsed output sd3.5 turbo","bounding":[233.29273986816406,-763.4204711914062,1459.6298828125,782.7643432617188],"color":"#3f789e","font_size":24,"flags":{}},{"id":4,"title":"Prompt-safety switch","bounding":[-384.9774475097656,-615.8638305664062,420,666.5762939453125],"color":"#3f789e","font_size":24,"flags":{}}],"config":{},"extra":{"ds":{"scale":0.9090909090909091,"offset":[2412.460716420136,654.1802497360209]}},"version":0.4}
+{
+  "id": "66f77ba5-8aac-4aea-bde5-bac29cbb3ef1",
+  "revision": 0,
+  "last_node_id": 43,
+  "last_link_id": 66,
+  "nodes": [
+    {
+      "id": 20,
+      "type": "CLIPLoader",
+      "pos": [
+        3711.84375,
+        547.2083740234375
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36"
+      },
+      "widgets_values": [
+        "clip_g.safetensors",
+        "stable_diffusion",
+        "default"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        243.29266357421875,
+        -536.0072021484375
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 60
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "A banner showing DEFAULT PROMPT, EINGABE FEHLGESCHLAGEN"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        752.5933227539062,
+        -202.13926696777344
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        704.7546997070312,
+        -96.65591430664062
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "batch_size",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1055.9368896484375,
+        -684.7732543945312
+      ],
+      "size": [
+        626.985595703125,
+        683.2880249023438
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -1477.517333984375,
+        -771.42138671875
+      ],
+      "size": [
+        806.9450073242188,
+        211.6782989501953
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            56
+          ]
+        }
+      ],
+      "title": "Just a more convenient input for your prompt",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Ein Werbeplakat mit der Aufschrift NICHT DEIN PROMPT auf einer grünen Wiese"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        246.42034912109375,
+        -689.4536743164062
+      ],
+      "size": [
+        417.40997314453125,
+        102.49164581298828
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "ckpt_name",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "Choose your checkpoint ( = image generation model)",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "OfficialStableDiffusion/sd3.5_large.safetensors"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        245.4578857421875,
+        -318.25469970703125
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 59
+        },
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 40,
+      "type": "TripleCLIPLoader",
+      "pos": [
+        732.8792724609375,
+        -673.9069213867188
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name1",
+          "name": "clip_name1",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name2",
+          "name": "clip_name2",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name3",
+          "name": "clip_name3",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name3"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            59,
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripleCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "clip_g.safetensors",
+        "t5xxl_enconly.safetensors"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        719.5446166992188,
+        -521.2147827148438
+      ],
+      "size": [
+        300.6266784667969,
+        474
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "localized_name": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28"
+      },
+      "widgets_values": [
+        347862060649018,
+        "randomize",
+        20,
+        5.5,
+        "euler",
+        "normal",
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 41,
+      "type": "PreviewAny",
+      "pos": [
+        -366.4149475097656,
+        -280.6267395019531
+      ],
+      "size": [
+        383.2861633300781,
+        321.3395690917969
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "*",
+          "link": 63
+        }
+      ],
+      "outputs": [],
+      "title": "Safety-filtered positive prompt",
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 26,
+      "type": "PrimitiveString",
+      "pos": [
+        -1488.910400390625,
+        -504.844970703125
+      ],
+      "size": [
+        826.6832275390625,
+        109.9383544921875
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "title": "ai4artsed_text_prompt",
+      "properties": {
+        "Node name for S&R": "PrimitiveString",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.36"
+      },
+      "widgets_values": [
+        "Ein Banner mit der Aufschrift ACHTUNG DEFAULT-PROMPT!"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 43,
+      "type": "ai4artsed_openrouter_key",
+      "pos": [
+        -949.2777099609375,
+        -308.9635009765625
+      ],
+      "size": [
+        283.3666687011719,
+        26
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ai4artsed_openrouter_key"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 42,
+      "type": "ai4artsed_switch_promptsafety",
+      "pos": [
+        -374.9774475097656,
+        -542.2637939453125
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model_override",
+          "name": "model_override",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 64
+        },
+        {
+          "localized_name": "filter_level",
+          "name": "filter_level",
+          "type": "COMBO",
+          "widget": {
+            "name": "filter_level"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "api_key",
+          "name": "api_key",
+          "type": "STRING",
+          "widget": {
+            "name": "api_key"
+          },
+          "link": 66
+        },
+        {
+          "localized_name": "unload_model",
+          "name": "unload_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "unload_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "filtered_prompt",
+          "name": "filtered_prompt",
+          "type": "STRING",
+          "links": [
+            63,
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ai4artsed_switch_promptsafety"
+      },
+      "widgets_values": [
+        "",
+        "off",
+        "openrouter/mistralai/mistral-nemo [multilingual / $0.01/$0.001]",
+        "",
+        "yes"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      4,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      56,
+      37,
+      0,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      59,
+      40,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      60,
+      40,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      63,
+      42,
+      0,
+      41,
+      0,
+      "*"
+    ],
+    [
+      64,
+      26,
+      0,
+      42,
+      1,
+      "STRING"
+    ],
+    [
+      65,
+      42,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      66,
+      43,
+      0,
+      42,
+      4,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "ai4artsed standard prompt input and translation",
+      "bounding": [
+        -1498.910400390625,
+        -845.0213623046875,
+        856.890869140625,
+        994.489501953125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "ai4artsed output sd3.5 turbo",
+      "bounding": [
+        233.29273986816406,
+        -763.4204711914062,
+        1459.6298828125,
+        782.7643432617188
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Prompt-safety switch",
+      "bounding": [
+        -384.9774475097656,
+        -615.8638305664062,
+        420,
+        666.5762939453125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        2412.460716420136,
+        654.1802497360209
+      ]
+    }
+  },
+  "version": 0.4,
+  "1": {
+    "inputs": {
+      "value": "Stable Diffusion 3.5 Standard\nBasis-Implementation des SD 3.5 Modells\nDirekter Zugang zum Stable Diffusion 3.5 Modell ohne zusätzliche Verarbeitungsschritte."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "über"
+    }
+  },
+  "2": {
+    "inputs": {
+      "value": "Stable Diffusion 3.5 Standard\nBasic implementation of the SD 3.5 model\nDirect access to the Stable Diffusion 3.5 model without additional processing steps."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "info"
+    }
+  }
+}
