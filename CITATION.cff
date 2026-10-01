@@ -1,0 +1,34 @@
+# This CITATION.cff file was generated in order to comply with the
+# requirements of the research project AI4ArtsEd (FKZ 01JKT2408A),
+# funded by the German Federal Ministry of Education and Research (BMBF).
+# Please use the metadata provided below.
+---
+cff-version: 1.2.0
+title: "AI4ArtsEd AI Lab ComfyUI Workflows: Explorative Workflow Collection for AI4ArtsEd Werkraum (AI for Arts Education)"
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - family-names: "Jörissen"
+    given-names: "Benjamin"
+    email: "joerissen@gmail.com"
+identifiers:
+  - type: url
+    value: "https://github.com/joeriben/ai4artsed_comfyui_workflows"
+    description: "Repository"
+repository-code: "https://github.com/joeriben/ai4artsed_comfyui_workflows"
+url: "https://github.com/joeriben/ai4artsed_comfyui_workflows"
+abstract: >-
+  Explorative collection of ComfyUI workflows of the AI4ArtsEd AI
+  Lab, organised by pedagogical themes (arts, aesthetics, sound,
+  semantics, media analysis and more) for the critically reflective
+  use of generative AI in cultural-aesthetic education.
+keywords:
+  - "AI4ArtsEd"
+  - "generative AI"
+  - "arts education"
+  - "cultural-aesthetic education"
+  - "ComfyUI"
+license: EUPL-1.2
+commit: 6c8b94a2b06d439b25959182dbb479c4eaaf19f8
